@@ -73,6 +73,9 @@
     <Compile Include="Assets\Tilemap\Tiles\Rule Override Tile\Scripts\Editor\RuleOverrideTileEditor.cs" />
     <Compile Include="Assets\Tilemap\Tiles\Rule Tile\Scripts\Editor\CustomRuleTileMenu.cs" />
     <Compile Include="Assets\Tilemap\Tiles\Rule Tile\Scripts\Editor\RuleTileEditor.cs" />
+    <Reference Include="Cinemachine">
+      <HintPath>D:/Edumantra/Binghamton/3. Spring 2019/1. Game Development for Mobile Platforms/4. Unity Game/Unity Game/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Edumantra/Binghamton/3. Spring 2019/1. Game Development for Mobile Platforms/4. Unity Game/Unity Game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -82,17 +85,14 @@
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>D:/Edumantra/Binghamton/3. Spring 2019/1. Game Development for Mobile Platforms/4. Unity Game/Unity Game/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>D:/Edumantra/Binghamton/3. Spring 2019/1. Game Development for Mobile Platforms/4. Unity Game/Unity Game/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:/Edumantra/Binghamton/3. Spring 2019/1. Game Development for Mobile Platforms/4. Unity Game/Unity Game/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
       <HintPath>D:/Edumantra/Binghamton/3. Spring 2019/1. Game Development for Mobile Platforms/4. Unity Game/Unity Game/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
-    </Reference>
-    <Reference Include="Cinemachine">
-      <HintPath>D:/Edumantra/Binghamton/3. Spring 2019/1. Game Development for Mobile Platforms/4. Unity Game/Unity Game/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>D:/Edumantra/Binghamton/3. Spring 2019/1. Game Development for Mobile Platforms/4. Unity Game/Unity Game/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
