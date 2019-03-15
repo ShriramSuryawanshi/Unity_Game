@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDamageable
 {
 
     private Rigidbody2D _rigid;
@@ -11,15 +11,15 @@ public class Player : MonoBehaviour
     private LayerMask _groundLayer;
     private bool _grounded = false;
 
-    private float _speed = 2.5f;
+    private float _speed = 5.0f;
 
     private PlayerAnimation _playerAnim;
     private SpriteRenderer _playerSprite;
     private SpriteRenderer _swordArcSprite;
 
+    public int Health { get; set; }
 
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         _rigid = GetComponent<Rigidbody2D>();
@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
         _swordArcSprite = transform.GetChild(1).GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         Movement();  
@@ -105,5 +105,10 @@ public class Player : MonoBehaviour
         _resetJump = true;
         yield return new WaitForSeconds(0.1f);
         _resetJump = false;
+    }
+
+    public void Damage()
+    {
+
     }
 }
