@@ -1,3 +1,2369 @@
+commit 2ca9fc6d8ed527dbb6a36d3033a8822c55434d5a
+Author: ShriramSuryawanshi <shriram.a.suryawanshi@gmail.com>
+Date:   Fri Mar 15 20:14:34 2019 -0400
+
+    Finihsing up, screenshots, readme
+
+ README.md                                          |   26 +-
+ Screenshot 1.png                                   |  Bin 0 -> 887118 bytes
+ Screenshot 2.png                                   |  Bin 0 -> 1051935 bytes
+ Screenshot 3.png                                   |  Bin 0 -> 1226356 bytes
+ Unity Game/.vs/Unity Game/v15/.suo                 |  Bin 369664 -> 369664 bytes
+ .../.vs/Unity Game/v15/Server/sqlite3/storage.ide  |  Bin 1642496 -> 1646592 bytes
+ .../Unity Game/v15/Server/sqlite3/storage.ide-shm  |  Bin 32768 -> 32768 bytes
+ .../Unity Game/v15/Server/sqlite3/storage.ide-wal  |  Bin 4148872 -> 4177712 bytes
+ Unity Game/Assembly-CSharp-Editor.csproj           |   14 +
+ Unity Game/Assembly-CSharp.csproj                  |   41 +
+ Unity Game/Assets/Assets/_Scenes/Game.unity        | 1919 +++++++++++++++++++-
+ Unity Game/Assets/Prefabs/Diamond.prefab           |   94 +-
+ Unity Game/Assets/RockVR.meta                      |    9 +
+ Unity Game/Assets/RockVR/Common.meta               |    9 +
+ Unity Game/Assets/RockVR/Common/Scripts.meta       |    9 +
+ .../Assets/RockVR/Common/Scripts/EventDelegate.cs  |   27 +
+ .../RockVR/Common/Scripts/EventDelegate.cs.meta    |   12 +
+ .../Assets/RockVR/Common/Scripts/FPSDisplay.cs     |   31 +
+ .../RockVR/Common/Scripts/FPSDisplay.cs.meta       |   12 +
+ .../Assets/RockVR/Common/Scripts/Platform.cs       |   48 +
+ .../Assets/RockVR/Common/Scripts/Platform.cs.meta  |   12 +
+ Unity Game/Assets/RockVR/Common/Scripts/Process.cs |   30 +
+ .../Assets/RockVR/Common/Scripts/Process.cs.meta   |   12 +
+ .../Assets/RockVR/Common/Scripts/Singleton.cs      |   98 +
+ .../Assets/RockVR/Common/Scripts/Singleton.cs.meta |   12 +
+ Unity Game/Assets/RockVR/Common/Textures.meta      |    9 +
+ Unity Game/Assets/RockVR/Common/Textures/Logo.png  |  Bin 0 -> 15288 bytes
+ .../Assets/RockVR/Common/Textures/Logo.png.meta    |   59 +
+ Unity Game/Assets/RockVR/Video.meta                |    9 +
+ Unity Game/Assets/RockVR/Video/Demo.meta           |    9 +
+ Unity Game/Assets/RockVR/Video/Demo/Audio.meta     |    9 +
+ .../Assets/RockVR/Video/Demo/Audio/SampleAudio.mp3 |  Bin 0 -> 1486726 bytes
+ .../RockVR/Video/Demo/Audio/SampleAudio.mp3.meta   |   22 +
+ .../RockVR/Video/Demo/Demo_01_VideoCapture.unity   |  666 +++++++
+ .../Video/Demo/Demo_01_VideoCapture.unity.meta     |    8 +
+ .../RockVR/Video/Demo/Demo_02_MainCapture.unity    |  558 ++++++
+ .../Video/Demo/Demo_02_MainCapture.unity.meta      |    8 +
+ .../RockVR/Video/Demo/Demo_03_360Capture.unity     |  658 +++++++
+ .../Video/Demo/Demo_03_360Capture.unity.meta       |    8 +
+ .../Video/Demo/Demo_04_VideoLiveCapture.unity      |  655 +++++++
+ .../Video/Demo/Demo_04_VideoLiveCapture.unity.meta |    8 +
+ Unity Game/Assets/RockVR/Video/Demo/Scripts.meta   |    9 +
+ .../Assets/RockVR/Video/Demo/Scripts/AutoRotate.cs |   24 +
+ .../RockVR/Video/Demo/Scripts/AutoRotate.cs.meta   |   12 +
+ .../RockVR/Video/Demo/Scripts/VideoCaptureUI.cs    |   84 +
+ .../Video/Demo/Scripts/VideoCaptureUI.cs.meta      |   12 +
+ Unity Game/Assets/RockVR/Video/Editor.meta         |    9 +
+ .../RockVR/Video/Editor/VideoCaptureEditor.cs      |  112 ++
+ .../RockVR/Video/Editor/VideoCaptureEditor.cs.meta |   12 +
+ .../RockVR/Video/Editor/VideoCaptureMenuEditor.cs  |  184 ++
+ .../Video/Editor/VideoCaptureMenuEditor.cs.meta    |   12 +
+ Unity Game/Assets/RockVR/Video/Plugins.meta        |    9 +
+ Unity Game/Assets/RockVR/Video/Plugins/OSX.meta    |    9 +
+ .../Video/Plugins/OSX/VideoCaptureLib.bundle.meta  |   30 +
+ .../OSX/VideoCaptureLib.bundle/Contents.meta       |    9 +
+ .../OSX/VideoCaptureLib.bundle/Contents/Info.plist |   44 +
+ .../Contents/Info.plist.meta                       |    8 +
+ .../OSX/VideoCaptureLib.bundle/Contents/MacOS.meta |    9 +
+ .../Contents/MacOS/VideoCaptureLib                 |  Bin 0 -> 418240 bytes
+ .../Contents/MacOS/VideoCaptureLib.meta            |    8 +
+ .../Contents/_CodeSignature.meta                   |    9 +
+ .../Contents/_CodeSignature/CodeResources          |  115 ++
+ .../Contents/_CodeSignature/CodeResources.meta     |    8 +
+ .../Assets/RockVR/Video/Plugins/Windows.meta       |    9 +
+ .../Assets/RockVR/Video/Plugins/Windows/x64.meta   |    9 +
+ .../Video/Plugins/Windows/x64/VideoCaptureLib.dll  |  Bin 0 -> 279040 bytes
+ .../Plugins/Windows/x64/VideoCaptureLib.dll.meta   |  139 ++
+ .../Assets/RockVR/Video/Plugins/Windows/x86.meta   |    9 +
+ .../Video/Plugins/Windows/x86/VideoCaptureLib.dll  |  Bin 0 -> 268800 bytes
+ .../Plugins/Windows/x86/VideoCaptureLib.dll.meta   |  139 ++
+ Unity Game/Assets/RockVR/Video/Readme.pdf          |  Bin 0 -> 1269329 bytes
+ Unity Game/Assets/RockVR/Video/Readme.pdf.meta     |    8 +
+ Unity Game/Assets/RockVR/Video/Resources.meta      |    9 +
+ .../Assets/RockVR/Video/Resources/Materials.meta   |    9 +
+ .../Video/Resources/Materials/CopyReverse.mat      |   77 +
+ .../Video/Resources/Materials/CopyReverse.mat.meta |    8 +
+ .../Materials/Cubemap2Equirectangular.mat          |   77 +
+ .../Materials/Cubemap2Equirectangular.mat.meta     |    8 +
+ .../Materials/Cubemap2EquirectangularPro.mat       |   77 +
+ .../Materials/Cubemap2EquirectangularPro.mat.meta  |    8 +
+ .../Resources/Materials/CubemapDisplayPro.mat      |   77 +
+ .../Resources/Materials/CubemapDisplayPro.mat.meta |    8 +
+ .../Video/Resources/Materials/DownsamplePro.mat    |   77 +
+ .../Resources/Materials/DownsamplePro.mat.meta     |    8 +
+ .../Assets/RockVR/Video/Resources/Prefabs.meta     |    9 +
+ .../Video/Resources/Prefabs/360Capture.prefab      |  105 ++
+ .../Video/Resources/Prefabs/360Capture.prefab.meta |    8 +
+ .../Video/Resources/Prefabs/360CapturePro.prefab   |  Bin 0 -> 8052 bytes
+ .../Resources/Prefabs/360CapturePro.prefab.meta    |    8 +
+ .../Resources/Prefabs/DedicatedCapture.prefab      |  105 ++
+ .../Resources/Prefabs/DedicatedCapture.prefab.meta |    8 +
+ .../Resources/Prefabs/DedicatedCapturePro.prefab   |  Bin 0 -> 7612 bytes
+ .../Prefabs/DedicatedCapturePro.prefab.meta        |    8 +
+ .../Video/Resources/Prefabs/MainCapture.prefab     |  145 ++
+ .../Resources/Prefabs/MainCapture.prefab.meta      |    8 +
+ .../Video/Resources/Prefabs/MainCapturePro.prefab  |  Bin 0 -> 9308 bytes
+ .../Resources/Prefabs/MainCapturePro.prefab.meta   |    9 +
+ .../Resources/Prefabs/VideoCaptureCtrl.prefab      |  207 +++
+ .../Resources/Prefabs/VideoCaptureCtrl.prefab.meta |    9 +
+ .../Resources/Prefabs/VideoCaptureProCtrl.prefab   |  Bin 0 -> 11267 bytes
+ .../Prefabs/VideoCaptureProCtrl.prefab.meta        |    9 +
+ Unity Game/Assets/RockVR/Video/Scripts.meta        |    9 +
+ .../Assets/RockVR/Video/Scripts/AudioCapture.cs    |  155 ++
+ .../RockVR/Video/Scripts/AudioCapture.cs.meta      |   12 +
+ Unity Game/Assets/RockVR/Video/Scripts/Base.meta   |    9 +
+ .../RockVR/Video/Scripts/Base/VideoCaptureBase.cs  |  657 +++++++
+ .../Video/Scripts/Base/VideoCaptureBase.cs.meta    |   12 +
+ .../Video/Scripts/Base/VideoCaptureCtrlBase.cs     |  150 ++
+ .../Scripts/Base/VideoCaptureCtrlBase.cs.meta      |   12 +
+ Unity Game/Assets/RockVR/Video/Scripts/Config.cs   |   87 +
+ .../Assets/RockVR/Video/Scripts/Config.cs.meta     |   12 +
+ .../Assets/RockVR/Video/Scripts/Screenshot.cs      |  146 ++
+ .../Assets/RockVR/Video/Scripts/Screenshot.cs.meta |   12 +
+ Unity Game/Assets/RockVR/Video/Scripts/Utils.meta  |    9 +
+ .../Assets/RockVR/Video/Scripts/Utils/Utils.cs     |   59 +
+ .../RockVR/Video/Scripts/Utils/Utils.cs.meta       |   12 +
+ .../Assets/RockVR/Video/Scripts/VideoCapture.cs    |  797 ++++++++
+ .../RockVR/Video/Scripts/VideoCapture.cs.meta      |   12 +
+ .../RockVR/Video/Scripts/VideoCaptureCtrl.cs       |  345 ++++
+ .../RockVR/Video/Scripts/VideoCaptureCtrl.cs.meta  |   12 +
+ .../Assets/RockVR/Video/Scripts/VideoPlayer.cs     |   87 +
+ .../RockVR/Video/Scripts/VideoPlayer.cs.meta       |   12 +
+ Unity Game/Assets/RockVR/Video/Shaders.meta        |    9 +
+ .../Assets/RockVR/Video/Shaders/CopyReverse.shader |   61 +
+ .../RockVR/Video/Shaders/CopyReverse.shader.meta   |    9 +
+ .../Video/Shaders/Cubemap2Equirectangular.shader   |   58 +
+ .../Shaders/Cubemap2Equirectangular.shader.meta    |    9 +
+ .../Shaders/Cubemap2EquirectangularPro.shader      |   72 +
+ .../Shaders/Cubemap2EquirectangularPro.shader.meta |    9 +
+ .../RockVR/Video/Shaders/CubemapDisplayPro.shader  |   57 +
+ .../Video/Shaders/CubemapDisplayPro.shader.meta    |    9 +
+ .../Video/Shaders/CubemapToCylindrical.shader      |   72 +
+ .../Video/Shaders/CubemapToCylindrical.shader.meta |    9 +
+ .../RockVR/Video/Shaders/DownsamplePro.shader      |   54 +
+ .../RockVR/Video/Shaders/DownsamplePro.shader.meta |    9 +
+ .../RockVR/Video/Shaders/FlippingTexture.shader    |   47 +
+ .../Video/Shaders/FlippingTexture.shader.meta      |    9 +
+ .../RockVR/Video/Shaders/Stereoscopic.shader       |   62 +
+ .../RockVR/Video/Shaders/Stereoscopic.shader.meta  |    9 +
+ Unity Game/Assets/Scripts/Diamond.cs               |   22 +
+ Unity Game/Assets/Scripts/Diamond.cs.meta          |   11 +
+ Unity Game/Assets/Scripts/Enemy/Enemy.cs           |    3 +
+ Unity Game/Assets/Scripts/Enemy/MossGiant.cs       |    7 +-
+ Unity Game/Assets/Scripts/Enemy/Skeleton.cs        |    7 +-
+ Unity Game/Assets/Scripts/Enemy/Spider.cs          |    8 +-
+ Unity Game/Assets/Scripts/Player/Player.cs         |    2 +
+ Unity Game/Assets/Scripts/Shop.meta                |    8 +
+ Unity Game/Assets/Scripts/Shop/Shop.cs             |   27 +
+ Unity Game/Assets/Scripts/Shop/Shop.cs.meta        |   11 +
+ Unity Game/Assets/Scripts/UI.meta                  |    8 +
+ Unity Game/Assets/Scripts/UI/UIManager.cs          |   22 +
+ Unity Game/Assets/Scripts/UI/UIManager.cs.meta     |   11 +
+ .../Assets/Sprites/Effects/Animations/Diamond.anim |  155 ++
+ .../Sprites/Effects/Animations/Diamond.anim.meta   |    8 +
+ .../Sprites/Effects/Animations/Diamond.controller  |   72 +
+ .../Effects/Animations/Diamond.controller.meta     |    8 +
+ Unity Game/Assets/Sprites/Effects/Diamond.png.meta |  268 +--
+ Unity Game/Assets/StreamingAssets.meta             |    9 +
+ Unity Game/Assets/StreamingAssets/RockVR.meta      |    9 +
+ .../Assets/StreamingAssets/RockVR/FFmpeg.meta      |    9 +
+ .../Assets/StreamingAssets/RockVR/FFmpeg/OSX.meta  |    9 +
+ .../StreamingAssets/RockVR/FFmpeg/OSX/ffmpeg       |  Bin 0 -> 34667192 bytes
+ .../StreamingAssets/RockVR/FFmpeg/OSX/ffmpeg.meta  |    8 +
+ .../StreamingAssets/RockVR/FFmpeg/Windows.meta     |    9 +
+ .../RockVR/FFmpeg/Windows/ffmpeg.exe               |  Bin 0 -> 36226560 bytes
+ .../RockVR/FFmpeg/Windows/ffmpeg.exe.meta          |    8 +
+ .../RockVR/Spatial Media Metadata Injector.meta    |    9 +
+ .../Spatial Media Metadata Injector/OSX.meta       |    9 +
+ .../OSX/Spatial Media Metadata Injector            |  Bin 0 -> 6950207 bytes
+ .../OSX/Spatial Media Metadata Injector.meta       |    8 +
+ .../Spatial Media Metadata Injector/Windows.meta   |    9 +
+ .../Windows/Spatial Media Metadata Injector.exe    |  Bin 0 -> 7412100 bytes
+ .../Spatial Media Metadata Injector.exe.meta       |    8 +
+ Unity Game/Assets/Unity Recorder.meta              |    8 +
+ .../Assets/Unity Recorder/Documentation.meta       |    8 +
+ .../Documentation/UnityRecorderV1UserManual.pdf    |  Bin 0 -> 253683 bytes
+ .../UnityRecorderV1UserManual.pdf.meta             |    7 +
+ Unity Game/Assets/Unity Recorder/Editor.meta       |    8 +
+ .../Assets/Unity Recorder/Editor/Sources.meta      |    8 +
+ .../Unity Recorder/Editor/Sources/AspectRatio.cs   |   31 +
+ .../Editor/Sources/AspectRatio.cs.meta             |    3 +
+ .../Editor/Sources/AspectRatioPropertyDrawer.cs    |  114 ++
+ .../Sources/AspectRatioPropertyDrawer.cs.meta      |    3 +
+ .../Editor/Sources/BaseRenderTextureInput.cs       |   32 +
+ .../Editor/Sources/BaseRenderTextureInput.cs.meta  |   12 +
+ .../Unity Recorder/Editor/Sources/EditableLabel.cs |  132 ++
+ .../Editor/Sources/EditableLabel.cs.meta           |    3 +
+ .../Editor/Sources/EnumProperyDrawer.cs            |   34 +
+ .../Editor/Sources/EnumProperyDrawer.cs.meta       |    3 +
+ .../Editor/Sources/FileNameGenerator.cs            |  284 +++
+ .../Editor/Sources/FileNameGenerator.cs.meta       |   13 +
+ .../Editor/Sources/FileNameGeneratorDrawer.cs      |  200 ++
+ .../Editor/Sources/FileNameGeneratorDrawer.cs.meta |   13 +
+ .../Editor/Sources/FrameRateProperyDrawer.cs       |   34 +
+ .../Editor/Sources/FrameRateProperyDrawer.cs.meta  |    3 +
+ .../Editor/Sources/GenericRecorder.cs              |   16 +
+ .../Editor/Sources/GenericRecorder.cs.meta         |   11 +
+ .../Unity Recorder/Editor/Sources/Helpers.meta     |    3 +
+ .../Editor/Sources/Helpers/EnumHelper.cs           |   55 +
+ .../Editor/Sources/Helpers/EnumHelper.cs.meta      |   11 +
+ .../Editor/Sources/Helpers/PresetHelper.cs         |   76 +
+ .../Editor/Sources/Helpers/PresetHelper.cs.meta    |    3 +
+ .../Sources/Helpers/SerializableObjHelper.cs       |   47 +
+ .../Sources/Helpers/SerializableObjHelper.cs.meta  |   11 +
+ .../Editor/Sources/Helpers/StatusBarHelper.cs      |   74 +
+ .../Editor/Sources/Helpers/StatusBarHelper.cs.meta |    3 +
+ .../Editor/Sources/Helpers/UIElementHelper.cs      |  116 ++
+ .../Editor/Sources/Helpers/UIElementHelper.cs.meta |   11 +
+ .../Editor/Sources/Helpers/UnityHelpers.cs         |   70 +
+ .../Editor/Sources/Helpers/UnityHelpers.cs.meta    |   11 +
+ .../Editor/Sources/ImageHeightSelector.cs          |   83 +
+ .../Editor/Sources/ImageHeightSelector.cs.meta     |   11 +
+ .../Editor/Sources/ImageInputSelector.cs           |   74 +
+ .../Editor/Sources/ImageInputSelector.cs.meta      |   11 +
+ .../Editor/Sources/ImageInputSettings.cs           |   87 +
+ .../Editor/Sources/ImageInputSettings.cs.meta      |   11 +
+ .../Editor/Sources/InputPropertyDrawer.cs          |   12 +
+ .../Editor/Sources/InputPropertyDrawer.cs.meta     |   13 +
+ .../Unity Recorder/Editor/Sources/InputSettings.cs |   15 +
+ .../Editor/Sources/InputSettings.cs.meta           |   12 +
+ .../Editor/Sources/InputSettingsSelector.cs        |   62 +
+ .../Editor/Sources/InputSettingsSelector.cs.meta   |    3 +
+ .../Editor/Sources/InputSettingsSelectorDrawer.cs  |   89 +
+ .../Sources/InputSettingsSelectorDrawer.cs.meta    |    3 +
+ .../Unity Recorder/Editor/Sources/InternalEnums.cs |   42 +
+ .../Editor/Sources/InternalEnums.cs.meta           |   12 +
+ .../Unity Recorder/Editor/Sources/Options.cs       |   98 +
+ .../Unity Recorder/Editor/Sources/Options.cs.meta  |   12 +
+ .../Unity Recorder/Editor/Sources/OutputPath.cs    |  127 ++
+ .../Editor/Sources/OutputPath.cs.meta              |   13 +
+ .../Editor/Sources/OutputPathDrawer.cs             |   77 +
+ .../Editor/Sources/OutputPathDrawer.cs.meta        |   13 +
+ .../Editor/Sources/OutputResolution.cs             |   61 +
+ .../Editor/Sources/OutputResolution.cs.meta        |    3 +
+ .../Sources/OutputResolutionPropertyDrawer.cs      |   81 +
+ .../Sources/OutputResolutionPropertyDrawer.cs.meta |    3 +
+ .../Unity Recorder/Editor/Sources/PanelSplitter.cs |  110 ++
+ .../Editor/Sources/PanelSplitter.cs.meta           |    3 +
+ .../Editor/Sources/RecordModePropertyDrawer.cs     |   27 +
+ .../Sources/RecordModePropertyDrawer.cs.meta       |    3 +
+ .../Unity Recorder/Editor/Sources/Recorder.cs      |  179 ++
+ .../Unity Recorder/Editor/Sources/Recorder.cs.meta |   12 +
+ .../Editor/Sources/RecorderController.cs           |  166 ++
+ .../Editor/Sources/RecorderController.cs.meta      |    3 +
+ .../Editor/Sources/RecorderControllerSettings.cs   |  212 +++
+ .../Sources/RecorderControllerSettings.cs.meta     |    3 +
+ .../Sources/RecorderControllerSettingsPreset.cs    |   85 +
+ .../RecorderControllerSettingsPreset.cs.meta       |   11 +
+ .../RecorderControllerSettingsPresetEditor.cs      |   84 +
+ .../RecorderControllerSettingsPresetEditor.cs.meta |    3 +
+ .../Editor/Sources/RecorderEditor.cs               |  169 ++
+ .../Editor/Sources/RecorderEditor.cs.meta          |   12 +
+ .../Unity Recorder/Editor/Sources/RecorderInput.cs |   36 +
+ .../Editor/Sources/RecorderInput.cs.meta           |   12 +
+ .../Unity Recorder/Editor/Sources/RecorderItem.cs  |  234 +++
+ .../Editor/Sources/RecorderItem.cs.meta            |    3 +
+ .../Editor/Sources/RecorderSettings.cs             |  211 +++
+ .../Editor/Sources/RecorderSettings.cs.meta        |   12 +
+ .../Editor/Sources/RecorderSettingsAttribute.cs    |   25 +
+ .../Sources/RecorderSettingsAttribute.cs.meta      |   12 +
+ .../Editor/Sources/RecorderSettingsPrefsEditor.cs  |  158 ++
+ .../Sources/RecorderSettingsPrefsEditor.cs.meta    |    3 +
+ .../Editor/Sources/RecorderWindow.cs               | 1151 ++++++++++++
+ .../Editor/Sources/RecorderWindow.cs.meta          |    3 +
+ .../Unity Recorder/Editor/Sources/Recorders.meta   |    8 +
+ .../Sources/Recorders/AnimationRecorder.meta       |    8 +
+ .../AnimationRecorder/AnimationRecorder.cs         |   42 +
+ .../AnimationRecorder/AnimationRecorder.cs.meta    |    3 +
+ .../AnimationRecorder/AnimationRecorderSettings.cs |   87 +
+ .../AnimationRecorderSettings.cs.meta              |    3 +
+ .../AnimationRecorderSettingsEditor.cs             |   12 +
+ .../AnimationRecorderSettingsEditor.cs.meta        |    3 +
+ .../Recorders/AnimationRecorder/Resources.meta     |    8 +
+ .../Resources/animation_recorder.png               |  Bin 0 -> 568 bytes
+ .../Resources/animation_recorder.png.meta          |   84 +
+ .../Editor/Sources/Recorders/GIFRecorder.meta      |    8 +
+ .../Sources/Recorders/GIFRecorder/GIFRecorder.cs   |   54 +
+ .../Recorders/GIFRecorder/GIFRecorder.cs.meta      |   12 +
+ .../Recorders/GIFRecorder/GIFRecorderSettings.cs   |   43 +
+ .../GIFRecorder/GIFRecorderSettings.cs.meta        |   12 +
+ .../GIFRecorder/GIFRecorderSettingsEditor.cs       |   13 +
+ .../GIFRecorder/GIFRecorderSettingsEditor.cs.meta  |   12 +
+ .../Editor/Sources/Recorders/ImageRecorder.meta    |    9 +
+ .../Recorders/ImageRecorder/ImageRecorder.cs       |   79 +
+ .../Recorders/ImageRecorder/ImageRecorder.cs.meta  |   12 +
+ .../Recorders/ImageRecorder/ImageRecorderEditor.cs |   53 +
+ .../ImageRecorder/ImageRecorderEditor.cs.meta      |   12 +
+ .../ImageRecorder/ImageRecorderSettings.cs         |   91 +
+ .../ImageRecorder/ImageRecorderSettings.cs.meta    |   12 +
+ .../Sources/Recorders/ImageRecorder/Resources.meta |    8 +
+ .../ImageRecorder/Resources/d_imagesequence_16.png |  Bin 0 -> 290 bytes
+ .../Resources/d_imagesequence_16.png.meta          |   86 +
+ .../ImageRecorder/Resources/imagesequence_16.png   |  Bin 0 -> 293 bytes
+ .../Resources/imagesequence_16.png.meta            |   86 +
+ .../Editor/Sources/Recorders/MovieRecorder.meta    |    8 +
+ .../Recorders/MovieRecorder/MovieRecorder.cs       |  214 +++
+ .../Recorders/MovieRecorder/MovieRecorder.cs.meta  |   13 +
+ .../Recorders/MovieRecorder/MovieRecorderEditor.cs |   58 +
+ .../MovieRecorder/MovieRecorderEditor.cs.meta      |   13 +
+ .../MovieRecorder/MovieRecorderSettings.cs         |  115 ++
+ .../MovieRecorder/MovieRecorderSettings.cs.meta    |   13 +
+ .../Sources/Recorders/MovieRecorder/Resources.meta |    8 +
+ .../MovieRecorder/Resources/d_movie_16.png         |  Bin 0 -> 260 bytes
+ .../MovieRecorder/Resources/d_movie_16.png.meta    |   86 +
+ .../Recorders/MovieRecorder/Resources/movie_16.png |  Bin 0 -> 262 bytes
+ .../MovieRecorder/Resources/movie_16.png.meta      |   86 +
+ .../Editor/Sources/Recorders/_Inputs.meta          |    8 +
+ .../Sources/Recorders/_Inputs/Animation.meta       |    8 +
+ .../Recorders/_Inputs/Animation/AnimationInput.cs  |   42 +
+ .../_Inputs/Animation/AnimationInput.cs.meta       |   12 +
+ .../_Inputs/Animation/AnimationInputSettings.cs    |  121 ++
+ .../Animation/AnimationInputSettings.cs.meta       |   12 +
+ .../AnimationInputSettingsPropertyDrawer.cs        |   80 +
+ .../AnimationInputSettingsPropertyDrawer.cs.meta   |   12 +
+ .../Editor/Sources/Recorders/_Inputs/Audio.meta    |    8 +
+ .../Sources/Recorders/_Inputs/Audio/AudioInput.cs  |  181 ++
+ .../Recorders/_Inputs/Audio/AudioInput.cs.meta     |   13 +
+ .../Recorders/_Inputs/Audio/AudioInputSettings.cs  |   23 +
+ .../_Inputs/Audio/AudioInputSettings.cs.meta       |   13 +
+ .../Audio/AudioInputSettingsPropertyDrawer.cs      |   23 +
+ .../Audio/AudioInputSettingsPropertyDrawer.cs.meta |   13 +
+ .../Editor/Sources/Recorders/_Inputs/Camera.meta   |    8 +
+ .../Recorders/_Inputs/Camera/CameraInput.cs        |  357 ++++
+ .../Recorders/_Inputs/Camera/CameraInput.cs.meta   |   11 +
+ .../_Inputs/Camera/CameraInputSettings.cs          |   38 +
+ .../_Inputs/Camera/CameraInputSettings.cs.meta     |   11 +
+ .../Camera/CameraInputSettingsPropertyDrawer.cs    |   78 +
+ .../CameraInputSettingsPropertyDrawer.cs.meta      |   11 +
+ .../Sources/Recorders/_Inputs/Camera/Shaders.meta  |    9 +
+ .../Recorders/_Inputs/Camera/Shaders/CopyFB.shader |  192 ++
+ .../_Inputs/Camera/Shaders/CopyFB.shader.meta      |    9 +
+ .../Sources/Recorders/_Inputs/Camera360.meta       |    8 +
+ .../Recorders/_Inputs/Camera360/Camera360Input.cs  |  154 ++
+ .../_Inputs/Camera360/Camera360Input.cs.meta       |   11 +
+ .../Camera360/Camera360InputPropertyDrawer.cs      |  108 ++
+ .../Camera360/Camera360InputPropertyDrawer.cs.meta |   11 +
+ .../_Inputs/Camera360/Camera360InputSettings.cs    |   99 +
+ .../Camera360/Camera360InputSettings.cs.meta       |   11 +
+ .../Editor/Sources/Recorders/_Inputs/GameView.meta |   10 +
+ .../Recorders/_Inputs/GameView/GameViewInput.cs    |   70 +
+ .../_Inputs/GameView/GameViewInput.cs.meta         |   13 +
+ .../GameView/GameViewInputPropertyDrawer.cs        |   27 +
+ .../GameView/GameViewInputPropertyDrawer.cs.meta   |   13 +
+ .../_Inputs/GameView/GameViewInputSettings.cs      |   25 +
+ .../_Inputs/GameView/GameViewInputSettings.cs.meta |   13 +
+ .../Sources/Recorders/_Inputs/GameViewSize.cs      |  161 ++
+ .../Sources/Recorders/_Inputs/GameViewSize.cs.meta |   11 +
+ .../Sources/Recorders/_Inputs/RenderTexture.meta   |   10 +
+ .../_Inputs/RenderTexture/RenderTextureInput.cs    |   37 +
+ .../RenderTexture/RenderTextureInput.cs.meta       |   13 +
+ .../RenderTexture/RenderTextureInputSettings.cs    |   53 +
+ .../RenderTextureInputSettings.cs.meta             |   13 +
+ .../RenderTextureInputSettingsPropertyDrawer.cs    |   47 +
+ ...enderTextureInputSettingsPropertyDrawer.cs.meta |   13 +
+ .../Recorders/_Inputs/RenderTextureSampler.meta    |    9 +
+ .../RenderTextureSampler/RenderTextureSampler.cs   |  393 ++++
+ .../RenderTextureSampler.cs.meta                   |   12 +
+ .../RenderTextureSamplerPropertyDrawer.cs          |  107 ++
+ .../RenderTextureSamplerPropertyDrawer.cs.meta     |   12 +
+ .../RenderTextureSamplerSettings.cs                |   86 +
+ .../RenderTextureSamplerSettings.cs.meta           |   12 +
+ .../_Inputs/RenderTextureSampler/Shaders.meta      |    9 +
+ .../Shaders/BS4Accumulate.shader                   |   74 +
+ .../Shaders/BS4Accumulate.shader.meta              |    9 +
+ .../Shaders/BS4Normalize.shader                    |   78 +
+ .../Shaders/BS4Normalize.shader.meta               |    9 +
+ .../Shaders/BS4SuperShader.shader                  |  101 ++
+ .../Shaders/BS4SuperShader.shader.meta             |    9 +
+ .../Editor/Sources/Recorders/_Legacy.meta          |    8 +
+ .../Recorders/_Legacy/BaseFCRecorderSettings.cs    |   49 +
+ .../_Legacy/BaseFCRecorderSettings.cs.meta         |   12 +
+ .../Editor/Sources/Recorders/_Legacy/EXR.meta      |    9 +
+ .../Sources/Recorders/_Legacy/EXR/EXRRecorder.cs   |   49 +
+ .../Recorders/_Legacy/EXR/EXRRecorder.cs.meta      |   12 +
+ .../Recorders/_Legacy/EXR/EXRRecorderSettings.cs   |   18 +
+ .../_Legacy/EXR/EXRRecorderSettings.cs.meta        |   12 +
+ .../_Legacy/EXR/EXRRecorderSettingsEditor.cs       |   14 +
+ .../_Legacy/EXR/EXRRecorderSettingsEditor.cs.meta  |   12 +
+ .../Sources/Recorders/_Legacy/FrameCapturer.meta   |    8 +
+ .../Recorders/_Legacy/FrameCapturer/Plugins.meta   |    8 +
+ .../_Legacy/FrameCapturer/Plugins/x86.meta         |    9 +
+ .../_Legacy/FrameCapturer/Plugins/x86/fccore.dll   |  Bin 0 -> 6028800 bytes
+ .../FrameCapturer/Plugins/x86/fccore.dll.meta      |   85 +
+ .../_Legacy/FrameCapturer/Plugins/x86_64.meta      |    8 +
+ .../Plugins/x86_64/fccore.bundle.meta              |  115 ++
+ .../Plugins/x86_64/fccore.bundle/Contents.meta     |    9 +
+ .../x86_64/fccore.bundle/Contents/Info.plist       |   34 +
+ .../x86_64/fccore.bundle/Contents/Info.plist.meta  |    8 +
+ .../x86_64/fccore.bundle/Contents/MacOS.meta       |    9 +
+ .../x86_64/fccore.bundle/Contents/MacOS/fccore     |  Bin 0 -> 6409232 bytes
+ .../fccore.bundle/Contents/MacOS/fccore.meta       |    8 +
+ .../FrameCapturer/Plugins/x86_64/fccore.dll        |  Bin 0 -> 6511616 bytes
+ .../FrameCapturer/Plugins/x86_64/fccore.dll.meta   |   85 +
+ .../Recorders/_Legacy/FrameCapturer/Scripts.meta   |    9 +
+ .../_Legacy/FrameCapturer/Scripts/Encoder.meta     |    9 +
+ .../FrameCapturer/Scripts/Encoder/EXREncoder.cs    |   55 +
+ .../Scripts/Encoder/EXREncoder.cs.meta             |   12 +
+ .../FrameCapturer/Scripts/Encoder/EncoderBase.cs   |   22 +
+ .../Scripts/Encoder/EncoderBase.cs.meta            |   12 +
+ .../FrameCapturer/Scripts/Encoder/GIFEncoder.cs    |   46 +
+ .../Scripts/Encoder/GIFEncoder.cs.meta             |   12 +
+ .../FrameCapturer/Scripts/Encoder/MP4Encoder.cs    |   47 +
+ .../Scripts/Encoder/MP4Encoder.cs.meta             |   12 +
+ .../FrameCapturer/Scripts/Encoder/MovieEncoder.cs  |  163 ++
+ .../Scripts/Encoder/MovieEncoder.cs.meta           |   12 +
+ .../FrameCapturer/Scripts/Encoder/PNGEncoder.cs    |   49 +
+ .../Scripts/Encoder/PNGEncoder.cs.meta             |   12 +
+ .../FrameCapturer/Scripts/Encoder/WEBMEncoder.cs   |   60 +
+ .../Scripts/Encoder/WEBMEncoder.cs.meta            |   12 +
+ .../_Legacy/FrameCapturer/Scripts/Encoder/fcAPI.cs |  520 ++++++
+ .../FrameCapturer/Scripts/Encoder/fcAPI.cs.meta    |   12 +
+ .../_Legacy/FrameCapturer/Scripts/Misc.meta        |    9 +
+ .../_Legacy/FrameCapturer/Scripts/Misc/Bool.cs     |   17 +
+ .../FrameCapturer/Scripts/Misc/Bool.cs.meta        |   12 +
+ .../FrameCapturer/Scripts/Misc/BoolDrawer.cs       |   30 +
+ .../FrameCapturer/Scripts/Misc/BoolDrawer.cs.meta  |   12 +
+ .../_Legacy/FrameCapturer/Scripts/Misc/DataPath.cs |  136 ++
+ .../FrameCapturer/Scripts/Misc/DataPath.cs.meta    |   12 +
+ .../FrameCapturer/Scripts/Misc/DataPathDrawer.cs   |   48 +
+ .../Scripts/Misc/DataPathDrawer.cs.meta            |   12 +
+ .../Editor/Sources/Recorders/_Legacy/MP4.meta      |    9 +
+ .../Sources/Recorders/_Legacy/MP4/MP4Recorder.cs   |   61 +
+ .../Recorders/_Legacy/MP4/MP4Recorder.cs.meta      |   12 +
+ .../Recorders/_Legacy/MP4/MP4RecorderSettings.cs   |   32 +
+ .../_Legacy/MP4/MP4RecorderSettings.cs.meta        |   12 +
+ .../_Legacy/MP4/MP4RecorderSettingsEditor.cs       |   38 +
+ .../_Legacy/MP4/MP4RecorderSettingsEditor.cs.meta  |   12 +
+ .../Editor/Sources/Recorders/_Legacy/PNG.meta      |    9 +
+ .../Sources/Recorders/_Legacy/PNG/PNGRecorder.cs   |   41 +
+ .../Recorders/_Legacy/PNG/PNGRecorder.cs.meta      |   12 +
+ .../Recorders/_Legacy/PNG/PNGRecorderSettings.cs   |   18 +
+ .../_Legacy/PNG/PNGRecorderSettings.cs.meta        |   12 +
+ .../_Legacy/PNG/PNGRecorderSettingsEditor.cs       |   13 +
+ .../_Legacy/PNG/PNGRecorderSettingsEditor.cs.meta  |   12 +
+ .../Editor/Sources/Recorders/_Legacy/WEBM.meta     |    9 +
+ .../Sources/Recorders/_Legacy/WEBM/WEBMRecorder.cs |   61 +
+ .../Recorders/_Legacy/WEBM/WEBMRecorder.cs.meta    |   12 +
+ .../Recorders/_Legacy/WEBM/WEBMRecorderSettings.cs |   20 +
+ .../_Legacy/WEBM/WEBMRecorderSettings.cs.meta      |   12 +
+ .../_Legacy/WEBM/WEBMRecorderSettingsEditor.cs     |   43 +
+ .../WEBM/WEBMRecorderSettingsEditor.cs.meta        |   12 +
+ .../Editor/Sources/RecordersInventory.cs           |  171 ++
+ .../Editor/Sources/RecordersInventory.cs.meta      |   12 +
+ .../Editor/Sources/RecordingSession.cs             |  203 +++
+ .../Editor/Sources/RecordingSession.cs.meta        |   12 +
+ .../Unity Recorder/Editor/Sources/Resources.meta   |    8 +
+ .../Editor/Sources/Resources/Styles.meta           |    8 +
+ .../Editor/Sources/Resources/Styles/recorder.uss   |  135 ++
+ .../Sources/Resources/Styles/recorder.uss.meta     |   10 +
+ .../Sources/Resources/Styles/recorder_darkSkin.uss |   65 +
+ .../Resources/Styles/recorder_darkSkin.uss.meta    |   10 +
+ .../Resources/Styles/recorder_lightSkin.uss        |   69 +
+ .../Resources/Styles/recorder_lightSkin.uss.meta   |   10 +
+ .../Editor/Sources/Resources/customrecorder_16.png |  Bin 0 -> 235 bytes
+ .../Sources/Resources/customrecorder_16.png.meta   |   86 +
+ .../Sources/Resources/d_customrecorder_16.png      |  Bin 0 -> 253 bytes
+ .../Sources/Resources/d_customrecorder_16.png.meta |   86 +
+ .../Editor/Sources/Resources/d_popout_icon.png     |  Bin 0 -> 2795 bytes
+ .../Sources/Resources/d_popout_icon.png.meta       |   86 +
+ .../Editor/Sources/Resources/popout_icon.png       |  Bin 0 -> 2771 bytes
+ .../Editor/Sources/Resources/popout_icon.png.meta  |   86 +
+ .../Editor/Sources/Resources/recorder_icon.png     |  Bin 0 -> 10278 bytes
+ .../Sources/Resources/recorder_icon.png.meta       |   94 +
+ .../Editor/Sources/Resources/vertical_gradient.png |  Bin 0 -> 1663 bytes
+ .../Sources/Resources/vertical_gradient.png.meta   |  106 ++
+ .../Unity Recorder/Editor/Sources/SceneHook.cs     |  215 +++
+ .../Editor/Sources/SceneHook.cs.meta               |   12 +
+ .../Editor/Sources/TargetedPropertyDrawer.cs       |   28 +
+ .../Editor/Sources/TargetedPropertyDrawer.cs.meta  |    3 +
+ .../Editor/Sources/TextureFlipper.cs               |   36 +
+ .../Editor/Sources/TextureFlipper.cs.meta          |   12 +
+ .../Editor/Sources/VisualListItem.cs               |  197 ++
+ .../Editor/Sources/VisualListItem.cs.meta          |    3 +
+ .../Editor/Sources/_RecorderComponent.cs           |   80 +
+ .../Editor/Sources/_RecorderComponent.cs.meta      |   12 +
+ .../Assets/Unity Recorder/Editor/Timeline.meta     |    8 +
+ .../Unity Recorder/Editor/Timeline/RecorderClip.cs |   73 +
+ .../Editor/Timeline/RecorderClip.cs.meta           |   12 +
+ .../Editor/Timeline/RecorderClipEditor.cs          |  190 ++
+ .../Editor/Timeline/RecorderClipEditor.cs.meta     |   12 +
+ .../Editor/Timeline/RecorderPlayableBehaviour.cs   |   83 +
+ .../Timeline/RecorderPlayableBehaviour.cs.meta     |   12 +
+ .../Editor/Timeline/RecorderSelector.cs            |   73 +
+ .../Editor/Timeline/RecorderSelector.cs.meta       |   12 +
+ .../Editor/Timeline/RecorderTrack.cs               |   12 +
+ .../Editor/Timeline/RecorderTrack.cs.meta          |   12 +
+ .../Editor/Timeline/_WaitForEndOfFrameComponent.cs |   25 +
+ .../Timeline/_WaitForEndOfFrameComponent.cs.meta   |   12 +
+ .../Editor/Unity.Recorder.Editor.asmdef            |   10 +
+ .../Editor/Unity.Recorder.Editor.asmdef.meta       |    7 +
+ Unity Game/Assets/Unity Recorder/LICENSE.md        |    5 +
+ Unity Game/Assets/Unity Recorder/LICENSE.md.meta   |    7 +
+ Unity Game/Assets/Unity Recorder/Runtime.meta      |    8 +
+ .../Unity Recorder/Runtime/RecorderBindings.cs     |   80 +
+ .../Runtime/RecorderBindings.cs.meta               |    3 +
+ .../Runtime/SerializedDictionnary.cs               |   39 +
+ .../Runtime/SerializedDictionnary.cs.meta          |    3 +
+ .../Unity Recorder/Runtime/Unity.Recorder.asmdef   |    6 +
+ .../Runtime/Unity.Recorder.asmdef.meta             |    7 +
+ Unity Game/Assets/Unity Recorder/Samples.meta      |    8 +
+ .../Assets/Unity Recorder/Samples/Editor.meta      |    8 +
+ .../Samples/Editor/RecorderEditorExample.cs        |   24 +
+ .../Samples/Editor/RecorderEditorExample.cs.meta   |   11 +
+ .../Unity Recorder/Samples/RecorderExample.cs      |   94 +
+ .../Unity Recorder/Samples/RecorderExample.cs.meta |   11 +
+ .../Samples/Unity.Recorder.Samples.asmdef          |    6 +
+ .../Samples/Unity.Recorder.Samples.asmdef.meta     |    7 +
+ Unity Game/Library/CurrentLayout.dwlt              |  524 +++---
+ Unity Game/Library/CurrentMaximizeLayout.dwlt      |  534 ++----
+ Unity Game/Library/InspectorExpandedItems.asset    |  Bin 4368 -> 4508 bytes
+ Unity Game/Library/Recorder/recorder.pref          |  110 ++
+ .../ScriptAssemblies/Assembly-CSharp-Editor.dll    |  Bin 72704 -> 79360 bytes
+ .../ScriptAssemblies/Assembly-CSharp-Editor.pdb    |  Bin 23624 -> 25288 bytes
+ .../Library/ScriptAssemblies/Assembly-CSharp.dll   |  Bin 43520 -> 78848 bytes
+ .../Library/ScriptAssemblies/Assembly-CSharp.pdb   |  Bin 17284 -> 32064 bytes
+ .../Library/ScriptAssemblies/Cinemachine.dll       |  Bin 200704 -> 200704 bytes
+ .../Unity.Analytics.DataPrivacy.dll                |  Bin 7680 -> 7680 bytes
+ .../ScriptAssemblies/Unity.CollabProxy.Editor.dll  |  Bin 40960 -> 40960 bytes
+ .../Unity.PackageManagerUI.Editor.dll              |  Bin 89600 -> 89600 bytes
+ .../ScriptAssemblies/Unity.Recorder.Editor.dll     |  Bin 0 -> 188928 bytes
+ .../ScriptAssemblies/Unity.Recorder.Editor.pdb     |  Bin 0 -> 81928 bytes
+ .../ScriptAssemblies/Unity.Recorder.Samples.dll    |  Bin 0 -> 6656 bytes
+ .../ScriptAssemblies/Unity.Recorder.Samples.pdb    |  Bin 0 -> 1240 bytes
+ .../Library/ScriptAssemblies/Unity.Recorder.dll    |  Bin 0 -> 6144 bytes
+ .../Library/ScriptAssemblies/Unity.Recorder.pdb    |  Bin 0 -> 1500 bytes
+ .../ScriptAssemblies/Unity.TextMeshPro.Editor.dll  |  Bin 177152 -> 177152 bytes
+ .../Library/ScriptAssemblies/Unity.TextMeshPro.dll |  Bin 346624 -> 346624 bytes
+ .../com.unity.cinemachine.editor.dll               |  Bin 185856 -> 185856 bytes
+ Unity Game/Library/ScriptMapper                    |  Bin 12861 -> 13389 bytes
+ Unity Game/Library/ShaderCache.db                  |  Bin 3072 -> 3072 bytes
+ .../0/0074c4388cd69669460da6916ef5d44a.bin         |  Bin 0 -> 716 bytes
+ .../0/02ccc1ca5af76816ccfa9810378a6701.bin         |  Bin 0 -> 532 bytes
+ .../0/02d6f19afd392d71ecaa861a595508f8.bin         |  Bin 0 -> 552 bytes
+ .../0/0c962e7411fadd475192e799eb6a06a5.bin         |  Bin 0 -> 580 bytes
+ .../1/12dd8959a08d678ff170b1179ce55d30.bin         |  Bin 0 -> 964 bytes
+ .../1/133e6be3ba418bd9f0326e2d10341fe1.bin         |  Bin 0 -> 3160 bytes
+ .../1/14babec7a27cc1e9781a146ae0721dbf.bin         |  Bin 0 -> 2464 bytes
+ .../1/1658b9909bf6e69d8ad97f8b2f2a1047.bin         |  Bin 0 -> 1080 bytes
+ .../1/19b34d23209b2b97058e9ac978e690ad.bin         |  Bin 0 -> 2968 bytes
+ .../2/2470ff9fc66bcee44553cdfdfe080307.bin         |  Bin 0 -> 756 bytes
+ .../2/2bedfa10cde93d0ff57e7d80fcce61a1.bin         |  Bin 0 -> 636 bytes
+ .../2/2f5bfe53a8c91843c64e1ec2a9d09146.bin         |  Bin 0 -> 1428 bytes
+ .../2/2fd572ce1b789a764c9bd9e96a57d0e3.bin         |  Bin 0 -> 468 bytes
+ .../3/30e0578a6221ed63a12a2729a830dcb6.bin         |  Bin 0 -> 1080 bytes
+ .../3/38faaac356088b78c98dda47e9c6df76.bin         |  Bin 0 -> 796 bytes
+ .../4/42672f8d340c9aa995564df12ddfa7e4.bin         |  Bin 0 -> 1152 bytes
+ .../4/46120c80fa32499763efefba3a7ac77c.bin         |  Bin 0 -> 1304 bytes
+ .../4/470e8b8c40abb382af89a63958b023d3.bin         |  Bin 0 -> 1396 bytes
+ .../4/4a8730055cf218dc2b446e3a8dcd9352.bin         |  Bin 0 -> 2000 bytes
+ .../4/4adb22e20d295a7e20696c5c65b55f35.bin         |  Bin 0 -> 1156 bytes
+ .../4/4cf8841c691dfd4c8b26a4fdf4a47115.bin         |  Bin 0 -> 396 bytes
+ .../4/4de398f237e17436a443434771b74c32.bin         |  Bin 0 -> 756 bytes
+ .../4/4e40c2146cdb304e5034a77dd6990d21.bin         |  Bin 0 -> 1384 bytes
+ .../5/584a7b8c8a67ec0d8cc26399c686d104.bin         |  Bin 0 -> 1072 bytes
+ .../5/5c023f3e85d88397ebc70b174e903344.bin         |  Bin 0 -> 1428 bytes
+ .../5/5c23f695d4ceffa714f1a0e3b58ed179.bin         |  Bin 0 -> 1944 bytes
+ .../5/5d27227dfbe9b81a03709d7e6f7b87e4.bin         |  Bin 0 -> 1996 bytes
+ .../5/5dd1d58ae37b1db699176ad874c8d8d0.bin         |  Bin 0 -> 512 bytes
+ .../6/609ea6ef8538db6bc7a56f49631aafed.bin         |  Bin 0 -> 1408 bytes
+ .../6/629256991aa282e36c91a7229917864f.bin         |  Bin 0 -> 944 bytes
+ .../6/6598abb2e1efcc692960e36eeedea4b8.bin         |  Bin 0 -> 396 bytes
+ .../6/6d34ab5e1bf1fbd4294b58bfeca87d06.bin         |  Bin 0 -> 396 bytes
+ .../7/71199adb422dd6f073c7577c001a56c3.bin         |  Bin 0 -> 1156 bytes
+ .../7/713247c45d9e9f414e8d4b8e8d0f1f01.bin         |  Bin 0 -> 2016 bytes
+ .../7/751d71876249ef0326db6717aec1836c.bin         |  Bin 0 -> 3304 bytes
+ .../7/78086481e81410e12beb7abb0ce7f4da.bin         |  Bin 0 -> 572 bytes
+ .../7/7883a6f6b52fb40886f2c71b5fb17df6.bin         |  Bin 0 -> 392 bytes
+ .../7/7dc6cefab4d6f4043ec6fa7fe4ce7a12.bin         |  Bin 0 -> 392 bytes
+ .../7/7ffd4e1395eb85f7983d7639e482803a.bin         |  Bin 0 -> 392 bytes
+ .../8/82fba04ed65ced889895bd7352c5d352.bin         |  Bin 0 -> 516 bytes
+ .../8/847ca6ec371a33f5503894728eea0869.bin         |  Bin 0 -> 944 bytes
+ .../8/8763b7caed37d28eec9e90b5bde40967.bin         |  Bin 0 -> 2716 bytes
+ .../8/8f305ae759ac24520b4dc9ee05a542d4.bin         |  Bin 0 -> 488 bytes
+ .../8/8f7e54a06a023f974c82d90097c00991.bin         |  Bin 0 -> 712 bytes
+ .../9/902875af300429a0edf6238a342e15cc.bin         |  Bin 0 -> 1156 bytes
+ .../9/93fcc509e194c7b47787ba794ca872c2.bin         |  Bin 0 -> 652 bytes
+ .../9/94b11d54e5ec71996892743d0758345b.bin         |  Bin 0 -> 304 bytes
+ .../9/990f40533d8c43ce85f68597fced4b33.bin         |  Bin 0 -> 1696 bytes
+ .../9/9b2509f08f97a15e665a054e5ae30363.bin         |  Bin 0 -> 820 bytes
+ .../9/9d5e90340464f4f3d17c41a7eb7e9179.bin         |  Bin 0 -> 968 bytes
+ .../a/a8e340cebb9c1aafb14b9e570b6ccf9a.bin         |  Bin 0 -> 1448 bytes
+ .../a/aafd0ae971bf989a636afcdea2054117.bin         |  Bin 0 -> 508 bytes
+ .../b/b4a228e6e7acda3d56971438cd452fce.bin         |  Bin 0 -> 396 bytes
+ .../b/bb0fca9440804f25d9ae626da1d376bd.bin         |  Bin 0 -> 984 bytes
+ .../b/bc1aab2bc2477c73984f585830974852.bin         |  Bin 0 -> 3048 bytes
+ .../c/c25e049c1207656f72a957d7130537a9.bin         |  Bin 0 -> 944 bytes
+ .../c/c53875e40b4db7a3d94d670e1279d898.bin         |  Bin 0 -> 4240 bytes
+ .../c/cf5461ecb5ef048f662984d496ff171b.bin         |  Bin 0 -> 396 bytes
+ .../d/d148b5fd9ab8f602d010434654157e2f.bin         |  Bin 0 -> 1720 bytes
+ .../d/dbbf967a2287e40cbaf5c2d17116a562.bin         |  Bin 0 -> 1284 bytes
+ .../e/e3c9c0a0ded4be3a22626e2f11e3b340.bin         |  Bin 0 -> 1448 bytes
+ .../e/e90fc52e227f547798e604f9326b0768.bin         |  Bin 0 -> 392 bytes
+ .../e/e9bb8438eec9df98862a86686c7af976.bin         |  Bin 0 -> 552 bytes
+ .../f/f1ae8ce2b2327915fbf19cf201682ed3.bin         |  Bin 0 -> 484 bytes
+ .../f/f387974d2f99452998f63a5745be4e67.bin         |  Bin 0 -> 944 bytes
+ .../f/f7fdcd6ec4d3582ad0b98e8f29bc9b4e.bin         |  Bin 0 -> 964 bytes
+ .../f/fd165ae2cc3033b1517bd6078c9604ea.bin         |  Bin 0 -> 984 bytes
+ .../f/feed7a8a9b98601c396cab9a5b495107.bin         |  Bin 0 -> 652 bytes
+ .../StateCache/Hierarchy/18e228-mainStage.json     |    1 +
+ .../StateCache/Hierarchy/3e5c51-mainStage.json     |    1 +
+ .../StateCache/Hierarchy/73714c-mainStage.json     |    1 +
+ .../StateCache/Hierarchy/84451b-mainStage.json     |    1 +
+ .../StateCache/Hierarchy/93b871-mainStage.json     |    1 +
+ .../Hierarchy/9ec023-a14b57a36ddd4c846a.json       |    1 +
+ .../StateCache/Hierarchy/9ec023-mainStage.json     |    2 +-
+ .../StateCache/Hierarchy/b08cac-mainStage.json     |    1 +
+ .../StateCache/Hierarchy/d940e2-mainStage.json     |    1 +
+ .../StateCache/Hierarchy/eb7e83-mainStage.json     |    1 +
+ .../StateCache/Hierarchy/f93fb7-mainStage.json     |    1 +
+ .../StateCache/SceneView/0eda2b-mainStage.json     |    1 +
+ .../StateCache/SceneView/2e019e-mainStage.json     |    1 +
+ .../StateCache/SceneView/505e04-mainStage.json     |    1 +
+ .../StateCache/SceneView/607d48-mainStage.json     |    1 +
+ .../StateCache/SceneView/771a7c-mainStage.json     |    1 +
+ .../StateCache/SceneView/8fbaae-mainStage.json     |    1 +
+ .../StateCache/SceneView/9299cd-mainStage.json     |    1 +
+ .../SceneView/b30c72-a14b57a36ddd4c846a.json       |    1 +
+ .../StateCache/SceneView/c3ccdc-mainStage.json     |    1 +
+ .../StateCache/SceneView/cc526a-mainStage.json     |    1 +
+ .../StateCache/SceneView/ccbddd-mainStage.json     |    1 +
+ .../StateCache/SceneView/dc04c8-mainStage.json     |    1 +
+ .../StateCache/SceneView/dff6ed-mainStage.json     |    1 +
+ .../StateCache/SceneView/edd51f-mainStage.json     |    1 +
+ .../StateCache/SceneView/ef7071-mainStage.json     |    1 +
+ .../StateCache/SceneView/f36719-mainStage.json     |    1 +
+ .../UnityEditor.Recorder.RecorderWindow.pref       |   20 +
+ Unity Game/Library/assetDatabase3                  |  Bin 4961316 -> 5107276 bytes
+ Unity Game/Library/expandedItems                   |  Bin 4284 -> 4308 bytes
+ .../metadata/03/03566585fa815644c9e795317dcab24c   |  Bin 0 -> 21548 bytes
+ .../03/03566585fa815644c9e795317dcab24c.info       |  Bin 0 -> 3622 bytes
+ .../metadata/03/03c087c477d1c2c48b7cce860c05b690   |  Bin 556636 -> 557492 bytes
+ .../03/03c087c477d1c2c48b7cce860c05b690.info       |  Bin 446722 -> 443170 bytes
+ .../metadata/04/0462c9c5a5412854bb501d0cf258eaf7   |  Bin 0 -> 4277 bytes
+ .../04/0462c9c5a5412854bb501d0cf258eaf7.info       |  Bin 0 -> 598 bytes
+ .../metadata/05/05a483774a00261429ff072ba4a63bea   |  Bin 0 -> 10212 bytes
+ .../05/05a483774a00261429ff072ba4a63bea.info       |  Bin 0 -> 732 bytes
+ .../metadata/06/0610be2662c388d45b5f621adc9e86ee   |  Bin 0 -> 4385 bytes
+ .../06/0610be2662c388d45b5f621adc9e86ee.info       |  Bin 0 -> 709 bytes
+ .../metadata/06/061b0c1d04c01f54fa322b11b8662964   |  Bin 0 -> 11076 bytes
+ .../06/061b0c1d04c01f54fa322b11b8662964.info       |  Bin 0 -> 682 bytes
+ .../metadata/06/062f3ffcab88dd64b9a59a7bf2f96c8c   |  Bin 0 -> 4341 bytes
+ .../06/062f3ffcab88dd64b9a59a7bf2f96c8c.info       |  Bin 0 -> 658 bytes
+ .../metadata/06/06397f605c749fe4dbe2df4bbd1ef4a1   |  Bin 0 -> 7460 bytes
+ .../06/06397f605c749fe4dbe2df4bbd1ef4a1.info       |  Bin 0 -> 721 bytes
+ .../metadata/08/0808b4ae0e5a40bc818e43f28ebe29e2   |  Bin 0 -> 5852 bytes
+ .../08/0808b4ae0e5a40bc818e43f28ebe29e2.info       |  Bin 0 -> 713 bytes
+ .../metadata/08/08c95a3c35833400582e55ac76900c33   |  Bin 0 -> 7592 bytes
+ .../08/08c95a3c35833400582e55ac76900c33.info       |  Bin 0 -> 669 bytes
+ .../metadata/09/095a7aaa840de2c40b28e8f46c6527bd   |  Bin 0 -> 5656 bytes
+ .../09/095a7aaa840de2c40b28e8f46c6527bd.info       |  Bin 0 -> 687 bytes
+ .../metadata/0a/0a39b3db9ae16074faa9f43e85b7f61b   |  Bin 0 -> 6536 bytes
+ .../0a/0a39b3db9ae16074faa9f43e85b7f61b.info       |  Bin 0 -> 749 bytes
+ .../metadata/0a/0a97d971fb4e03f41b27d50d0e59b7a5   |  Bin 0 -> 73334 bytes
+ .../0a/0a97d971fb4e03f41b27d50d0e59b7a5.info       |  Bin 0 -> 705 bytes
+ .../metadata/0b/0b0f72cc2f9e549e08a89dce32c34d31   |  Bin 0 -> 4276 bytes
+ .../0b/0b0f72cc2f9e549e08a89dce32c34d31.info       |  Bin 0 -> 2265 bytes
+ .../metadata/0c/0ce1c4f59cc9242fd926bcc78fcf4ab9   |  Bin 0 -> 17600 bytes
+ .../0c/0ce1c4f59cc9242fd926bcc78fcf4ab9.info       |  Bin 0 -> 739 bytes
+ .../metadata/0e/0e6cf5671577b7344ba25c25b4346ce4   |  Bin 0 -> 4664 bytes
+ .../0e/0e6cf5671577b7344ba25c25b4346ce4.info       |  Bin 0 -> 683 bytes
+ .../metadata/0f/0fd1bcdf4e762654da9323b7b37cfecb   |  Bin 0 -> 8372 bytes
+ .../0f/0fd1bcdf4e762654da9323b7b37cfecb.info       |  Bin 0 -> 717 bytes
+ .../metadata/10/101a3f227ffcc39479c9a5964a4184f2   |  Bin 0 -> 4361 bytes
+ .../10/101a3f227ffcc39479c9a5964a4184f2.info       |  Bin 0 -> 680 bytes
+ .../metadata/11/118aaf48522942c3953f714a6739285e   |  Bin 0 -> 4333 bytes
+ .../11/118aaf48522942c3953f714a6739285e.info       |  Bin 0 -> 656 bytes
+ .../metadata/12/1218980f385bfb24c866a8dee7eac2a3   |  Bin 0 -> 4337 bytes
+ .../12/1218980f385bfb24c866a8dee7eac2a3.info       |  Bin 0 -> 656 bytes
+ .../metadata/13/130688d22164e3c4188f749a2babfcf5   |  Bin 0 -> 5736 bytes
+ .../13/130688d22164e3c4188f749a2babfcf5.info       |  Bin 0 -> 705 bytes
+ .../metadata/13/1357e84f25f5b4b4e9b83cada42135e2   |  Bin 0 -> 4329 bytes
+ .../13/1357e84f25f5b4b4e9b83cada42135e2.info       |  Bin 0 -> 651 bytes
+ .../metadata/15/15136ad38d3c16f4d91a6c802884de03   |  Bin 0 -> 5948 bytes
+ .../15/15136ad38d3c16f4d91a6c802884de03.info       |  Bin 0 -> 726 bytes
+ .../metadata/16/16db0b1ebae44fbab4cd92b8b6c61bad   |  Bin 0 -> 5412 bytes
+ .../16/16db0b1ebae44fbab4cd92b8b6c61bad.info       |  Bin 0 -> 667 bytes
+ .../metadata/17/179d640c46150214a8076e7c738f27c1   |  Bin 0 -> 5316 bytes
+ .../17/179d640c46150214a8076e7c738f27c1.info       |  Bin 0 -> 677 bytes
+ .../metadata/17/17cf4427d915e1a418b54a3cd0b2e461   |  Bin 0 -> 5812 bytes
+ .../17/17cf4427d915e1a418b54a3cd0b2e461.info       |  Bin 0 -> 643 bytes
+ .../metadata/18/180842267b7175e4c9dedaf1f548db0f   |  Bin 0 -> 10780 bytes
+ .../18/180842267b7175e4c9dedaf1f548db0f.info       |  Bin 0 -> 682 bytes
+ .../metadata/18/18128f91fd1293e4189936cdb94053c8   |  Bin 0 -> 4297 bytes
+ .../18/18128f91fd1293e4189936cdb94053c8.info       |  Bin 0 -> 618 bytes
+ .../metadata/19/195c80e0a88f4aff975d21a4f4bb06fd   |  Bin 0 -> 4305 bytes
+ .../19/195c80e0a88f4aff975d21a4f4bb06fd.info       |  Bin 0 -> 626 bytes
+ .../metadata/1a/1a4fecbee2cafe74aa6837cff8e21683   |  Bin 0 -> 4276 bytes
+ .../1a/1a4fecbee2cafe74aa6837cff8e21683.info       |  Bin 0 -> 2271 bytes
+ .../metadata/1a/1a6f1dc33632e407eb5b21c449bddb27   |  Bin 0 -> 4285 bytes
+ .../1a/1a6f1dc33632e407eb5b21c449bddb27.info       |  Bin 0 -> 609 bytes
+ .../metadata/1b/1ba8d1176c817374b97c04409a853fc5   |  Bin 0 -> 7420 bytes
+ .../1b/1ba8d1176c817374b97c04409a853fc5.info       |  Bin 0 -> 697 bytes
+ .../metadata/1d/1d2d6653b53f84a16a95e4eb8974b4f4   |  Bin 0 -> 4992 bytes
+ .../1d/1d2d6653b53f84a16a95e4eb8974b4f4.info       |  Bin 0 -> 657 bytes
+ .../metadata/1d/1dd8c8968d3848743a824ed5191b2805   |  Bin 0 -> 5216 bytes
+ .../1d/1dd8c8968d3848743a824ed5191b2805.info       |  Bin 0 -> 700 bytes
+ .../metadata/1e/1e48dcc6629339d438e7c701fa87866d   |  Bin 0 -> 47458 bytes
+ .../1e/1e48dcc6629339d438e7c701fa87866d.info       |  Bin 0 -> 713 bytes
+ .../metadata/20/20303a43d07d149bf9448fe16b6926fa   |  Bin 0 -> 46586 bytes
+ .../20/20303a43d07d149bf9448fe16b6926fa.info       |  Bin 0 -> 682 bytes
+ .../metadata/21/21c789d725ad3bf49b4421448ba19f74   |  Bin 0 -> 4297 bytes
+ .../21/21c789d725ad3bf49b4421448ba19f74.info       |  Bin 0 -> 617 bytes
+ .../metadata/22/225145e129ea169449ebe485a462e36a   |  Bin 0 -> 9624 bytes
+ .../22/225145e129ea169449ebe485a462e36a.info       |  Bin 0 -> 781 bytes
+ .../metadata/23/23130678a8f49844c959f891f4ed88b6   |  Bin 0 -> 4428 bytes
+ .../23/23130678a8f49844c959f891f4ed88b6.info       |  Bin 0 -> 678 bytes
+ .../metadata/24/24232f5f40aada14995712e173fc8bd7   |  Bin 0 -> 47134 bytes
+ .../24/24232f5f40aada14995712e173fc8bd7.info       |  Bin 0 -> 716 bytes
+ .../metadata/25/25f3f42b06194f9baf10fc2cb14d397e   |  Bin 0 -> 8864 bytes
+ .../25/25f3f42b06194f9baf10fc2cb14d397e.info       |  Bin 0 -> 709 bytes
+ .../metadata/26/262e9424f303141518c858a648377c23   |  Bin 0 -> 5688 bytes
+ .../26/262e9424f303141518c858a648377c23.info       |  Bin 0 -> 710 bytes
+ .../metadata/26/265a2c6c7e77b6149a0fc4a60bb29cf9   |  Bin 0 -> 9448 bytes
+ .../26/265a2c6c7e77b6149a0fc4a60bb29cf9.info       |  Bin 0 -> 752 bytes
+ .../metadata/26/26a061aa362b6b246b3f9580b62212de   |  Bin 0 -> 4321 bytes
+ .../26/26a061aa362b6b246b3f9580b62212de.info       |  Bin 0 -> 646 bytes
+ .../metadata/26/26b884e8bf1552d49b39fd7c9298b0ac   |  Bin 0 -> 4325 bytes
+ .../26/26b884e8bf1552d49b39fd7c9298b0ac.info       |  Bin 0 -> 648 bytes
+ .../metadata/28/28989d36c5ee74f9f9afea4e26c27e35   |  Bin 0 -> 14044 bytes
+ .../28/28989d36c5ee74f9f9afea4e26c27e35.info       |  Bin 0 -> 689 bytes
+ .../metadata/2b/2b489925208325240a6246efb44d6e67   |  Bin 0 -> 5540 bytes
+ .../2b/2b489925208325240a6246efb44d6e67.info       |  Bin 0 -> 726 bytes
+ .../metadata/2b/2ba79f0946856d845b27244a57cab514   |  Bin 0 -> 5120 bytes
+ .../2b/2ba79f0946856d845b27244a57cab514.info       |  Bin 0 -> 649 bytes
+ .../metadata/2b/2bd83f31da5b4435ac97cde1432e7d63   |  Bin 0 -> 7920 bytes
+ .../2b/2bd83f31da5b4435ac97cde1432e7d63.info       |  Bin 0 -> 673 bytes
+ .../metadata/2b/2bfee62224562ef4b90423189321b406   |  Bin 0 -> 46418 bytes
+ .../2b/2bfee62224562ef4b90423189321b406.info       |  Bin 0 -> 652 bytes
+ .../metadata/2e/2eb1eb6bf0605b8469d2d383642f1fe4   |  Bin 0 -> 4337 bytes
+ .../2e/2eb1eb6bf0605b8469d2d383642f1fe4.info       |  Bin 0 -> 658 bytes
+ .../metadata/2e/2edf1ed5e1f1c8544b925c302853bbb8   |  Bin 0 -> 6232 bytes
+ .../2e/2edf1ed5e1f1c8544b925c302853bbb8.info       |  Bin 0 -> 726 bytes
+ .../metadata/30/307d31ebf2384b01bb70259435918b92   |  Bin 0 -> 6844 bytes
+ .../30/307d31ebf2384b01bb70259435918b92.info       |  Bin 0 -> 748 bytes
+ .../metadata/30/30c894a29296f1c43940e5f47ad54522   |  Bin 0 -> 4836 bytes
+ .../30/30c894a29296f1c43940e5f47ad54522.info       |  Bin 0 -> 731 bytes
+ .../metadata/32/324c02e09f53928429e39bbbd971fa1c   |  Bin 0 -> 4341 bytes
+ .../32/324c02e09f53928429e39bbbd971fa1c.info       |  Bin 0 -> 660 bytes
+ .../metadata/33/3373a3c72159f5d4da58d7a712031027   |  Bin 0 -> 4333 bytes
+ .../33/3373a3c72159f5d4da58d7a712031027.info       |  Bin 0 -> 654 bytes
+ .../metadata/33/33760b2112924a708eb6ae28468a3d62   |  Bin 0 -> 7404 bytes
+ .../33/33760b2112924a708eb6ae28468a3d62.info       |  Bin 0 -> 715 bytes
+ .../metadata/34/348f4b8d36e2476395e48ec521dd65d1   |  Bin 0 -> 7432 bytes
+ .../34/348f4b8d36e2476395e48ec521dd65d1.info       |  Bin 0 -> 724 bytes
+ .../metadata/35/353e2768e273425dbca885d53f6f1c36   |  Bin 0 -> 11084 bytes
+ .../35/353e2768e273425dbca885d53f6f1c36.info       |  Bin 0 -> 715 bytes
+ .../metadata/35/35e78ae7de177d440969878b883fc095   |  Bin 0 -> 6044 bytes
+ .../35/35e78ae7de177d440969878b883fc095.info       |  Bin 0 -> 703 bytes
+ .../metadata/39/39768ff6d1b18d44187cdc01ab105f69   |  Bin 0 -> 4277 bytes
+ .../39/39768ff6d1b18d44187cdc01ab105f69.info       |  Bin 0 -> 594 bytes
+ .../metadata/3c/3c7939c3956034bf98a8e5879e9f736c   |  Bin 0 -> 4313 bytes
+ .../3c/3c7939c3956034bf98a8e5879e9f736c.info       |  Bin 0 -> 8835 bytes
+ .../metadata/3d/3d0cc8567a67db240a4e84b0ea062245   |  Bin 0 -> 17468 bytes
+ .../3d/3d0cc8567a67db240a4e84b0ea062245.info       |  Bin 0 -> 698 bytes
+ .../metadata/3d/3d27b31dc27841cc9fa370de2f754b58   |  Bin 0 -> 5428 bytes
+ .../3d/3d27b31dc27841cc9fa370de2f754b58.info       |  Bin 0 -> 664 bytes
+ .../metadata/3d/3d5a09c81dc527545a1051b2e9b1a646   |  Bin 0 -> 6380 bytes
+ .../3d/3d5a09c81dc527545a1051b2e9b1a646.info       |  Bin 0 -> 715 bytes
+ .../metadata/3d/3d7a94094ef20fc4982eace127bb049e   |  Bin 0 -> 14191 bytes
+ .../3d/3d7a94094ef20fc4982eace127bb049e.info       |  Bin 0 -> 999 bytes
+ .../metadata/3e/3e3b5dc88a4ee454fa3a6f0b0c8d4f38   |  Bin 0 -> 32116 bytes
+ .../3e/3e3b5dc88a4ee454fa3a6f0b0c8d4f38.info       |  Bin 0 -> 30491 bytes
+ .../metadata/3e/3e415a2ae369d4dbdb9a3969e905ab29   |  Bin 0 -> 4289 bytes
+ .../3e/3e415a2ae369d4dbdb9a3969e905ab29.info       |  Bin 0 -> 610 bytes
+ .../metadata/3e/3e96abc3ffdedeb43b64a0b63cec4c3d   |  Bin 0 -> 4273 bytes
+ .../3e/3e96abc3ffdedeb43b64a0b63cec4c3d.info       |  Bin 0 -> 594 bytes
+ .../metadata/3e/3ef190f44e596a94ebfec7c7b888a950   |  Bin 0 -> 5892 bytes
+ .../3e/3ef190f44e596a94ebfec7c7b888a950.info       |  Bin 0 -> 750 bytes
+ .../metadata/41/4153e5ba919d2d04fb68db5206c6e13b   |  Bin 0 -> 4329 bytes
+ .../41/4153e5ba919d2d04fb68db5206c6e13b.info       |  Bin 0 -> 649 bytes
+ .../metadata/44/4403057bc5ab8ac4e9ae80155a3c92fd   |  Bin 0 -> 4309 bytes
+ .../44/4403057bc5ab8ac4e9ae80155a3c92fd.info       |  Bin 0 -> 630 bytes
+ .../metadata/44/44034f3dfb9cc1b4c9e86ff509fe70f4   |  Bin 0 -> 8204 bytes
+ .../44/44034f3dfb9cc1b4c9e86ff509fe70f4.info       |  Bin 0 -> 664 bytes
+ .../metadata/44/44305ecb1c1dd4b49b87b982320a3abc   |  Bin 0 -> 21552 bytes
+ .../44/44305ecb1c1dd4b49b87b982320a3abc.info       |  Bin 0 -> 3630 bytes
+ .../metadata/45/45a3a398027c325428867655177d2b93   |  Bin 0 -> 4345 bytes
+ .../45/45a3a398027c325428867655177d2b93.info       |  Bin 0 -> 664 bytes
+ .../metadata/46/464423cf3df84d8bbe4598e76cb43f6e   |  Bin 0 -> 6300 bytes
+ .../46/464423cf3df84d8bbe4598e76cb43f6e.info       |  Bin 0 -> 687 bytes
+ .../metadata/48/48ecef25af9bb3149b9f6f6beb875a72   |  Bin 0 -> 4788 bytes
+ .../48/48ecef25af9bb3149b9f6f6beb875a72.info       |  Bin 0 -> 621 bytes
+ .../metadata/49/490a789f326cc0948a9d691e94d31ec4   |  Bin 0 -> 4305 bytes
+ .../49/490a789f326cc0948a9d691e94d31ec4.info       |  Bin 0 -> 623 bytes
+ .../metadata/49/493b3fbd7e438374c8f4f23d25ebf2a1   |  Bin 0 -> 4317 bytes
+ .../49/493b3fbd7e438374c8f4f23d25ebf2a1.info       |  Bin 0 -> 636 bytes
+ .../metadata/49/49fc5b4f1838842adb221362066bd841   |  Bin 0 -> 4289 bytes
+ .../49/49fc5b4f1838842adb221362066bd841.info       |  Bin 0 -> 609 bytes
+ .../metadata/4a/4ab3cecb28de84a79895deed05c5b862   |  Bin 0 -> 4281 bytes
+ .../4a/4ab3cecb28de84a79895deed05c5b862.info       |  Bin 0 -> 601 bytes
+ .../metadata/4b/4bd7f4201fbd4c84d96b0479c6f986fa   |  Bin 0 -> 4329 bytes
+ .../4b/4bd7f4201fbd4c84d96b0479c6f986fa.info       |  Bin 0 -> 651 bytes
+ .../metadata/4c/4c141f3283050a44d83ddd6fdf406274   |  Bin 0 -> 4289 bytes
+ .../4c/4c141f3283050a44d83ddd6fdf406274.info       |  Bin 0 -> 609 bytes
+ .../metadata/4d/4d693da8172425342873e842c2f6031b   |  Bin 0 -> 8424 bytes
+ .../4d/4d693da8172425342873e842c2f6031b.info       |  Bin 0 -> 724 bytes
+ .../metadata/4f/4fdf6e0f64f22254ba6554fef1ef3412   |  Bin 0 -> 21372 bytes
+ .../4f/4fdf6e0f64f22254ba6554fef1ef3412.info       |  Bin 0 -> 3445 bytes
+ .../metadata/50/5054c280e9e1c420cbfae06aea14e981   |  Bin 0 -> 4289 bytes
+ .../50/5054c280e9e1c420cbfae06aea14e981.info       |  Bin 0 -> 607 bytes
+ .../metadata/50/5078fb266c916184bb5cd9e635b82f9d   |  Bin 0 -> 4916 bytes
+ .../50/5078fb266c916184bb5cd9e635b82f9d.info       |  Bin 0 -> 729 bytes
+ .../metadata/52/52831a734f67753409d81ac69465581e   |  Bin 0 -> 4325 bytes
+ .../52/52831a734f67753409d81ac69465581e.info       |  Bin 0 -> 644 bytes
+ .../metadata/52/52b9c3732a14dd14d9427ced3524773f   |  Bin 0 -> 21532 bytes
+ .../52/52b9c3732a14dd14d9427ced3524773f.info       |  Bin 0 -> 3563 bytes
+ .../metadata/53/53bf4be83c4174504b904e958637cced   |  Bin 0 -> 10172 bytes
+ .../53/53bf4be83c4174504b904e958637cced.info       |  Bin 0 -> 727 bytes
+ .../metadata/55/552f879535a3c4ab2bc2bf115618dd1d   |  Bin 0 -> 4289 bytes
+ .../55/552f879535a3c4ab2bc2bf115618dd1d.info       |  Bin 0 -> 614 bytes
+ .../metadata/55/5537212fe2c4414c9a0cdd7ba0728908   |  Bin 0 -> 7376 bytes
+ .../55/5537212fe2c4414c9a0cdd7ba0728908.info       |  Bin 0 -> 730 bytes
+ .../metadata/58/58a9eaefca02fe041806c3109e743a5b   |  Bin 7160 -> 7188 bytes
+ .../metadata/58/58fe471fc3009fb4d8cf266a5cc5a7a1   |  Bin 0 -> 10880 bytes
+ .../58/58fe471fc3009fb4d8cf266a5cc5a7a1.info       |  Bin 0 -> 658 bytes
+ .../metadata/59/5970c978d42818b43afb0f5236f0c16a   |  Bin 0 -> 21544 bytes
+ .../59/5970c978d42818b43afb0f5236f0c16a.info       |  Bin 0 -> 3714 bytes
+ .../metadata/5b/5b7ce254a486bc84fbe5c25016270005   |  Bin 0 -> 4317 bytes
+ .../5b/5b7ce254a486bc84fbe5c25016270005.info       |  Bin 0 -> 638 bytes
+ .../metadata/5f/5f64f48f6643a0a43b882fb62baf8c0f   |  Bin 0 -> 4260 bytes
+ .../5f/5f64f48f6643a0a43b882fb62baf8c0f.info       |  Bin 0 -> 630 bytes
+ .../metadata/61/6122dab7ff1764c468a03aa29f49ea5b   |  Bin 0 -> 6940 bytes
+ .../61/6122dab7ff1764c468a03aa29f49ea5b.info       |  Bin 0 -> 667 bytes
+ .../metadata/62/6264862ed2c4d29459646d3dd0a6e107   |  Bin 5000 -> 5220 bytes
+ .../metadata/63/638d71d378e8c794285fa6bc5cbfcd19   |  Bin 0 -> 5404 bytes
+ .../63/638d71d378e8c794285fa6bc5cbfcd19.info       |  Bin 0 -> 676 bytes
+ .../metadata/65/6531813ef453f4f4f9bb73b36bbf477c   |  Bin 0 -> 4337 bytes
+ .../65/6531813ef453f4f4f9bb73b36bbf477c.info       |  Bin 0 -> 658 bytes
+ .../metadata/65/65582944c3f9143d3b69bf438906024b   |  Bin 0 -> 4856 bytes
+ .../65/65582944c3f9143d3b69bf438906024b.info       |  Bin 0 -> 653 bytes
+ .../metadata/65/6578621dde5e4659927f1f4eaf1b315c   |  Bin 0 -> 6120 bytes
+ .../65/6578621dde5e4659927f1f4eaf1b315c.info       |  Bin 0 -> 682 bytes
+ .../metadata/65/65b11bea460f97647bc5275372f643e2   |  Bin 0 -> 12136 bytes
+ .../65/65b11bea460f97647bc5275372f643e2.info       |  Bin 0 -> 1289 bytes
+ .../metadata/69/697a06985f68e154890108593080478b   |  Bin 0 -> 4289 bytes
+ .../69/697a06985f68e154890108593080478b.info       |  Bin 0 -> 612 bytes
+ .../metadata/6b/6b649a63cc2620e4f920aa775f95be7f   |  Bin 0 -> 6612 bytes
+ .../6b/6b649a63cc2620e4f920aa775f95be7f.info       |  Bin 0 -> 678 bytes
+ .../metadata/6b/6b96abf6168bd414d9786231347ac89a   |  Bin 0 -> 4333 bytes
+ .../6b/6b96abf6168bd414d9786231347ac89a.info       |  Bin 0 -> 654 bytes
+ .../metadata/6b/6bda971be788f044c91c68400f4a2ad6   |  Bin 0 -> 21804 bytes
+ .../6b/6bda971be788f044c91c68400f4a2ad6.info       |  Bin 0 -> 739 bytes
+ .../metadata/6c/6c3909f411e0e1b42b3a95ded8e1fd5a   |  Bin 0 -> 8272 bytes
+ .../6c/6c3909f411e0e1b42b3a95ded8e1fd5a.info       |  Bin 0 -> 655 bytes
+ .../metadata/6c/6c433f8333932f14da0b7f9b6963258e   |  Bin 0 -> 9908 bytes
+ .../6c/6c433f8333932f14da0b7f9b6963258e.info       |  Bin 0 -> 710 bytes
+ .../metadata/6d/6d4cea4a62f94b949b7c8eded57c2ccc   |  Bin 0 -> 4345 bytes
+ .../6d/6d4cea4a62f94b949b7c8eded57c2ccc.info       |  Bin 0 -> 665 bytes
+ .../metadata/6d/6d80688849564584188eda136c5243b6   |  Bin 0 -> 4321 bytes
+ .../6d/6d80688849564584188eda136c5243b6.info       |  Bin 0 -> 640 bytes
+ .../metadata/6d/6da78ae6f9d77af439627f61c6649706   |  Bin 0 -> 4325 bytes
+ .../6d/6da78ae6f9d77af439627f61c6649706.info       |  Bin 0 -> 644 bytes
+ .../metadata/6d/6df354de90964eb0b6f67f00337b73d8   |  Bin 0 -> 7556 bytes
+ .../6d/6df354de90964eb0b6f67f00337b73d8.info       |  Bin 0 -> 673 bytes
+ .../metadata/6f/6fde0a8ac3e6b482c95fa602e65ab045   |  Bin 0 -> 8468 bytes
+ .../6f/6fde0a8ac3e6b482c95fa602e65ab045.info       |  Bin 0 -> 721 bytes
+ .../metadata/70/705506601d70ac144bf0d9182eac6424   |  Bin 0 -> 11188 bytes
+ .../70/705506601d70ac144bf0d9182eac6424.info       |  Bin 0 -> 703 bytes
+ .../metadata/70/706bb8b4a85725946a017e942835b7e4   |  Bin 0 -> 4345 bytes
+ .../70/706bb8b4a85725946a017e942835b7e4.info       |  Bin 0 -> 667 bytes
+ .../metadata/70/70d99dbb24601f749be943b88edaa308   |  Bin 0 -> 4345 bytes
+ .../70/70d99dbb24601f749be943b88edaa308.info       |  Bin 0 -> 667 bytes
+ .../metadata/72/72aed44f050841cd8c96c42fb0245008   |  Bin 0 -> 10016 bytes
+ .../72/72aed44f050841cd8c96c42fb0245008.info       |  Bin 0 -> 655 bytes
+ .../metadata/72/72cd87241899a7446a3b6e2ece276a56   |  Bin 0 -> 6304 bytes
+ .../72/72cd87241899a7446a3b6e2ece276a56.info       |  Bin 0 -> 792 bytes
+ .../metadata/72/72d53ddfa043c4442ae634e6b6486032   |  Bin 0 -> 4321 bytes
+ .../72/72d53ddfa043c4442ae634e6b6486032.info       |  Bin 0 -> 642 bytes
+ .../metadata/73/735c70ee605a363489603a301ccf9001   |  Bin 0 -> 4313 bytes
+ .../73/735c70ee605a363489603a301ccf9001.info       |  Bin 0 -> 636 bytes
+ .../metadata/74/74df144a4ec2f8049a8fdc52d05d35bc   |  Bin 0 -> 6740 bytes
+ .../74/74df144a4ec2f8049a8fdc52d05d35bc.info       |  Bin 0 -> 706 bytes
+ .../metadata/79/7901733e7863a914783b6962f0911770   |  Bin 0 -> 4333 bytes
+ .../79/7901733e7863a914783b6962f0911770.info       |  Bin 0 -> 8852 bytes
+ .../metadata/7b/7be4a1e8b0e041d488d5c5b413073863   |  Bin 0 -> 5276 bytes
+ .../7b/7be4a1e8b0e041d488d5c5b413073863.info       |  Bin 0 -> 748 bytes
+ .../metadata/7c/7c27d08615ad2754e8ee667c5bde63a8   |  Bin 0 -> 4293 bytes
+ .../7c/7c27d08615ad2754e8ee667c5bde63a8.info       |  Bin 0 -> 613 bytes
+ .../metadata/7c/7c66a740a74845a08dc18bab7f2ffa03   |  Bin 0 -> 45560 bytes
+ .../7c/7c66a740a74845a08dc18bab7f2ffa03.info       |  Bin 0 -> 676 bytes
+ .../metadata/7d/7de59e38a5edf344794b4a5cb8baaae0   |  Bin 0 -> 7608 bytes
+ .../7d/7de59e38a5edf344794b4a5cb8baaae0.info       |  Bin 0 -> 774 bytes
+ .../metadata/7f/7fb4eb193786376458450101f3cdd3b3   |  Bin 0 -> 11608 bytes
+ .../7f/7fb4eb193786376458450101f3cdd3b3.info       |  Bin 0 -> 1326 bytes
+ .../metadata/80/80fd5695133049945b3c3d8751d33daf   |  Bin 0 -> 4281 bytes
+ .../80/80fd5695133049945b3c3d8751d33daf.info       |  Bin 0 -> 599 bytes
+ .../metadata/81/8199d32e6bec98e45ae1e2ed4167c267   |  Bin 0 -> 4768 bytes
+ .../81/8199d32e6bec98e45ae1e2ed4167c267.info       |  Bin 0 -> 610 bytes
+ .../metadata/81/81bb4b24c44c943b49c402cbdad20d9c   |  Bin 0 -> 12484 bytes
+ .../81/81bb4b24c44c943b49c402cbdad20d9c.info       |  Bin 0 -> 697 bytes
+ .../metadata/81/81cefa2b805fd4f49ae4de35fe4e869e   |  Bin 0 -> 21564 bytes
+ .../81/81cefa2b805fd4f49ae4de35fe4e869e.info       |  Bin 0 -> 4022 bytes
+ .../metadata/83/832a8ef6e615e9a41a5076e1c9a43782   |  Bin 0 -> 4440 bytes
+ .../83/832a8ef6e615e9a41a5076e1c9a43782.info       |  Bin 0 -> 662 bytes
+ .../metadata/83/83e133618310a76428f5cc2e3bb26cee   |  Bin 0 -> 4293 bytes
+ .../83/83e133618310a76428f5cc2e3bb26cee.info       |  Bin 0 -> 617 bytes
+ .../metadata/84/8407d226afd36044fb3531b73342f6ab   |  Bin 0 -> 4317 bytes
+ .../84/8407d226afd36044fb3531b73342f6ab.info       |  Bin 0 -> 636 bytes
+ .../metadata/84/847b179520b009e4c8d15c296b1cbf35   |  Bin 0 -> 4516 bytes
+ .../84/847b179520b009e4c8d15c296b1cbf35.info       |  Bin 0 -> 675 bytes
+ .../metadata/85/85214aaee64b25647bffc33477766500   |  Bin 0 -> 4293 bytes
+ .../85/85214aaee64b25647bffc33477766500.info       |  Bin 0 -> 617 bytes
+ .../metadata/85/856c53159e929467abccd8747fc0fbbb   |  Bin 0 -> 6528 bytes
+ .../85/856c53159e929467abccd8747fc0fbbb.info       |  Bin 0 -> 715 bytes
+ .../metadata/86/860e2fa82cdb5ca47ba9e65328cd0ffb   |  Bin 0 -> 4321 bytes
+ .../86/860e2fa82cdb5ca47ba9e65328cd0ffb.info       |  Bin 0 -> 646 bytes
+ .../metadata/86/863996e4edcb5b04ea58bf8223641884   |  Bin 0 -> 6604 bytes
+ .../86/863996e4edcb5b04ea58bf8223641884.info       |  Bin 0 -> 707 bytes
+ .../metadata/88/885a9dcb3d2df3d4e804487e0424b277   |  Bin 0 -> 4297 bytes
+ .../88/885a9dcb3d2df3d4e804487e0424b277.info       |  Bin 0 -> 620 bytes
+ .../metadata/88/885dda332c079bd4d8e55d12b3b25b40   |  Bin 0 -> 4309 bytes
+ .../88/885dda332c079bd4d8e55d12b3b25b40.info       |  Bin 0 -> 630 bytes
+ .../metadata/88/88f57149cac83e34799c2d4ca8b061a0   |  Bin 0 -> 41136 bytes
+ .../88/88f57149cac83e34799c2d4ca8b061a0.info       |  Bin 0 -> 12203 bytes
+ .../metadata/89/8974526d005ae444390dd14b549e88c1   |  Bin 0 -> 4704 bytes
+ .../89/8974526d005ae444390dd14b549e88c1.info       |  Bin 0 -> 670 bytes
+ .../metadata/89/8996a5fdc30607b42857762774e4e6c9   |  Bin 0 -> 4285 bytes
+ .../89/8996a5fdc30607b42857762774e4e6c9.info       |  Bin 0 -> 611 bytes
+ .../metadata/8a/8a307a3b38b9d9c41ba879ad6019927a   |  Bin 0 -> 4349 bytes
+ .../8a/8a307a3b38b9d9c41ba879ad6019927a.info       |  Bin 0 -> 8864 bytes
+ .../metadata/8a/8a56f61f51a1a4d3ea99ad0114742960   |  Bin 0 -> 5316 bytes
+ .../8a/8a56f61f51a1a4d3ea99ad0114742960.info       |  Bin 0 -> 626 bytes
+ .../metadata/8a/8ac62795fb4713e42b44c3fb6b3c86e8   |  Bin 0 -> 6296 bytes
+ .../8a/8ac62795fb4713e42b44c3fb6b3c86e8.info       |  Bin 0 -> 672 bytes
+ .../metadata/8c/8c2a8241711244cd8e9a9eff1b6f95fe   |  Bin 0 -> 10672 bytes
+ .../8c/8c2a8241711244cd8e9a9eff1b6f95fe.info       |  Bin 0 -> 688 bytes
+ .../metadata/8c/8c32108e0d92efe43bf433bbf6f666b0   |  Bin 0 -> 4872 bytes
+ .../8c/8c32108e0d92efe43bf433bbf6f666b0.info       |  Bin 0 -> 745 bytes
+ .../metadata/8c/8c6ba2cf63eff6f4daca2ed76c965188   |  Bin 0 -> 4289 bytes
+ .../8c/8c6ba2cf63eff6f4daca2ed76c965188.info       |  Bin 0 -> 610 bytes
+ .../metadata/8d/8d66cffaa8550254e9846b39052f9d14   |  Bin 0 -> 4297 bytes
+ .../8d/8d66cffaa8550254e9846b39052f9d14.info       |  Bin 0 -> 613 bytes
+ .../metadata/94/940a3fecc672f9f4ba7ab2b5b71a63a5   |  Bin 0 -> 7464 bytes
+ .../94/940a3fecc672f9f4ba7ab2b5b71a63a5.info       |  Bin 0 -> 772 bytes
+ .../metadata/94/9465d023f45ee32439b099669f91229c   |  Bin 0 -> 9336 bytes
+ .../94/9465d023f45ee32439b099669f91229c.info       |  Bin 0 -> 682 bytes
+ .../metadata/96/96396973072080b44b74b8b56e8ca90f   |  Bin 0 -> 4369 bytes
+ .../96/96396973072080b44b74b8b56e8ca90f.info       |  Bin 0 -> 689 bytes
+ .../metadata/96/969273fd8374b2147b215100fbc27c59   |  Bin 0 -> 46502 bytes
+ .../96/969273fd8374b2147b215100fbc27c59.info       |  Bin 0 -> 646 bytes
+ .../metadata/97/9700ad97272d0dc4587c6882edb94130   |  Bin 0 -> 47754 bytes
+ .../97/9700ad97272d0dc4587c6882edb94130.info       |  Bin 0 -> 718 bytes
+ .../metadata/98/9859176119f26664bb0e2eb2c286f293   |  Bin 0 -> 7708 bytes
+ .../98/9859176119f26664bb0e2eb2c286f293.info       |  Bin 0 -> 764 bytes
+ .../metadata/99/996a2525a38b5a943bb672d76265167a   |  Bin 0 -> 4289 bytes
+ .../99/996a2525a38b5a943bb672d76265167a.info       |  Bin 0 -> 610 bytes
+ .../metadata/9b/9b9f59dbe78d8ab43ad96132525a4ce7   |  Bin 0 -> 7112 bytes
+ .../9b/9b9f59dbe78d8ab43ad96132525a4ce7.info       |  Bin 0 -> 691 bytes
+ .../metadata/9d/9d47ffc6e33ad6045a4194b7f39f2c94   |  Bin 0 -> 4289 bytes
+ .../9d/9d47ffc6e33ad6045a4194b7f39f2c94.info       |  Bin 0 -> 610 bytes
+ .../metadata/9e/9e20138a5c8355243ab6d691fe856c79   |  Bin 0 -> 5864 bytes
+ .../9e/9e20138a5c8355243ab6d691fe856c79.info       |  Bin 0 -> 651 bytes
+ .../metadata/9e/9e35a253b90b7244cb70d21db885fee8   |  Bin 0 -> 4329 bytes
+ .../9e/9e35a253b90b7244cb70d21db885fee8.info       |  Bin 0 -> 648 bytes
+ .../metadata/9f/9f956c0b0f15ce74aac4600909d4e55f   |  Bin 0 -> 5296 bytes
+ .../9f/9f956c0b0f15ce74aac4600909d4e55f.info       |  Bin 0 -> 673 bytes
+ .../metadata/a0/a06099d97088f49758b44dd5842d1b05   |  Bin 0 -> 4277 bytes
+ .../a0/a06099d97088f49758b44dd5842d1b05.info       |  Bin 0 -> 603 bytes
+ .../metadata/a0/a0888db1d9f84d6da3b0d5de41f42c2d   |  Bin 0 -> 11444 bytes
+ .../a0/a0888db1d9f84d6da3b0d5de41f42c2d.info       |  Bin 0 -> 712 bytes
+ .../metadata/a1/a14b57a36ddd4c846adcc718eb174fb2   |  Bin 8093 -> 12408 bytes
+ .../a1/a14b57a36ddd4c846adcc718eb174fb2.info       |  Bin 9223 -> 9321 bytes
+ .../metadata/a2/a24bc7e8573847adbdf1198360b3c794   |  Bin 0 -> 6844 bytes
+ .../a2/a24bc7e8573847adbdf1198360b3c794.info       |  Bin 0 -> 675 bytes
+ .../metadata/a2/a2c8844522598244c853bbfcb74cf8ac   |  Bin 0 -> 6568 bytes
+ .../a2/a2c8844522598244c853bbfcb74cf8ac.info       |  Bin 0 -> 735 bytes
+ .../metadata/a5/a58206ec1fb0c394bb58c6be4a9b7f60   |  Bin 0 -> 4393 bytes
+ .../a5/a58206ec1fb0c394bb58c6be4a9b7f60.info       |  Bin 0 -> 8916 bytes
+ .../metadata/a6/a6ee9a8f826ced34082d654155141a26   |  Bin 0 -> 5412 bytes
+ .../a6/a6ee9a8f826ced34082d654155141a26.info       |  Bin 0 -> 727 bytes
+ .../metadata/a7/a7234308adeab3d419817de7e29c50f1   |  Bin 0 -> 5412 bytes
+ .../a7/a7234308adeab3d419817de7e29c50f1.info       |  Bin 0 -> 723 bytes
+ .../metadata/a7/a73191e6972bce940b8f8bcc84ec507b   |  Bin 0 -> 4325 bytes
+ .../a7/a73191e6972bce940b8f8bcc84ec507b.info       |  Bin 0 -> 642 bytes
+ .../metadata/a8/a8e14f8e28927a942b7bdd72f1c0ea8e   |  Bin 0 -> 4289 bytes
+ .../a8/a8e14f8e28927a942b7bdd72f1c0ea8e.info       |  Bin 0 -> 611 bytes
+ .../metadata/a8/a8e4edca843db3b4bb41baa076395e85   |  Bin 0 -> 5500 bytes
+ .../a8/a8e4edca843db3b4bb41baa076395e85.info       |  Bin 0 -> 722 bytes
+ .../metadata/a9/a93936c560512aa4f89b283d08d5b3f0   |  Bin 0 -> 5032 bytes
+ .../a9/a93936c560512aa4f89b283d08d5b3f0.info       |  Bin 0 -> 730 bytes
+ .../metadata/a9/a95cc60500f985d458e4f1b1af26903f   |  Bin 0 -> 14124 bytes
+ .../a9/a95cc60500f985d458e4f1b1af26903f.info       |  Bin 0 -> 685 bytes
+ .../metadata/a9/a9863cc9542e92d4595eb0478b697c68   |  Bin 0 -> 7072 bytes
+ .../a9/a9863cc9542e92d4595eb0478b697c68.info       |  Bin 0 -> 696 bytes
+ .../metadata/a9/a9f55b158f7c43688c1c21ce05ac46ba   |  Bin 0 -> 7360 bytes
+ .../a9/a9f55b158f7c43688c1c21ce05ac46ba.info       |  Bin 0 -> 737 bytes
+ .../metadata/aa/aa20290b6edf1374384422fa698914c1   |  Bin 0 -> 5300 bytes
+ .../aa/aa20290b6edf1374384422fa698914c1.info       |  Bin 0 -> 674 bytes
+ .../metadata/ae/ae3adaf31cbcac144bd5778be1e565ed   |  Bin 0 -> 4373 bytes
+ .../ae/ae3adaf31cbcac144bd5778be1e565ed.info       |  Bin 0 -> 8895 bytes
+ .../metadata/af/afc6867a22e414a188b45973bcc23273   |  Bin 0 -> 7632 bytes
+ .../af/afc6867a22e414a188b45973bcc23273.info       |  Bin 0 -> 776 bytes
+ .../metadata/b2/b2238b0d8b83469ba64148039293eed3   |  Bin 0 -> 5268 bytes
+ .../b2/b2238b0d8b83469ba64148039293eed3.info       |  Bin 0 -> 679 bytes
+ .../metadata/b5/b522115b71943504485bf54210c86e8a   |  Bin 0 -> 4832 bytes
+ .../b5/b522115b71943504485bf54210c86e8a.info       |  Bin 0 -> 612 bytes
+ .../metadata/b5/b54fab5cb1f84d044835a48fe603969c   |  Bin 0 -> 4868 bytes
+ .../b5/b54fab5cb1f84d044835a48fe603969c.info       |  Bin 0 -> 745 bytes
+ .../metadata/b5/b5b9496d9b39e674abf5b3bd1ad57a67   |  Bin 0 -> 6564 bytes
+ .../b5/b5b9496d9b39e674abf5b3bd1ad57a67.info       |  Bin 0 -> 703 bytes
+ .../metadata/b5/b5d1e24071d5d1e46ace7e1af1f324bb   |  Bin 0 -> 4369 bytes
+ .../b5/b5d1e24071d5d1e46ace7e1af1f324bb.info       |  Bin 0 -> 692 bytes
+ .../metadata/b5/b5f9edca0e76485d8490267712eb006c   |  Bin 0 -> 4796 bytes
+ .../b5/b5f9edca0e76485d8490267712eb006c.info       |  Bin 0 -> 755 bytes
+ .../metadata/b6/b6a99610875e99f4a86c25c0d98826fb   |  Bin 0 -> 4333 bytes
+ .../b6/b6a99610875e99f4a86c25c0d98826fb.info       |  Bin 0 -> 658 bytes
+ .../metadata/b7/b779014d9c6a48199ddf81280a58c216   |  Bin 0 -> 6480 bytes
+ .../b7/b779014d9c6a48199ddf81280a58c216.info       |  Bin 0 -> 697 bytes
+ .../metadata/b7/b7886a247afa60444ada453440e57c3c   |  Bin 0 -> 4313 bytes
+ .../b7/b7886a247afa60444ada453440e57c3c.info       |  Bin 0 -> 636 bytes
+ .../metadata/b9/b94e4c4dfdb07cb43b93121a598b6e00   |  Bin 0 -> 6836 bytes
+ .../b9/b94e4c4dfdb07cb43b93121a598b6e00.info       |  Bin 0 -> 692 bytes
+ .../metadata/bb/bb166651e2d4d8d4da76f787a5b6b380   |  Bin 5124 -> 5356 bytes
+ .../metadata/bb/bb65fbbf3636f4ee09abc8f730e8ae74   |  Bin 0 -> 4305 bytes
+ .../bb/bb65fbbf3636f4ee09abc8f730e8ae74.info       |  Bin 0 -> 628 bytes
+ .../metadata/bc/bc7b55d756546644aac3ba4244d75481   |  Bin 0 -> 4260 bytes
+ .../bc/bc7b55d756546644aac3ba4244d75481.info       |  Bin 0 -> 2241 bytes
+ .../metadata/bc/bc923b5a585620e4db67e78dfa654ee0   |  Bin 0 -> 21384 bytes
+ .../bc/bc923b5a585620e4db67e78dfa654ee0.info       |  Bin 0 -> 3539 bytes
+ .../metadata/bc/bce584456d820498b8cc7bd0ff6fdd25   |  Bin 0 -> 4325 bytes
+ .../bc/bce584456d820498b8cc7bd0ff6fdd25.info       |  Bin 0 -> 648 bytes
+ .../metadata/bd/bd7389f754b8a4646a21ecfdbc30a759   |  Bin 0 -> 169226 bytes
+ .../bd/bd7389f754b8a4646a21ecfdbc30a759.info       |  Bin 0 -> 723 bytes
+ .../metadata/bd/bda7ef56cff178f44bd5839568dbd198   |  Bin 0 -> 5216 bytes
+ .../bd/bda7ef56cff178f44bd5839568dbd198.info       |  Bin 0 -> 706 bytes
+ .../metadata/be/be959353d7114bf49a8e4f4e9a342714   |  Bin 0 -> 7376 bytes
+ .../be/be959353d7114bf49a8e4f4e9a342714.info       |  Bin 0 -> 688 bytes
+ .../metadata/c0/c011637fb4c894c56a9178092966b5ac   |  Bin 0 -> 7964 bytes
+ .../c0/c011637fb4c894c56a9178092966b5ac.info       |  Bin 0 -> 734 bytes
+ .../metadata/c0/c03148a0237b0b1468b61e45ba00f50f   |  Bin 0 -> 8104 bytes
+ .../c0/c03148a0237b0b1468b61e45ba00f50f.info       |  Bin 0 -> 632 bytes
+ .../metadata/c2/c25efc85fa14c7a4c843423ee9973b3b   |  Bin 0 -> 4252 bytes
+ .../c2/c25efc85fa14c7a4c843423ee9973b3b.info       |  Bin 0 -> 624 bytes
+ .../metadata/c2/c27cd24a7b8e9124db97567624f08b97   |  Bin 0 -> 4329 bytes
+ .../c2/c27cd24a7b8e9124db97567624f08b97.info       |  Bin 0 -> 654 bytes
+ .../metadata/c2/c2d3ad15b5919624bbfcb237e18fd2ec   |  Bin 0 -> 10080 bytes
+ .../c2/c2d3ad15b5919624bbfcb237e18fd2ec.info       |  Bin 0 -> 676 bytes
+ .../metadata/c3/c325a4f7bd7f8b047aa4fbd825163d85   |  Bin 0 -> 7108 bytes
+ .../c3/c325a4f7bd7f8b047aa4fbd825163d85.info       |  Bin 0 -> 694 bytes
+ .../metadata/c3/c326ee44aa645544f8fc5c854ad52d8d   |  Bin 0 -> 6232 bytes
+ .../c3/c326ee44aa645544f8fc5c854ad52d8d.info       |  Bin 0 -> 745 bytes
+ .../metadata/c6/c65eb0e897ba0c84da8868303d21a17f   |  Bin 0 -> 4980 bytes
+ .../c6/c65eb0e897ba0c84da8868303d21a17f.info       |  Bin 0 -> 727 bytes
+ .../metadata/c6/c6d3efb952299e848b726826a9a2258e   |  Bin 0 -> 4289 bytes
+ .../c6/c6d3efb952299e848b726826a9a2258e.info       |  Bin 0 -> 612 bytes
+ .../metadata/c7/c7240197859383247bc225d9bf03e7a7   |  Bin 0 -> 8592 bytes
+ .../c7/c7240197859383247bc225d9bf03e7a7.info       |  Bin 0 -> 687 bytes
+ .../metadata/c7/c767da64dece8844d9e3e898e4d053e0   |  Bin 0 -> 10632 bytes
+ .../c7/c767da64dece8844d9e3e898e4d053e0.info       |  Bin 0 -> 1205 bytes
+ .../metadata/c7/c7fe8472aebc45f4b93027b60a4003b3   |  Bin 0 -> 10888 bytes
+ .../c7/c7fe8472aebc45f4b93027b60a4003b3.info       |  Bin 0 -> 698 bytes
+ .../metadata/c8/c8cda6ede2891fb449c5b76045388f40   |  Bin 0 -> 46686 bytes
+ .../c8/c8cda6ede2891fb449c5b76045388f40.info       |  Bin 0 -> 649 bytes
+ .../metadata/c9/c90fbca1bb37c1d47868781f9a7557dd   |  Bin 0 -> 21548 bytes
+ .../c9/c90fbca1bb37c1d47868781f9a7557dd.info       |  Bin 0 -> 3726 bytes
+ .../metadata/c9/c9cad4ecd59770540a8cac321f16aefc   |  Bin 0 -> 4289 bytes
+ .../c9/c9cad4ecd59770540a8cac321f16aefc.info       |  Bin 0 -> 8810 bytes
+ .../metadata/ca/ca62b38426adb1d47ad6cd6c94001b6a   |  Bin 0 -> 5212 bytes
+ .../ca/ca62b38426adb1d47ad6cd6c94001b6a.info       |  Bin 0 -> 709 bytes
+ .../metadata/ca/caca9e87a0fc2f3419c94994880dd403   |  Bin 0 -> 4353 bytes
+ .../ca/caca9e87a0fc2f3419c94994880dd403.info       |  Bin 0 -> 675 bytes
+ .../metadata/ca/cae30da739b542daa7e96ab3f70fb006   |  Bin 0 -> 6848 bytes
+ .../ca/cae30da739b542daa7e96ab3f70fb006.info       |  Bin 0 -> 678 bytes
+ .../metadata/cb/cb499ec071a55cd4b8f4df814a75ff88   |  Bin 0 -> 4337 bytes
+ .../cb/cb499ec071a55cd4b8f4df814a75ff88.info       |  Bin 0 -> 656 bytes
+ .../metadata/cb/cb579d3ab681ded4bbcd41bac0530cb4   |  Bin 0 -> 5960 bytes
+ .../cb/cb579d3ab681ded4bbcd41bac0530cb4.info       |  Bin 0 -> 726 bytes
+ .../metadata/cc/cca0a1e4258db55408a8064341c1d136   |  Bin 0 -> 4289 bytes
+ .../cc/cca0a1e4258db55408a8064341c1d136.info       |  Bin 0 -> 611 bytes
+ .../metadata/d0/d0148fe9343f938459039691719fee0f   |  Bin 0 -> 4313 bytes
+ .../d0/d0148fe9343f938459039691719fee0f.info       |  Bin 0 -> 634 bytes
+ .../metadata/d1/d12879c5a369a4f49a484913a5467a62   |  Bin 0 -> 4297 bytes
+ .../d1/d12879c5a369a4f49a484913a5467a62.info       |  Bin 0 -> 617 bytes
+ .../metadata/d1/d1653b4ff1171f44d832497f2d11b0fc   |  Bin 0 -> 4325 bytes
+ .../d1/d1653b4ff1171f44d832497f2d11b0fc.info       |  Bin 0 -> 646 bytes
+ .../metadata/d2/d2c4b71bf3b81a4468a4252a02abe32f   |  Bin 0 -> 9044 bytes
+ .../d2/d2c4b71bf3b81a4468a4252a02abe32f.info       |  Bin 0 -> 1242 bytes
+ .../metadata/d2/d2dc80d0c08c0435aa55c815bab4e562   |  Bin 0 -> 4293 bytes
+ .../d2/d2dc80d0c08c0435aa55c815bab4e562.info       |  Bin 0 -> 618 bytes
+ .../metadata/d3/d33382d41b60b72438f8e9586f86504a   |  Bin 0 -> 5024 bytes
+ .../d3/d33382d41b60b72438f8e9586f86504a.info       |  Bin 0 -> 731 bytes
+ .../metadata/d3/d3e59dc5e7a8644be846943f5853cec3   |  Bin 0 -> 4289 bytes
+ .../d3/d3e59dc5e7a8644be846943f5853cec3.info       |  Bin 0 -> 609 bytes
+ .../metadata/d4/d4119bfe26c92f74d863956c2f362e4f   |  Bin 0 -> 4268 bytes
+ .../d4/d4119bfe26c92f74d863956c2f362e4f.info       |  Bin 0 -> 2253 bytes
+ .../metadata/d4/d4dd339be962bba4aa82c902f7b3452e   |  Bin 0 -> 7956 bytes
+ .../d4/d4dd339be962bba4aa82c902f7b3452e.info       |  Bin 0 -> 681 bytes
+ .../metadata/d5/d53962d7bf5a4415ba204aea5e80e746   |  Bin 0 -> 10244 bytes
+ .../d5/d53962d7bf5a4415ba204aea5e80e746.info       |  Bin 0 -> 694 bytes
+ .../metadata/d5/d580900d83be2664c9c035d6e50791fe   |  Bin 0 -> 7008 bytes
+ .../d5/d580900d83be2664c9c035d6e50791fe.info       |  Bin 0 -> 719 bytes
+ .../metadata/d6/d6275b4102a8b4b8a8c94c7e1101581f   |  Bin 0 -> 4305 bytes
+ .../d6/d6275b4102a8b4b8a8c94c7e1101581f.info       |  Bin 0 -> 626 bytes
+ .../metadata/d6/d6913dd8876ab8149ac67f69aba208ac   |  Bin 0 -> 24888 bytes
+ .../d6/d6913dd8876ab8149ac67f69aba208ac.info       |  Bin 0 -> 711 bytes
+ .../metadata/d6/d6f57e07517130f4a9f6de78306c95b7   |  Bin 0 -> 4840 bytes
+ .../d6/d6f57e07517130f4a9f6de78306c95b7.info       |  Bin 0 -> 608 bytes
+ .../metadata/d9/d95f112dcf873464e8d57e91c7e23e4e   |  Bin 0 -> 4317 bytes
+ .../d9/d95f112dcf873464e8d57e91c7e23e4e.info       |  Bin 0 -> 636 bytes
+ .../metadata/d9/d9f575d4ed1bf45379a627c6b86e4b79   |  Bin 0 -> 4301 bytes
+ .../d9/d9f575d4ed1bf45379a627c6b86e4b79.info       |  Bin 0 -> 623 bytes
+ .../metadata/da/dab23848655b5c74ca8b171d95b0864a   |  Bin 0 -> 9272 bytes
+ .../da/dab23848655b5c74ca8b171d95b0864a.info       |  Bin 0 -> 754 bytes
+ .../metadata/db/db4f1a6c0bab84e29b9a12b4db3909c0   |  Bin 0 -> 5168 bytes
+ .../db/db4f1a6c0bab84e29b9a12b4db3909c0.info       |  Bin 0 -> 760 bytes
+ .../metadata/dc/dc2565054f55446d7b1108732cd4c121   |  Bin 0 -> 5392 bytes
+ .../dc/dc2565054f55446d7b1108732cd4c121.info       |  Bin 0 -> 658 bytes
+ .../metadata/dc/dc859ff0056ed294bbe3c71d4306ad50   |  Bin 0 -> 5872 bytes
+ .../dc/dc859ff0056ed294bbe3c71d4306ad50.info       |  Bin 0 -> 651 bytes
+ .../metadata/dc/dcb93390da2124a46bf233981889d902   |  Bin 0 -> 31240 bytes
+ .../dc/dcb93390da2124a46bf233981889d902.info       |  Bin 0 -> 670 bytes
+ .../metadata/de/de22bd77f0f87f345abe1d33ad15f9df   |  Bin 0 -> 9060 bytes
+ .../de/de22bd77f0f87f345abe1d33ad15f9df.info       |  Bin 0 -> 1254 bytes
+ .../metadata/df/df4f1ccab0b6e3a46b9036ac82d96ba9   |  Bin 0 -> 14032 bytes
+ .../df/df4f1ccab0b6e3a46b9036ac82d96ba9.info       |  Bin 0 -> 2914 bytes
+ .../metadata/e0/e0b2c59a00daa2644b162e9f98d431f6   |  Bin 4976 -> 5200 bytes
+ .../metadata/e1/e11d656cf6217cb41ba5443ff354aea7   |  Bin 0 -> 10400 bytes
+ .../e1/e11d656cf6217cb41ba5443ff354aea7.info       |  Bin 0 -> 688 bytes
+ .../metadata/e3/e328bea6ad6257848a01305be866b33b   |  Bin 0 -> 5872 bytes
+ .../e3/e328bea6ad6257848a01305be866b33b.info       |  Bin 0 -> 726 bytes
+ .../metadata/e3/e378e9c2cad5a7e48a6931f63edd1421   |  Bin 0 -> 10944 bytes
+ .../e3/e378e9c2cad5a7e48a6931f63edd1421.info       |  Bin 0 -> 661 bytes
+ .../metadata/e3/e37930a0cc67be24bb961bcb1f8513a1   |  Bin 0 -> 21532 bytes
+ .../e3/e37930a0cc67be24bb961bcb1f8513a1.info       |  Bin 0 -> 3549 bytes
+ .../metadata/e4/e435bf89a8bb0bf4abee94a2cc516927   |  Bin 0 -> 5936 bytes
+ .../e4/e435bf89a8bb0bf4abee94a2cc516927.info       |  Bin 0 -> 713 bytes
+ .../metadata/e6/e6bc9c6360e92cd44a8a76c34fa8df81   |  Bin 6764 -> 6828 bytes
+ .../metadata/e6/e6fc544c142d81d4ba34b7eafee123a5   |  Bin 0 -> 4268 bytes
+ .../e6/e6fc544c142d81d4ba34b7eafee123a5.info       |  Bin 0 -> 2335 bytes
+ .../metadata/e7/e74a0ade798956d49a6bbb833422663e   |  Bin 0 -> 5068 bytes
+ .../e7/e74a0ade798956d49a6bbb833422663e.info       |  Bin 0 -> 670 bytes
+ .../metadata/e8/e8fca5261388a6942bd0203351ce7c4c   |  Bin 0 -> 46498 bytes
+ .../e8/e8fca5261388a6942bd0203351ce7c4c.info       |  Bin 0 -> 664 bytes
+ .../metadata/e9/e971ec30698b0bf41bd9afdd5694c8ba   |  Bin 0 -> 4760 bytes
+ .../e9/e971ec30698b0bf41bd9afdd5694c8ba.info       |  Bin 0 -> 658 bytes
+ .../metadata/e9/e97be077778b9b94299a83f96fc35644   |  Bin 0 -> 4289 bytes
+ .../e9/e97be077778b9b94299a83f96fc35644.info       |  Bin 0 -> 609 bytes
+ .../metadata/e9/e9feec3702556c04dbedbf041253153f   |  Bin 0 -> 47010 bytes
+ .../e9/e9feec3702556c04dbedbf041253153f.info       |  Bin 0 -> 691 bytes
+ .../metadata/eb/eb010d9e17c69d3428750677d9ffb1be   |  Bin 0 -> 6152 bytes
+ .../eb/eb010d9e17c69d3428750677d9ffb1be.info       |  Bin 0 -> 732 bytes
+ .../metadata/eb/eba378c9cb692fe42a5d65b8ff4fd410   |  Bin 0 -> 7532 bytes
+ .../eb/eba378c9cb692fe42a5d65b8ff4fd410.info       |  Bin 0 -> 682 bytes
+ .../metadata/eb/ebc87403d133ba04da787b7ea5967b1f   |  Bin 0 -> 4377 bytes
+ .../eb/ebc87403d133ba04da787b7ea5967b1f.info       |  Bin 0 -> 700 bytes
+ .../metadata/ec/ecad3b14769e19641967a8bc64bebd03   |  Bin 0 -> 10220 bytes
+ .../ec/ecad3b14769e19641967a8bc64bebd03.info       |  Bin 0 -> 721 bytes
+ .../metadata/ed/ed1345f8bf983c44eabea9eb25c9dfca   |  Bin 0 -> 6152 bytes
+ .../ed/ed1345f8bf983c44eabea9eb25c9dfca.info       |  Bin 0 -> 689 bytes
+ .../metadata/ed/ed4775271d95de24194e9dad1b8e46ab   |  Bin 0 -> 4976 bytes
+ .../ed/ed4775271d95de24194e9dad1b8e46ab.info       |  Bin 0 -> 727 bytes
+ .../metadata/ed/ede0b596204eb437ea5ebe77543bcbd7   |  Bin 0 -> 38376 bytes
+ .../ed/ede0b596204eb437ea5ebe77543bcbd7.info       |  Bin 0 -> 8651 bytes
+ .../ed/ede0b596204eb437ea5ebe77543bcbd7.resource   |  Bin 0 -> 1412256 bytes
+ .../metadata/ee/eee7f681cb55c6842966b6ef81067cd7   |  Bin 0 -> 6068 bytes
+ .../ee/eee7f681cb55c6842966b6ef81067cd7.info       |  Bin 0 -> 625 bytes
+ .../metadata/ef/ef684dd9f11b94566987101f8beb60a9   |  Bin 0 -> 10348 bytes
+ .../ef/ef684dd9f11b94566987101f8beb60a9.info       |  Bin 0 -> 677 bytes
+ .../metadata/f0/f0d01430cb7446d4787e1549b55f0a70   |  Bin 0 -> 40192 bytes
+ .../f0/f0d01430cb7446d4787e1549b55f0a70.info       |  Bin 0 -> 727 bytes
+ .../metadata/f1/f12f632d73764658935f8dc2e01f48b6   |  Bin 0 -> 5564 bytes
+ .../f1/f12f632d73764658935f8dc2e01f48b6.info       |  Bin 0 -> 700 bytes
+ .../metadata/f1/f158296cc8641d24788ec4de9c3ca9e3   |  Bin 0 -> 10472 bytes
+ .../f1/f158296cc8641d24788ec4de9c3ca9e3.info       |  Bin 0 -> 694 bytes
+ .../metadata/f1/f1b5616245464783858c3c5fd95d16b1   |  Bin 0 -> 5232 bytes
+ .../f1/f1b5616245464783858c3c5fd95d16b1.info       |  Bin 0 -> 706 bytes
+ .../metadata/f1/f1e95aa6d658d694785bfde37c857fff   |  Bin 0 -> 6620 bytes
+ .../f1/f1e95aa6d658d694785bfde37c857fff.info       |  Bin 0 -> 680 bytes
+ .../metadata/f3/f30981aebc95f4b2fbafd503dc41a7b8   |  Bin 0 -> 4297 bytes
+ .../f3/f30981aebc95f4b2fbafd503dc41a7b8.info       |  Bin 0 -> 617 bytes
+ .../metadata/f3/f37d0d697d128c5459e67d1d4f8de9e0   |  Bin 0 -> 10136 bytes
+ .../f3/f37d0d697d128c5459e67d1d4f8de9e0.info       |  Bin 0 -> 1217 bytes
+ .../metadata/f3/f385fa14c01142e3b09545d102c9496d   |  Bin 0 -> 11268 bytes
+ .../f3/f385fa14c01142e3b09545d102c9496d.info       |  Bin 0 -> 670 bytes
+ .../metadata/f3/f3941bff05f4e88479d3c4741b63bbf1   |  Bin 0 -> 5136 bytes
+ .../f3/f3941bff05f4e88479d3c4741b63bbf1.info       |  Bin 0 -> 652 bytes
+ .../metadata/f4/f47a5cc9438cc244d87b90efe8d8690a   |  Bin 0 -> 4297 bytes
+ .../f4/f47a5cc9438cc244d87b90efe8d8690a.info       |  Bin 0 -> 619 bytes
+ .../metadata/f4/f482d23ae5c5c16468b9bec7d87e7d62   |  Bin 0 -> 7420 bytes
+ .../f4/f482d23ae5c5c16468b9bec7d87e7d62.info       |  Bin 0 -> 734 bytes
+ .../metadata/f8/f88da291941f5f54098ecaf6bf1bc3b9   |  Bin 0 -> 6916 bytes
+ .../f8/f88da291941f5f54098ecaf6bf1bc3b9.info       |  Bin 0 -> 763 bytes
+ .../metadata/f9/f9bf5f2835771fd4d8f203a4f0e76e96   |  Bin 0 -> 4349 bytes
+ .../f9/f9bf5f2835771fd4d8f203a4f0e76e96.info       |  Bin 0 -> 670 bytes
+ .../metadata/fa/fa7bc077895a8c14b964402c7ec0f69b   |  Bin 0 -> 47014 bytes
+ .../fa/fa7bc077895a8c14b964402c7ec0f69b.info       |  Bin 0 -> 672 bytes
+ .../metadata/fa/fae41d0797227451ea4b10db1c086647   |  Bin 0 -> 4972 bytes
+ .../fa/fae41d0797227451ea4b10db1c086647.info       |  Bin 0 -> 718 bytes
+ .../metadata/fb/fb0550cc97f23464f99f702c09306f21   |  Bin 0 -> 5012 bytes
+ .../fb/fb0550cc97f23464f99f702c09306f21.info       |  Bin 0 -> 695 bytes
+ .../metadata/fb/fbdb018768e69fd4ab3863b04aa6bdd0   |  Bin 0 -> 4325 bytes
+ .../fb/fbdb018768e69fd4ab3863b04aa6bdd0.info       |  Bin 0 -> 643 bytes
+ .../metadata/fc/fc6c3a8035cb4c8e9e7ebe4c44e8853a   |  Bin 0 -> 5476 bytes
+ .../fc/fc6c3a8035cb4c8e9e7ebe4c44e8853a.info       |  Bin 0 -> 669 bytes
+ .../metadata/fc/fca86976b230bf6489cba451676ee05b   |  Bin 0 -> 4836 bytes
+ .../fc/fca86976b230bf6489cba451676ee05b.info       |  Bin 0 -> 652 bytes
+ .../metadata/fd/fd0bd8fa4f70b604e9582c2e4f6b8de5   |  Bin 0 -> 14351 bytes
+ .../fd/fd0bd8fa4f70b604e9582c2e4f6b8de5.info       |  Bin 0 -> 908 bytes
+ .../metadata/fd/fd32dc75ec04a564baf657a78c7e0e02   |  Bin 0 -> 5696 bytes
+ .../fd/fd32dc75ec04a564baf657a78c7e0e02.info       |  Bin 0 -> 703 bytes
+ .../metadata/fd/fde401d160f133842addfb7db5ae4c97   |  Bin 0 -> 4345 bytes
+ .../fd/fde401d160f133842addfb7db5ae4c97.info       |  Bin 0 -> 666 bytes
+ .../metadata/fe/feb89bd50fd2c9b4589670dc229526c7   |  Bin 0 -> 6716 bytes
+ .../fe/feb89bd50fd2c9b4589670dc229526c7.info       |  Bin 0 -> 729 bytes
+ .../metadata/ff/ffa0df4e3b31c8c4a9e2facb63af80ee   |  Bin 0 -> 4329 bytes
+ .../ff/ffa0df4e3b31c8c4a9e2facb63af80ee.info       |  Bin 0 -> 648 bytes
+ .../shadercompiler-UnityShaderCompiler.exe0.log    |  192 +-
+ .../Recordings/Video Demo_Partial Completed.mp4    |  Bin 0 -> 64774542 bytes
+ Unity Game/Unity Game.sln                          |   18 +
+ Unity Game/Unity.Recorder.Editor.csproj            |  809 +++++++++
+ Unity Game/Unity.Recorder.Samples.csproj           |  675 +++++++
+ Unity Game/Unity.Recorder.csproj                   |  669 +++++++
+ .../Assembly-CSharp.csproj.CoreCompileInputs.cache |    2 +-
+ Video Demo (Partially Completed).mp4               |  Bin 0 -> 64774542 bytes
+ 1214 files changed, 29089 insertions(+), 860 deletions(-)
+
+commit 525e36602a1d4f1ee0fa6c7981549f6361714401
+Author: ShriramSuryawanshi <shriram.a.suryawanshi@gmail.com>
+Date:   Fri Mar 15 17:09:49 2019 -0400
+
+    Enemy attack and deaths
+
+ Unity Game/.vs/Unity Game/v15/.suo                 |  Bin 369664 -> 369664 bytes
+ .../.vs/Unity Game/v15/Server/sqlite3/storage.ide  |  Bin 1630208 -> 1642496 bytes
+ .../Unity Game/v15/Server/sqlite3/storage.ide-shm  |  Bin 32768 -> 32768 bytes
+ .../Unity Game/v15/Server/sqlite3/storage.ide-wal  |  Bin 4140632 -> 4148872 bytes
+ Unity Game/Assembly-CSharp.csproj                  |    4 +
+ Unity Game/Assets/Assets/_Scenes/Game.unity        |  393 +++-
+ Unity Game/Assets/Prefabs/Acid.prefab              |  153 ++
+ Unity Game/Assets/Prefabs/Acid.prefab.meta         |    7 +
+ Unity Game/Assets/Scripts/Attack.cs                |   31 +
+ Unity Game/Assets/Scripts/Attack.cs.meta           |   11 +
+ Unity Game/Assets/Scripts/Enemy/AcidEffect.cs      |   33 +
+ Unity Game/Assets/Scripts/Enemy/AcidEffect.cs.meta |   11 +
+ Unity Game/Assets/Scripts/Enemy/Enemy.cs           |   41 +-
+ Unity Game/Assets/Scripts/Enemy/MossGiant.cs       |   24 +-
+ Unity Game/Assets/Scripts/Enemy/Skeleton.cs        |   24 +-
+ Unity Game/Assets/Scripts/Enemy/Spider.cs          |   36 +-
+ .../Assets/Scripts/Enemy/SpiderAnimationEvent.cs   |   19 +
+ .../Scripts/Enemy/SpiderAnimationEvent.cs.meta     |   11 +
+ Unity Game/Assets/Scripts/IDamageable.cs           |   11 +
+ Unity Game/Assets/Scripts/IDamageable.cs.meta      |   11 +
+ Unity Game/Assets/Scripts/Player/Player.cs         |   15 +-
+ .../Characters/Moss_Giant/Animations/Attack.anim   | 1302 +++++++++++
+ .../Moss_Giant/Animations/Attack.anim.meta         |    8 +
+ .../Characters/Moss_Giant/Animations/Death.anim    |  113 +
+ .../Moss_Giant/Animations/Death.anim.meta          |    8 +
+ .../Characters/Moss_Giant/Animations/Hit.anim      |  113 +
+ .../Characters/Moss_Giant/Animations/Hit.anim.meta |    8 +
+ .../Moss_Giant/Animations/Sprite.controller        |  236 +-
+ .../Moss_Giant/Moss_Giant_Attack.png.meta          |  377 ++-
+ .../Moss_Giant/Moss_Giant_Death.png.meta           |  377 ++-
+ .../Characters/Moss_Giant/Moss_Giant_Hit.png.meta  |  377 ++-
+ .../Characters/Moss_Giant/Moss_Giant_Walk.png.meta |    2 +-
+ .../Characters/Player/Animations/Attack.anim       | 2460 +++++++++++++++++++-
+ .../Characters/Player/Animations/Death.anim        |  170 ++
+ .../Characters/Player/Animations/Death.anim.meta   |    8 +
+ .../Sprites/Characters/Player/Animations/Idle.anim |   49 +-
+ .../Characters/Player/Animations/Sprite.controller |   65 +-
+ .../Sprites/Characters/Player/Death.png.meta       |  350 +--
+ .../Characters/Skeleton/Animations/Attack.anim     | 2336 +++++++++++++++++++
+ .../Skeleton/Animations/Attack.anim.meta           |    8 +
+ .../Characters/Skeleton/Animations/Death.anim      |  206 ++
+ .../Characters/Skeleton/Animations/Death.anim.meta |    8 +
+ .../Characters/Skeleton/Animations/Hit.anim        |  152 ++
+ .../Characters/Skeleton/Animations/Hit.anim.meta   |    8 +
+ .../Characters/Skeleton/Animations/Idle.anim       |  245 +-
+ .../Skeleton/Animations/Sprite.controller          |  236 +-
+ .../Characters/Skeleton/Skeleton_Attack.png.meta   |  692 +++++-
+ .../Characters/Skeleton/Skeleton_Death.png.meta    | 1028 +++++++-
+ .../Characters/Skeleton/Skeleton_Hit.png.meta      |  650 +++++-
+ .../Characters/Spider/Animations/Attack.anim       |  165 ++
+ .../Characters/Spider/Animations/Attack.anim.meta  |    8 +
+ .../Characters/Spider/Animations/Death.anim        |  158 ++
+ .../Characters/Spider/Animations/Death.anim.meta   |    8 +
+ .../Characters/Spider/Animations/Sprite.controller |   96 +-
+ .../Characters/Spider/Spider_Attack.png.meta       |  692 +++++-
+ .../Characters/Spider/Spider_Death.png.meta        |  692 +++++-
+ Unity Game/Assets/Sprites/Effects/Acid.png.meta    |  377 ++-
+ .../Sprites/Effects/Animations/Acid.controller     |   72 +
+ .../Effects/Animations/Acid.controller.meta        |    8 +
+ .../Sprites/Effects/Animations/Acid_Effects.anim   |  113 +
+ .../Effects/Animations/Acid_Effects.anim.meta      |    8 +
+ Unity Game/Library/CurrentLayout.dwlt              |  181 +-
+ Unity Game/Library/CurrentMaximizeLayout.dwlt      |  194 +-
+ Unity Game/Library/InspectorExpandedItems.asset    |  Bin 4308 -> 4368 bytes
+ .../ScriptAssemblies/Assembly-CSharp-Editor.dll    |  Bin 72704 -> 72704 bytes
+ .../Library/ScriptAssemblies/Assembly-CSharp.dll   |  Bin 40448 -> 43520 bytes
+ .../Library/ScriptAssemblies/Assembly-CSharp.pdb   |  Bin 15772 -> 17284 bytes
+ .../Library/ScriptAssemblies/Cinemachine.dll       |  Bin 200704 -> 200704 bytes
+ .../Unity.Analytics.DataPrivacy.dll                |  Bin 7680 -> 7680 bytes
+ .../ScriptAssemblies/Unity.CollabProxy.Editor.dll  |  Bin 40960 -> 40960 bytes
+ .../Unity.PackageManagerUI.Editor.dll              |  Bin 89600 -> 89600 bytes
+ .../ScriptAssemblies/Unity.TextMeshPro.Editor.dll  |  Bin 177152 -> 177152 bytes
+ .../Library/ScriptAssemblies/Unity.TextMeshPro.dll |  Bin 346624 -> 346624 bytes
+ .../com.unity.cinemachine.editor.dll               |  Bin 185856 -> 185856 bytes
+ .../Hierarchy/9ec023-85543abfee029fc489.json       |    1 +
+ .../SceneView/b30c72-85543abfee029fc489.json       |    1 +
+ .../StateCache/SceneView/b30c72-mainStage.json     |    2 +-
+ Unity Game/Library/assetDatabase3                  |  Bin 4938256 -> 4961316 bytes
+ Unity Game/Library/expandedItems                   |  Bin 4260 -> 4284 bytes
+ .../metadata/00/004ac85ff5c65a84c87ed0f35da11cbe   |  Bin 4260 -> 4260 bytes
+ .../metadata/0d/0d3b6b54a7a33194c9890534592cb042   |  Bin 4231180 -> 4246244 bytes
+ .../0d/0d3b6b54a7a33194c9890534592cb042.info       |  Bin 16369 -> 94307 bytes
+ .../metadata/18/182e7d7724dc2324fbd92a344e20009b   |  Bin 1081320 -> 1091408 bytes
+ .../18/182e7d7724dc2324fbd92a344e20009b.info       |  Bin 48914 -> 252338 bytes
+ .../metadata/1d/1d416f51951d94b4a9b8e165cb416a09   |  Bin 0 -> 4728 bytes
+ .../1d/1d416f51951d94b4a9b8e165cb416a09.info       |  Bin 0 -> 657 bytes
+ .../metadata/20/208c19c8190c72f498a998f9bb4190e7   |  Bin 0 -> 4260 bytes
+ .../20/208c19c8190c72f498a998f9bb4190e7.info       |  Bin 0 -> 628 bytes
+ .../metadata/23/23fbe56827731dd409f2d054f6db16dd   |  Bin 4232864 -> 4247508 bytes
+ .../23/23fbe56827731dd409f2d054f6db16dd.info       |  Bin 16361 -> 99474 bytes
+ .../metadata/26/262f809d646dee445af5d96c2137aed1   |  Bin 2146620 -> 2176260 bytes
+ .../26/262f809d646dee445af5d96c2137aed1.info       |  Bin 12042 -> 170953 bytes
+ .../metadata/37/37ecb2a53cf703a4fb5bf875846340f4   |  Bin 0 -> 4268 bytes
+ .../37/37ecb2a53cf703a4fb5bf875846340f4.info       |  Bin 0 -> 634 bytes
+ .../metadata/46/462f1df86e74afb438b604608267f8e7   |  Bin 0 -> 4260 bytes
+ .../46/462f1df86e74afb438b604608267f8e7.info       |  Bin 0 -> 632 bytes
+ .../metadata/51/5129f37907fe2f749b240bf036c4c938   |  Bin 0 -> 4268 bytes
+ .../51/5129f37907fe2f749b240bf036c4c938.info       |  Bin 0 -> 636 bytes
+ .../metadata/55/55fb6fb0626a88a44854724d43bd9919   |  Bin 0 -> 5048 bytes
+ .../55/55fb6fb0626a88a44854724d43bd9919.info       |  Bin 0 -> 616 bytes
+ .../metadata/58/58a9eaefca02fe041806c3109e743a5b   |  Bin 7148 -> 7160 bytes
+ .../58/58a9eaefca02fe041806c3109e743a5b.info       |  Bin 609 -> 616 bytes
+ .../metadata/62/6264862ed2c4d29459646d3dd0a6e107   |  Bin 4552 -> 5000 bytes
+ .../metadata/85/85543abfee029fc489cd57fb4b6318b2   |  Bin 0 -> 12408 bytes
+ .../85/85543abfee029fc489cd57fb4b6318b2.info       |  Bin 0 -> 6050 bytes
+ .../metadata/85/85ae5ee9fc9ded44fbb1ef1ba873fef6   |  Bin 2365672 -> 2366088 bytes
+ .../85/85ae5ee9fc9ded44fbb1ef1ba873fef6.info       |  Bin 283653 -> 151440 bytes
+ .../metadata/8d/8daa26566ab0bbd4d9145fc8793b5899   |  Bin 0 -> 4260 bytes
+ .../8d/8daa26566ab0bbd4d9145fc8793b5899.info       |  Bin 0 -> 634 bytes
+ .../metadata/8e/8ea1bc6dff37c7543a4cc8bf85ebc739   |  Bin 4246420 -> 4246420 bytes
+ .../metadata/a1/a12f69293d95426438ac8c90c591d1d8   |  Bin 2155536 -> 2202624 bytes
+ .../a1/a12f69293d95426438ac8c90c591d1d8.info       |  Bin 13339 -> 207789 bytes
+ .../metadata/a1/a1705ffc07a972649836fe08acc5e567   |  Bin 0 -> 4268 bytes
+ .../a1/a1705ffc07a972649836fe08acc5e567.info       |  Bin 0 -> 634 bytes
+ .../metadata/aa/aa29ad44469d8da42b9ef391a324beaa   |  Bin 0 -> 4260 bytes
+ .../aa/aa29ad44469d8da42b9ef391a324beaa.info       |  Bin 0 -> 630 bytes
+ .../metadata/ac/ac41d90224b5fe847bdd0afb000da16c   |  Bin 2138388 -> 2161248 bytes
+ .../ac/ac41d90224b5fe847bdd0afb000da16c.info       |  Bin 9593 -> 125607 bytes
+ .../metadata/b4/b499c7d4baf9c7a47abba89935548e94   |  Bin 0 -> 4260 bytes
+ .../b4/b499c7d4baf9c7a47abba89935548e94.info       |  Bin 0 -> 630 bytes
+ .../metadata/bb/bb166651e2d4d8d4da76f787a5b6b380   |  Bin 4532 -> 5124 bytes
+ .../metadata/c0/c0e8e7e12be4cbf4f9e32bbb4bdf8d60   |  Bin 4243560 -> 4258164 bytes
+ .../c0/c0e8e7e12be4cbf4f9e32bbb4bdf8d60.info       |  Bin 20814 -> 129626 bytes
+ .../metadata/c1/c16754a1fef74d74981c7c61731768f7   |  Bin 2157964 -> 2186176 bytes
+ .../c1/c16754a1fef74d74981c7c61731768f7.info       |  Bin 21185 -> 356969 bytes
+ .../metadata/c5/c57c4c72d81797046b45fa0375e098c0   |  Bin 0 -> 5012 bytes
+ .../c5/c57c4c72d81797046b45fa0375e098c0.info       |  Bin 0 -> 627 bytes
+ .../metadata/d9/d97d1485a6b8e4647a2f6f79493b25be   |  Bin 0 -> 4260 bytes
+ .../d9/d97d1485a6b8e4647a2f6f79493b25be.info       |  Bin 0 -> 630 bytes
+ .../metadata/de/deb9b49b1103bac44884718f91d545ed   |  Bin 0 -> 4524 bytes
+ .../de/deb9b49b1103bac44884718f91d545ed.info       |  Bin 0 -> 624 bytes
+ .../metadata/e0/e0b2c59a00daa2644b162e9f98d431f6   |  Bin 4532 -> 4976 bytes
+ .../metadata/e6/e6bc9c6360e92cd44a8a76c34fa8df81   |  Bin 5800 -> 6764 bytes
+ .../metadata/e9/e95e7a13f9edb4045b40a523a3c4675e   |  Bin 0 -> 4260 bytes
+ .../e9/e95e7a13f9edb4045b40a523a3c4675e.info       |  Bin 0 -> 624 bytes
+ .../metadata/e9/e96d154cdd90206458cd6563f8ed1c09   |  Bin 3202548 -> 3246980 bytes
+ .../e9/e96d154cdd90206458cd6563f8ed1c09.info       |  Bin 12725 -> 197628 bytes
+ .../metadata/f0/f0133de40b2306c4ea62229a9334fd1d   |  Bin 0 -> 4260 bytes
+ .../f0/f0133de40b2306c4ea62229a9334fd1d.info       |  Bin 0 -> 632 bytes
+ .../shadercompiler-UnityShaderCompiler.exe0.log    |   15 +
+ Unity Game/ProjectSettings/Physics2DSettings.asset |    2 +-
+ Unity Game/ProjectSettings/TagManager.asset        |    8 +-
+ ...bly-CSharp-Editor.csprojAssemblyReference.cache |  Bin 183380 -> 182360 bytes
+ .../Assembly-CSharp.csproj.CoreCompileInputs.cache |    2 +-
+ 144 files changed, 14784 insertions(+), 446 deletions(-)
+
+commit fa3cd38e1ceb5259c1dd93f205942b4857ff2318
+Author: ShriramSuryawanshi <shriram.a.suryawanshi@gmail.com>
+Date:   Fri Mar 15 03:46:54 2019 -0400
+
+    Enemy Added with animations
+
+ Unity Game/.vs/Unity Game/v15/.suo                 | Bin 376832 -> 369664 bytes
+ .../.vs/Unity Game/v15/Server/sqlite3/storage.ide  | Bin 1593344 -> 1630208 bytes
+ .../Unity Game/v15/Server/sqlite3/storage.ide-shm  | Bin 32768 -> 32768 bytes
+ .../Unity Game/v15/Server/sqlite3/storage.ide-wal  | Bin 4140632 -> 4140632 bytes
+ Unity Game/Assembly-CSharp-Editor.csproj           |  12 +-
+ Unity Game/Assembly-CSharp.csproj                  |  20 +-
+ Unity Game/Assets/Assets/_Scenes/Game.unity        | 631 ++++++++++++-
+ Unity Game/Assets/Scripts/Enemy.meta               |   8 +
+ Unity Game/Assets/Scripts/Enemy/Enemy.cs           |  65 ++
+ Unity Game/Assets/Scripts/Enemy/Enemy.cs.meta      |  11 +
+ Unity Game/Assets/Scripts/Enemy/MossGiant.cs       |  12 +
+ Unity Game/Assets/Scripts/Enemy/MossGiant.cs.meta  |  11 +
+ Unity Game/Assets/Scripts/Enemy/Skeleton.cs        |  12 +
+ Unity Game/Assets/Scripts/Enemy/Skeleton.cs.meta   |  11 +
+ Unity Game/Assets/Scripts/Enemy/Spider.cs          |  12 +
+ Unity Game/Assets/Scripts/Enemy/Spider.cs.meta     |  11 +
+ Unity Game/Assets/Scripts/Player.meta              |   8 +
+ Unity Game/Assets/Scripts/{ => Player}/Player.cs   |   0
+ .../Assets/Scripts/{ => Player}/Player.cs.meta     |   0
+ .../Assets/Scripts/{ => Player}/PlayerAnimation.cs |   0
+ .../Scripts/{ => Player}/PlayerAnimation.cs.meta   |   0
+ .../Sprites/Characters/Moss_Giant/Animations.meta  |   8 +
+ .../Characters/Moss_Giant/Animations/Idle.anim     | 200 +++++
+ .../Moss_Giant/Animations/Idle.anim.meta           |   8 +
+ .../Moss_Giant/Animations/Sprite.controller        | 156 ++++
+ .../Moss_Giant/Animations/Sprite.controller.meta   |   8 +
+ .../Characters/Moss_Giant/Animations/Walk.anim     | 113 +++
+ .../Moss_Giant/Animations/Walk.anim.meta           |   8 +
+ .../Characters/Moss_Giant/Moss_Giant_Idle.png.meta | 986 ++++++++++++++++++++-
+ .../Characters/Moss_Giant/Moss_Giant_Walk.png.meta | 377 +++++++-
+ .../Sprites/Characters/Skeleton/Animations.meta    |   8 +
+ .../Characters/Skeleton/Animations/Idle.anim       | 152 ++++
+ .../Characters/Skeleton/Animations/Idle.anim.meta  |   8 +
+ .../Skeleton/Animations/Sprite.controller          | 156 ++++
+ .../Skeleton/Animations/Sprite.controller.meta     |   8 +
+ .../Characters/Skeleton/Animations/Walk.anim       | 158 ++++
+ .../Characters/Skeleton/Animations/Walk.anim.meta  |   8 +
+ .../Characters/Skeleton/Skeleton_Idle.png.meta     | 650 +++++++++++++-
+ .../Characters/Skeleton/Skeleton_Walk.png.meta     | 692 ++++++++++++++-
+ .../Sprites/Characters/Spider/Animations.meta      |   8 +
+ .../Sprites/Characters/Spider/Animations/Idle.anim | 158 ++++
+ .../Characters/Spider/Animations/Idle.anim.meta    |   8 +
+ .../Characters/Spider/Animations/Sprite.controller | 156 ++++
+ .../Spider/Animations/Sprite.controller.meta       |   8 +
+ .../Sprites/Characters/Spider/Animations/Walk.anim | 158 ++++
+ .../Characters/Spider/Animations/Walk.anim.meta    |   8 +
+ .../Sprites/Characters/Spider/Spider_Idle.png.meta | 692 ++++++++++++++-
+ .../Sprites/Characters/Spider/Spider_Walk.png.meta | 692 ++++++++++++++-
+ Unity Game/Library/CurrentLayout.dwlt              | 921 ++++++++++---------
+ Unity Game/Library/CurrentMaximizeLayout.dwlt      | 848 ++++++++++++++++++
+ Unity Game/Library/InspectorExpandedItems.asset    | Bin 4268 -> 4308 bytes
+ .../ScriptAssemblies/Assembly-CSharp-Editor.dll    | Bin 72704 -> 72704 bytes
+ .../Library/ScriptAssemblies/Assembly-CSharp.dll   | Bin 39424 -> 40448 bytes
+ .../Library/ScriptAssemblies/Assembly-CSharp.pdb   | Bin 15112 -> 15772 bytes
+ .../StateCache/SceneView/b30c72-mainStage.json     |   2 +-
+ Unity Game/Library/assetDatabase3                  | Bin 4918480 -> 4938256 bytes
+ Unity Game/Library/expandedItems                   | Bin 4212 -> 4260 bytes
+ .../metadata/1a/1aabeaa8bee7cea4aa0cd24f52245e42   | Bin 2144248 -> 2177880 bytes
+ .../1a/1aabeaa8bee7cea4aa0cd24f52245e42.info       | Bin 8826 -> 135523 bytes
+ .../metadata/26/2604a59fa15d03345921cb4c52803ef6   | Bin 0 -> 4260 bytes
+ .../26/2604a59fa15d03345921cb4c52803ef6.info       | Bin 0 -> 630 bytes
+ .../metadata/2b/2b693aea70890b2489bccc267ed40cef   | Bin 2155584 -> 2190184 bytes
+ .../2b/2b693aea70890b2489bccc267ed40cef.info       | Bin 17910 -> 249989 bytes
+ .../metadata/30/30ddae5396718aa46b8ccb7880722018   | Bin 0 -> 4309 bytes
+ .../30/30ddae5396718aa46b8ccb7880722018.info       | Bin 0 -> 630 bytes
+ .../metadata/37/37df051cad15cbf49bd507858220840e   | Bin 0 -> 4260 bytes
+ .../37/37df051cad15cbf49bd507858220840e.info       | Bin 0 -> 630 bytes
+ .../metadata/50/506f710605437fd46b28c9fd3a9f9741   | Bin 0 -> 4268 bytes
+ .../50/506f710605437fd46b28c9fd3a9f9741.info       | Bin 0 -> 640 bytes
+ .../metadata/50/50f7d6efe57fc3445a6d07223e80317a   | Bin 0 -> 4268 bytes
+ .../50/50f7d6efe57fc3445a6d07223e80317a.info       | Bin 0 -> 632 bytes
+ .../metadata/58/58a9eaefca02fe041806c3109e743a5b   | Bin 7140 -> 7148 bytes
+ .../metadata/5e/5ec2eeacf8191b042a5614a36ff81cd1   | Bin 0 -> 4276 bytes
+ .../5e/5ec2eeacf8191b042a5614a36ff81cd1.info       | Bin 0 -> 642 bytes
+ .../metadata/62/6264862ed2c4d29459646d3dd0a6e107   | Bin 0 -> 4552 bytes
+ .../62/6264862ed2c4d29459646d3dd0a6e107.info       | Bin 0 -> 624 bytes
+ .../metadata/70/705fa5093d6721d478bccdcee593dffd   | Bin 5132 -> 5132 bytes
+ .../metadata/7c/7c8661a47af1b884b93094cffb707366   | Bin 0 -> 4309 bytes
+ .../7c/7c8661a47af1b884b93094cffb707366.info       | Bin 0 -> 632 bytes
+ .../metadata/7e/7e6d3c0a4fa200c4cba8eab85068726b   | Bin 0 -> 4268 bytes
+ .../7e/7e6d3c0a4fa200c4cba8eab85068726b.info       | Bin 0 -> 632 bytes
+ .../metadata/82/82fb3760dca44254ba04286a6ebe9cee   | Bin 0 -> 4268 bytes
+ .../82/82fb3760dca44254ba04286a6ebe9cee.info       | Bin 0 -> 638 bytes
+ .../metadata/8e/8ea1bc6dff37c7543a4cc8bf85ebc739   | Bin 4232896 -> 4246420 bytes
+ .../8e/8ea1bc6dff37c7543a4cc8bf85ebc739.info       | Bin 16730 -> 98399 bytes
+ .../metadata/8f/8f70bb77aee46674a856372e1d309cbf   | Bin 0 -> 4260 bytes
+ .../8f/8f70bb77aee46674a856372e1d309cbf.info       | Bin 0 -> 628 bytes
+ .../metadata/a8/a829333a8e44eb34a9bce2c1f7469240   | Bin 2148628 -> 2185364 bytes
+ .../a8/a829333a8e44eb34a9bce2c1f7469240.info       | Bin 11646 -> 195776 bytes
+ .../metadata/b2/b24633d975f182c41aaa26f609297906   | Bin 0 -> 4260 bytes
+ .../b2/b24633d975f182c41aaa26f609297906.info       | Bin 0 -> 628 bytes
+ .../metadata/b3/b3865e8abbd50f94c807a58f141b3e39   | Bin 0 -> 4281 bytes
+ .../b3/b3865e8abbd50f94c807a58f141b3e39.info       | Bin 0 -> 602 bytes
+ .../metadata/b8/b889b9a1134985b428c010493bafcd3b   | Bin 0 -> 4309 bytes
+ .../b8/b889b9a1134985b428c010493bafcd3b.info       | Bin 0 -> 628 bytes
+ .../metadata/bb/bb166651e2d4d8d4da76f787a5b6b380   | Bin 0 -> 4532 bytes
+ .../bb/bb166651e2d4d8d4da76f787a5b6b380.info       | Bin 0 -> 615 bytes
+ .../metadata/bc/bc683a66c9a77d6429f160927fb23045   | Bin 8246864 -> 8285040 bytes
+ .../bc/bc683a66c9a77d6429f160927fb23045.info       | Bin 45287 -> 886922 bytes
+ .../metadata/cf/cfb27e4037604d94c87de595e5c469ce   | Bin 0 -> 4281 bytes
+ .../cf/cfb27e4037604d94c87de595e5c469ce.info       | Bin 0 -> 607 bytes
+ .../metadata/e0/e0b2c59a00daa2644b162e9f98d431f6   | Bin 0 -> 4532 bytes
+ .../e0/e0b2c59a00daa2644b162e9f98d431f6.info       | Bin 0 -> 621 bytes
+ .../metadata/e6/e6bc9c6360e92cd44a8a76c34fa8df81   | Bin 0 -> 5800 bytes
+ .../e6/e6bc9c6360e92cd44a8a76c34fa8df81.info       | Bin 0 -> 612 bytes
+ .../metadata/f1/f1d08449252f2e94f8b3a9bbf489729f   | Bin 2146212 -> 2180836 bytes
+ .../f1/f1d08449252f2e94f8b3a9bbf489729f.info       | Bin 10556 -> 145510 bytes
+ .../shadercompiler-UnityShaderCompiler.exe0.log    |   5 -
+ ...bly-CSharp-Editor.csprojAssemblyReference.cache | Bin 180530 -> 183380 bytes
+ .../Assembly-CSharp.csproj.CoreCompileInputs.cache |   2 +-
+ .../DesignTimeResolveAssemblyReferencesInput.cache | Bin 29376 -> 26987 bytes
+ 111 files changed, 7706 insertions(+), 488 deletions(-)
+
+commit da19a8c9a65f2f729fe42656978b807c9e4a35ae
+Author: ShriramSuryawanshi <shriram.a.suryawanshi@gmail.com>
+Date:   Thu Mar 14 21:05:52 2019 -0400
+
+    Player done
+
+ Unity Game/.vs/Unity Game/v15/.suo                 |  Bin 499712 -> 376832 bytes
+ .../.vs/Unity Game/v15/Server/sqlite3/storage.ide  |  Bin 1593344 -> 1593344 bytes
+ .../Unity Game/v15/Server/sqlite3/storage.ide-shm  |  Bin 32768 -> 32768 bytes
+ .../Unity Game/v15/Server/sqlite3/storage.ide-wal  |  Bin 4140632 -> 4140632 bytes
+ Unity Game/Assembly-CSharp-Editor.csproj           |    6 +
+ Unity Game/Assembly-CSharp.csproj                  |    6 +
+ Unity Game/Assets/Assets/_Scenes/Game.unity        |  312 +-
+ Unity Game/Assets/Gizmos.meta                      |    8 +
+ Unity Game/Assets/Gizmos/Cinemachine.meta          |    8 +
+ .../Assets/Gizmos/Cinemachine/cm_logo_lg.png       |  Bin 0 -> 66152 bytes
+ .../Assets/Gizmos/Cinemachine/cm_logo_lg.png.meta  |   88 +
+ Unity Game/Assets/Scripts/Player.cs                |   36 +-
+ Unity Game/Assets/Scripts/PlayerAnimation.cs       |   25 +-
+ .../Characters/Player/Animations/Attack.anim       |  116 +
+ .../Characters/Player/Animations/Attack.anim.meta  |    8 +
+ .../Sprites/Characters/Player/Animations/Jump.anim |   86 +
+ .../Characters/Player/Animations/Jump.anim.meta    |    8 +
+ .../Characters/Player/Animations/Sprite.controller |  282 +-
+ .../Assets/Sprites/Characters/Player/Jump.png.meta |  300 +-
+ .../Sprites/Characters/Player/Reg_Swing.png.meta   |  350 +-
+ Unity Game/Assets/Sprites/Effects/Animations.meta  |    8 +
+ .../Sprites/Effects/Animations/Sword_Arc.anim      |  280 +
+ .../Sprites/Effects/Animations/Sword_Arc.anim.meta |    8 +
+ .../Effects/Animations/Sword_Arc.controller        |  156 +
+ .../Effects/Animations/Sword_Arc.controller.meta   |    8 +
+ .../Sprites/Effects/Sword_Three_Particle.png.meta  |  207 +-
+ Unity Game/Assets/Sprites/Materials.meta           |    8 +
+ .../Sprites/Materials/Floor.physicsMaterial2D      |   11 +
+ .../Sprites/Materials/Floor.physicsMaterial2D.meta |    8 +
+ Unity Game/Library/CurrentLayout.dwlt              |  131 +-
+ Unity Game/Library/InspectorExpandedItems.asset    |  Bin 4268 -> 4268 bytes
+ .../com.unity.cinemachine@2.2.8/.gitattributes     |   17 +
+ .../com.unity.cinemachine@2.2.8/CHANGELOG.md       |  131 +
+ .../com.unity.cinemachine@2.2.8/CHANGELOG.md.meta  |    7 +
+ .../Documentation~/Cinemachine2D.md                |    6 +
+ .../Documentation~/CinemachineAimComposer.md       |   23 +
+ .../Documentation~/CinemachineAimDoNothing.md      |    4 +
+ .../Documentation~/CinemachineAimGroupComposer.md  |    4 +
+ .../Documentation~/CinemachineAimHardLook.md       |    4 +
+ .../Documentation~/CinemachineAimPOV.md            |   37 +
+ .../Documentation~/CinemachineAimSameAsFollow.md   |    4 +
+ .../Documentation~/CinemachineBlendListCamera.md   |   21 +
+ .../Documentation~/CinemachineBlending.md          |   32 +
+ .../Documentation~/CinemachineBodyDoNothing.md     |    4 +
+ .../CinemachineBodyFramingTransposer.md            |   54 +
+ .../CinemachineBodyHardLockTarget.md               |    4 +
+ .../CinemachineBodyOrbitalTransposer.md            |   51 +
+ .../Documentation~/CinemachineBodyTrackedDolly.md  |   38 +
+ .../Documentation~/CinemachineBodyTransposer.md    |   25 +
+ .../Documentation~/CinemachineBrainProperties.md   |   48 +
+ .../Documentation~/CinemachineClearShot.md         |   26 +
+ .../Documentation~/CinemachineCollider.md          |   34 +
+ .../Documentation~/CinemachineColliderConfiner.md  |    7 +
+ .../CinemachineCollisionImpulseSource.md           |  115 +
+ .../Documentation~/CinemachineConfiner.md          |   19 +
+ .../CinemachineDocRevisionHistory.md               |    8 +
+ .../Documentation~/CinemachineDolly.md             |   36 +
+ .../Documentation~/CinemachineDollyCart.md         |   16 +
+ .../Documentation~/CinemachineExternalCamera.md    |   10 +
+ .../Documentation~/CinemachineFollowZoom.md        |   13 +
+ .../Documentation~/CinemachineFreeLook.md          |   57 +
+ .../Documentation~/CinemachineGettingStarted.md    |   36 +
+ .../Documentation~/CinemachineImpulse.md           |   23 +
+ .../Documentation~/CinemachineImpulseFiltering.md  |   69 +
+ .../CinemachineImpulseFixedSignals.md              |   30 +
+ .../Documentation~/CinemachineImpulseListener.md   |   31 +
+ .../CinemachineImpulseNoiseProfiles.md             |   33 +
+ .../Documentation~/CinemachineImpulseRawSignal.md  |   25 +
+ .../Documentation~/CinemachineImpulseSource.md     |   84 +
+ .../CinemachineImpulseSourceOverview.md            |  125 +
+ .../Documentation~/CinemachineManagerCameras.md    |   18 +
+ .../Documentation~/CinemachineMixingCamera.md      |   33 +
+ .../Documentation~/CinemachineMultipleCameras.md   |   14 +
+ .../Documentation~/CinemachineNoiseProfiles.md     |   39 +
+ .../Documentation~/CinemachineOverview.md          |   91 +
+ .../Documentation~/CinemachinePath.md              |   24 +
+ .../Documentation~/CinemachinePostProcessing.md    |   35 +
+ .../Documentation~/CinemachineSavingDuringPlay.md  |   10 +
+ .../Documentation~/CinemachineSetUpVCam.md         |   16 +
+ .../Documentation~/CinemachineSmoothPath.md        |   23 +
+ .../Documentation~/CinemachineStateDrivenCamera.md |   47 +
+ .../Documentation~/CinemachineStoryboard.md        |   25 +
+ .../Documentation~/CinemachineTargetGroup.md       |   35 +
+ .../Documentation~/CinemachineTimeline.md          |   48 +
+ .../Documentation~/CinemachineTopDown.md           |    8 +
+ .../Documentation~/CinemachineVirtualCamera.md     |   41 +
+ .../Documentation~/CinemachineVirtualCameraAim.md  |   18 +
+ .../Documentation~/CinemachineVirtualCameraBody.md |   14 +
+ .../CinemachineVirtualCameraExtensions.md          |   12 +
+ .../CinemachineVirtualCameraNoise.md               |   28 +
+ .../InspectorImpulseSourceSpatialRange.png         |  Bin 0 -> 6938 bytes
+ .../Documentation~/TableOfContents.md              |   57 +
+ .../Documentation~/cinemachine.md                  |   19 +
+ .../Documentation~/cinemachineAPI.md               | 2405 +++++++++
+ .../Documentation~/images/CinemachineAim.png       |  Bin 0 -> 31768 bytes
+ .../images/CinemachineAssetStore.png               |  Bin 0 -> 12353 bytes
+ .../images/CinemachineBasicMultiChannelPerlin.png  |  Bin 0 -> 13224 bytes
+ .../Documentation~/images/CinemachineBody.png      |  Bin 0 -> 11743 bytes
+ .../Documentation~/images/CinemachineBrain.png     |  Bin 0 -> 27382 bytes
+ .../images/CinemachineCustomBlends.png             |  Bin 0 -> 7825 bytes
+ .../images/CinemachineFreeLookProperties.png       |  Bin 0 -> 19649 bytes
+ .../Documentation~/images/CinemachineFreelook.png  |  Bin 0 -> 37391 bytes
+ .../images/CinemachineGameWindowGuides.png         |  Bin 0 -> 15421 bytes
+ .../Documentation~/images/CinemachineMenu.png      |  Bin 0 -> 70959 bytes
+ .../images/CinemachineMixingCamera.png             |  Bin 0 -> 13561 bytes
+ .../images/CinemachineMixingCameraChildren.png     |  Bin 0 -> 17308 bytes
+ .../Documentation~/images/CinemachineNewVCam.png   |  Bin 0 -> 8860 bytes
+ .../images/CinemachineNoiseProfile.png             |  Bin 0 -> 36735 bytes
+ .../images/CinemachineOrbitalTransposer.png        |  Bin 0 -> 20118 bytes
+ .../Documentation~/images/CinemachinePackage.png   |  Bin 0 -> 29145 bytes
+ .../images/CinemachinePathInspector.png            |  Bin 0 -> 38969 bytes
+ .../Documentation~/images/CinemachinePathScene.png |  Bin 0 -> 23198 bytes
+ .../images/CinemachineSceneHierarchy.png           |  Bin 0 -> 12867 bytes
+ .../Documentation~/images/CinemachineSplash.png    |  Bin 0 -> 428511 bytes
+ .../images/CinemachineStateDrivenCamera.png        |  Bin 0 -> 55010 bytes
+ .../images/CinemachineStateDrivenChildren.png      |  Bin 0 -> 11369 bytes
+ .../images/CinemachineTargetGroup.png              |  Bin 0 -> 15432 bytes
+ .../images/CinemachineTimelineShotClips.png        |  Bin 0 -> 19159 bytes
+ .../images/CinemachineVCamProperties.png           |  Bin 0 -> 31540 bytes
+ .../Documentation~/images/FixedSignalEditor.png    |  Bin 0 -> 35853 bytes
+ .../Documentation~/images/ImpulseGraphEditor.png   |  Bin 0 -> 17573 bytes
+ .../Documentation~/images/ImpulseHammerStrike.png  |  Bin 0 -> 21166 bytes
+ .../Documentation~/images/ImpulseOverview.png      |  Bin 0 -> 420991 bytes
+ .../Documentation~/images/ImpulseSpatialRange.png  |  Bin 0 -> 36722 bytes
+ .../images/InspectorCollisionImpulseSource.png     |  Bin 0 -> 42201 bytes
+ .../images/InspectorFixedSignalTiles.png           |  Bin 0 -> 8484 bytes
+ .../images/InspectorImpulseChannelsScript.png      |  Bin 0 -> 13105 bytes
+ .../InspectorImpulseCollisionSourceChannel.png     |  Bin 0 -> 35334 bytes
+ .../images/InspectorImpulseListener.png            |  Bin 0 -> 12242 bytes
+ .../InspectorImpulseListenerChannelsMenu.png       |  Bin 0 -> 23125 bytes
+ .../images/InspectorImpulseSource.png              |  Bin 0 -> 38702 bytes
+ .../images/InspectorImpulseSourceChannel.png       |  Bin 0 -> 3111 bytes
+ .../images/InspectorImpulseSourceChannelsMenu.png  |  Bin 0 -> 43632 bytes
+ .../images/InspectorImpulseSourceHowToGenerate.png |  Bin 0 -> 4848 bytes
+ .../images/InspectorImpulseSourceRawSignalMenu.png |  Bin 0 -> 28985 bytes
+ .../images/InspectorImpulseSourceSignal.png        |  Bin 0 -> 7582 bytes
+ .../images/InspectorImpulseSourceSpatialRange.png  |  Bin 0 -> 6938 bytes
+ .../images/InspectorImpulseSourceTimeEnvelope.png  |  Bin 0 -> 5545 bytes
+ .../images/InspectorImpulseSourceTriggerObject.png |  Bin 0 -> 4875 bytes
+ .../images/InspectorImpulseTimeEnvelope.png        |  Bin 0 -> 10030 bytes
+ .../images/InspectorNoiseProfile.png               |  Bin 0 -> 66982 bytes
+ .../Documentation~/index.md                        |   19 +
+ .../com.unity.cinemachine@2.2.8/Editor.meta        |    9 +
+ .../Editor/Editors.meta                            |    9 +
+ .../CinemachineBasicMultiChannelPerlinEditor.cs    |   30 +
+ ...inemachineBasicMultiChannelPerlinEditor.cs.meta |   12 +
+ .../Editors/CinemachineBlendListCameraEditor.cs    |  206 +
+ .../CinemachineBlendListCameraEditor.cs.meta       |   13 +
+ .../Editors/CinemachineBlenderSettingsEditor.cs    |  153 +
+ .../CinemachineBlenderSettingsEditor.cs.meta       |   12 +
+ .../Editor/Editors/CinemachineBrainEditor.cs       |  171 +
+ .../Editor/Editors/CinemachineBrainEditor.cs.meta  |   12 +
+ .../Editor/Editors/CinemachineClearShotEditor.cs   |  210 +
+ .../Editors/CinemachineClearShotEditor.cs.meta     |   12 +
+ .../Editor/Editors/CinemachineColliderEditor.cs    |   78 +
+ .../Editors/CinemachineColliderEditor.cs.meta      |   12 +
+ .../Editor/Editors/CinemachineComposerEditor.cs    |   92 +
+ .../Editors/CinemachineComposerEditor.cs.meta      |   12 +
+ .../Editor/Editors/CinemachineConfinerEditor.cs    |  161 +
+ .../Editors/CinemachineConfinerEditor.cs.meta      |   13 +
+ .../Editors/CinemachineExternalCameraEditor.cs     |   17 +
+ .../CinemachineExternalCameraEditor.cs.meta        |   12 +
+ .../Editors/CinemachineFramingTransposerEditor.cs  |  183 +
+ .../CinemachineFramingTransposerEditor.cs.meta     |   12 +
+ .../Editor/Editors/CinemachineFreeLookEditor.cs    |  203 +
+ .../Editors/CinemachineFreeLookEditor.cs.meta      |   11 +
+ .../Editors/CinemachineGroupComposerEditor.cs      |   94 +
+ .../Editors/CinemachineGroupComposerEditor.cs.meta |   12 +
+ .../Editors/CinemachineHardLockToTargetEditor.cs   |   23 +
+ .../CinemachineHardLockToTargetEditor.cs.meta      |   12 +
+ .../Editor/Editors/CinemachineHardLookAtEditor.cs  |   23 +
+ .../Editors/CinemachineHardLookAtEditor.cs.meta    |   11 +
+ .../Editors/CinemachineMixingCameraEditor.cs       |  104 +
+ .../Editors/CinemachineMixingCameraEditor.cs.meta  |   12 +
+ .../Editors/CinemachineNoiseSettingsEditor.cs      |  361 ++
+ .../Editors/CinemachineNoiseSettingsEditor.cs.meta |   11 +
+ .../Editors/CinemachineOrbitalTransposerEditor.cs  |  136 +
+ .../CinemachineOrbitalTransposerEditor.cs.meta     |   12 +
+ .../Editor/Editors/CinemachinePOVEditor.cs         |    9 +
+ .../Editor/Editors/CinemachinePOVEditor.cs.meta    |   12 +
+ .../Editor/Editors/CinemachinePathEditor.cs        |  396 ++
+ .../Editor/Editors/CinemachinePathEditor.cs.meta   |   12 +
+ .../Editors/CinemachineSameAsFollowTargetEditor.cs |   23 +
+ .../CinemachineSameAsFollowTargetEditor.cs.meta    |   11 +
+ .../Editors/CinemachineScreenComposerGuides.cs     |  196 +
+ .../CinemachineScreenComposerGuides.cs.meta        |   12 +
+ .../Editor/Editors/CinemachineSmoothPathEditor.cs  |  233 +
+ .../Editors/CinemachineSmoothPathEditor.cs.meta    |   12 +
+ .../Editors/CinemachineStateDrivenCameraEditor.cs  |  453 ++
+ .../CinemachineStateDrivenCameraEditor.cs.meta     |   12 +
+ .../Editor/Editors/CinemachineStoryboardEditor.cs  |   82 +
+ .../Editors/CinemachineStoryboardEditor.cs.meta    |   13 +
+ .../Editor/Editors/CinemachineTargetGroupEditor.cs |   94 +
+ .../Editors/CinemachineTargetGroupEditor.cs.meta   |   12 +
+ .../Editors/CinemachineTrackedDollyEditor.cs       |   72 +
+ .../Editors/CinemachineTrackedDollyEditor.cs.meta  |   12 +
+ .../Editor/Editors/CinemachineTransposerEditor.cs  |  102 +
+ .../Editors/CinemachineTransposerEditor.cs.meta    |   12 +
+ .../Editors/CinemachineVirtualCameraBaseEditor.cs  |  203 +
+ .../CinemachineVirtualCameraBaseEditor.cs.meta     |   12 +
+ .../Editors/CinemachineVirtualCameraEditor.cs      |  459 ++
+ .../Editors/CinemachineVirtualCameraEditor.cs.meta |   11 +
+ .../Editor/EventHelpers.meta                       |    8 +
+ .../EventHelpers/CinemachineTriggerActionEditor.cs |  153 +
+ .../CinemachineTriggerActionEditor.cs.meta         |   11 +
+ .../Editor/Experimental.meta                       |    8 +
+ .../Experimental/CinemachineNewFreeLookEditor.cs   |  307 ++
+ .../CinemachineNewFreeLookEditor.cs.meta           |   11 +
+ .../CinemachineNewVirtualCameraEditor.cs           |   78 +
+ .../CinemachineNewVirtualCameraEditor.cs.meta      |   11 +
+ .../Editor/Experimental/VcamStageEditor.cs         |  314 ++
+ .../Editor/Experimental/VcamStageEditor.cs.meta    |   11 +
+ .../Editor/Impulse.meta                            |    8 +
+ .../CinemachineCollisionImpulseSourceEditor.cs     |   25 +
+ ...CinemachineCollisionImpulseSourceEditor.cs.meta |   11 +
+ .../CinemachineImpulseChannelPropertyDrawer.cs     |   49 +
+ ...CinemachineImpulseChannelPropertyDrawer.cs.meta |   11 +
+ .../Editor/Impulse/CinemachineImpulseChannels.cs   |   69 +
+ .../Impulse/CinemachineImpulseChannels.cs.meta     |   11 +
+ .../CinemachineImpulseDefinitionPropertyDrawer.cs  |   88 +
+ ...emachineImpulseDefinitionPropertyDrawer.cs.meta |   11 +
+ .../CinemachineImpulseEnvelopePropertyDrawer.cs    |   97 +
+ ...inemachineImpulseEnvelopePropertyDrawer.cs.meta |   11 +
+ .../Impulse/CinemachineImpulseListenerEditor.cs    |   18 +
+ .../CinemachineImpulseListenerEditor.cs.meta       |   11 +
+ .../Impulse/CinemachineImpulseSourceEditor.cs      |   19 +
+ .../Impulse/CinemachineImpulseSourceEditor.cs.meta |   11 +
+ .../com.unity.cinemachine@2.2.8/Editor/Menus.meta  |    9 +
+ .../Editor/Menus/CinemachineMenu.cs                |  291 +
+ .../Editor/Menus/CinemachineMenu.cs.meta           |   12 +
+ .../Editor/PropertyDrawers.meta                    |    9 +
+ .../PropertyDrawers/AxisStatePropertyDrawer.cs     |  110 +
+ .../AxisStatePropertyDrawer.cs.meta                |   11 +
+ .../CinemachineBlendDefinitionPropertyDrawer.cs    |   54 +
+ ...inemachineBlendDefinitionPropertyDrawer.cs.meta |   11 +
+ .../CinemachineTagFieldPropertyDrawer.cs           |   29 +
+ .../CinemachineTagFieldPropertyDrawer.cs.meta      |   12 +
+ .../PropertyDrawers/EmbeddedAssetPropertyDrawer.cs |  278 +
+ .../EmbeddedAssetPropertyDrawer.cs.meta            |   11 +
+ .../PropertyDrawers/LensSettingsPropertyDrawer.cs  |  175 +
+ .../LensSettingsPropertyDrawer.cs.meta             |   12 +
+ .../PropertyDrawers/NoiseSettingsPropertyDrawer.cs |  158 +
+ .../NoiseSettingsPropertyDrawer.cs.meta            |   13 +
+ .../OrbitalTransposerHeadingPropertyDrawer.cs      |   55 +
+ .../OrbitalTransposerHeadingPropertyDrawer.cs.meta |   13 +
+ .../Editor/Resources.meta                          |    9 +
+ .../Editor/Resources/CMWaveform.compute            |   60 +
+ .../Editor/Resources/CMWaveform.compute.meta       |   10 +
+ .../Editor/Resources/CMWaveform.shader             |   57 +
+ .../Editor/Resources/CMWaveform.shader.meta        |   10 +
+ .../Editor/Resources/Cinemachine_header.tif        |  Bin 0 -> 1166148 bytes
+ .../Editor/Resources/Cinemachine_header.tif.meta   |   74 +
+ .../Editor/Resources/StdLib.hlsl                   |   63 +
+ .../Editor/Resources/StdLib.hlsl.meta              |   10 +
+ .../Editor/Resources/cm_logo_sm.png                |  Bin 0 -> 66152 bytes
+ .../Editor/Resources/cm_logo_sm.png.meta           |   82 +
+ .../Editor/Timeline.meta                           |    8 +
+ .../Editor/Timeline/CinemachineShotEditor.cs       |  133 +
+ .../Editor/Timeline/CinemachineShotEditor.cs.meta  |   12 +
+ .../Editor/Utility.meta                            |    9 +
+ .../Editor/Utility/BaseEditor.cs                   |   83 +
+ .../Editor/Utility/BaseEditor.cs.meta              |   12 +
+ .../Editor/Utility/CinemachineLensPresets.cs       |  121 +
+ .../Editor/Utility/CinemachineLensPresets.cs.meta  |   11 +
+ .../Editor/Utility/EmbeddedAssetHelpers.cs         |  177 +
+ .../Editor/Utility/EmbeddedAssetHelpers.cs.meta    |   11 +
+ .../Editor/Utility/InspectorUtility.cs             |  166 +
+ .../Editor/Utility/InspectorUtility.cs.meta        |   11 +
+ .../Editor/Utility/ReflectionHelpers.cs            |  234 +
+ .../Editor/Utility/ReflectionHelpers.cs.meta       |   12 +
+ .../Editor/Utility/SaveDuringPlay.cs               |  538 ++
+ .../Editor/Utility/SaveDuringPlay.cs.meta          |   12 +
+ .../Editor/Utility/ScriptableObjectUtility.cs      |  135 +
+ .../Editor/Utility/ScriptableObjectUtility.cs.meta |   12 +
+ .../Editor/Utility/SerializedPropertyHelper.cs     |   73 +
+ .../Utility/SerializedPropertyHelper.cs.meta       |   12 +
+ .../Editor/Windows.meta                            |    9 +
+ .../Editor/Windows/AboutWindow.cs                  |  140 +
+ .../Editor/Windows/AboutWindow.cs.meta             |   13 +
+ .../Editor/Windows/CinemachineColliderPrefs.cs     |   85 +
+ .../Windows/CinemachineColliderPrefs.cs.meta       |   12 +
+ .../Editor/Windows/CinemachineSettings.cs          |  465 ++
+ .../Editor/Windows/CinemachineSettings.cs.meta     |   12 +
+ .../Editor/Windows/WaveformWindow.cs               |  231 +
+ .../Editor/Windows/WaveformWindow.cs.meta          |   13 +
+ .../Editor/com.unity.cinemachine.Editor.asmdef     |   12 +
+ .../com.unity.cinemachine.Editor.asmdef.meta       |    7 +
+ .../Extras~/CinemachineExamples.unitypackage       |  Bin 0 -> 3399435 bytes
+ .../CinemachinePostProcessingV1.unitypackage       |  Bin 0 -> 3111 bytes
+ .../CinemachinePostProcessingV2.unitypackage       |  Bin 0 -> 46510 bytes
+ .../Extras~/ReleaseNotes.txt                       |  183 +
+ .../com.unity.cinemachine@2.2.8/Gizmos.meta        |    8 +
+ .../Gizmos/Cinemachine.meta                        |    8 +
+ .../Gizmos/Cinemachine/cm_logo_lg.png              |  Bin 0 -> 66152 bytes
+ .../Gizmos/Cinemachine/cm_logo_lg.png.meta         |   94 +
+ .../com.unity.cinemachine@2.2.8/LICENSE.md         |    5 +
+ .../com.unity.cinemachine@2.2.8/LICENSE.md.meta    |    7 +
+ .../com.unity.cinemachine@2.2.8/Presets.meta       |    8 +
+ .../com.unity.cinemachine@2.2.8/Presets/Noise.meta |    9 +
+ .../Presets/Noise/6D Shake.asset                   |   87 +
+ .../Presets/Noise/6D Shake.asset.meta              |   10 +
+ .../Presets/Noise/Handheld_normal_extreme.asset    |   42 +
+ .../Noise/Handheld_normal_extreme.asset.meta       |    8 +
+ .../Presets/Noise/Handheld_normal_mild.asset       |   42 +
+ .../Presets/Noise/Handheld_normal_mild.asset.meta  |    8 +
+ .../Presets/Noise/Handheld_normal_strong.asset     |   42 +
+ .../Noise/Handheld_normal_strong.asset.meta        |    8 +
+ .../Presets/Noise/Handheld_tele_mild.asset         |   42 +
+ .../Presets/Noise/Handheld_tele_mild.asset.meta    |    8 +
+ .../Presets/Noise/Handheld_tele_strong.asset       |   42 +
+ .../Presets/Noise/Handheld_tele_strong.asset.meta  |    8 +
+ .../Presets/Noise/Handheld_wideangle_mild.asset    |   42 +
+ .../Noise/Handheld_wideangle_mild.asset.meta       |    8 +
+ .../Presets/Noise/Handheld_wideangle_strong.asset  |   42 +
+ .../Noise/Handheld_wideangle_strong.asset.meta     |    8 +
+ .../com.unity.cinemachine@2.2.8/README.md          |   35 +
+ .../com.unity.cinemachine@2.2.8/README.md.meta     |    7 +
+ .../com.unity.cinemachine@2.2.8/Runtime.meta       |    9 +
+ .../Runtime/AssemblyInfo.cs                        |    2 +
+ .../Runtime/AssemblyInfo.cs.meta                   |   11 +
+ .../Runtime/Behaviours.meta                        |    9 +
+ .../Behaviours/CinemachineBlendListCamera.cs       |  336 ++
+ .../Behaviours/CinemachineBlendListCamera.cs.meta  |   13 +
+ .../Runtime/Behaviours/CinemachineBrain.cs         |  707 +++
+ .../Runtime/Behaviours/CinemachineBrain.cs.meta    |   12 +
+ .../Runtime/Behaviours/CinemachineCameraOffset.cs  |   26 +
+ .../Behaviours/CinemachineCameraOffset.cs.meta     |   11 +
+ .../Runtime/Behaviours/CinemachineClearShot.cs     |  441 ++
+ .../Behaviours/CinemachineClearShot.cs.meta        |   12 +
+ .../Runtime/Behaviours/CinemachineCollider.cs      |  762 +++
+ .../Runtime/Behaviours/CinemachineCollider.cs.meta |   12 +
+ .../Runtime/Behaviours/CinemachineConfiner.cs      |  228 +
+ .../Runtime/Behaviours/CinemachineConfiner.cs.meta |   12 +
+ .../Runtime/Behaviours/CinemachineDollyCart.cs     |   83 +
+ .../Behaviours/CinemachineDollyCart.cs.meta        |   12 +
+ .../Behaviours/CinemachineExternalCamera.cs        |   74 +
+ .../Behaviours/CinemachineExternalCamera.cs.meta   |   12 +
+ .../Runtime/Behaviours/CinemachineFollowZoom.cs    |   95 +
+ .../Behaviours/CinemachineFollowZoom.cs.meta       |   12 +
+ .../Runtime/Behaviours/CinemachineFreeLook.cs      |  707 +++
+ .../Runtime/Behaviours/CinemachineFreeLook.cs.meta |   11 +
+ .../Runtime/Behaviours/CinemachineMixingCamera.cs  |  285 +
+ .../Behaviours/CinemachineMixingCamera.cs.meta     |   12 +
+ .../Runtime/Behaviours/CinemachinePath.cs          |  180 +
+ .../Runtime/Behaviours/CinemachinePath.cs.meta     |   12 +
+ .../Runtime/Behaviours/CinemachinePipeline.cs      |   12 +
+ .../Runtime/Behaviours/CinemachinePipeline.cs.meta |   12 +
+ .../Runtime/Behaviours/CinemachineSmoothPath.cs    |  224 +
+ .../Behaviours/CinemachineSmoothPath.cs.meta       |   12 +
+ .../Behaviours/CinemachineStateDrivenCamera.cs     |  535 ++
+ .../CinemachineStateDrivenCamera.cs.meta           |   12 +
+ .../Runtime/Behaviours/CinemachineStoryboard.cs    |  334 ++
+ .../Behaviours/CinemachineStoryboard.cs.meta       |   11 +
+ .../Runtime/Behaviours/CinemachineTargetGroup.cs   |  366 ++
+ .../Behaviours/CinemachineTargetGroup.cs.meta      |   12 +
+ .../Runtime/Behaviours/CinemachineVirtualCamera.cs |  548 ++
+ .../Behaviours/CinemachineVirtualCamera.cs.meta    |   12 +
+ .../Runtime/Components.meta                        |    9 +
+ .../CinemachineBasicMultiChannelPerlin.cs          |   92 +
+ .../CinemachineBasicMultiChannelPerlin.cs.meta     |   12 +
+ .../Runtime/Components/CinemachineComposer.cs      |  455 ++
+ .../Runtime/Components/CinemachineComposer.cs.meta |   12 +
+ .../Components/CinemachineFramingTransposer.cs     |  567 ++
+ .../CinemachineFramingTransposer.cs.meta           |   12 +
+ .../Runtime/Components/CinemachineGroupComposer.cs |  292 +
+ .../Components/CinemachineGroupComposer.cs.meta    |   12 +
+ .../Components/CinemachineHardLockToTarget.cs      |   32 +
+ .../Components/CinemachineHardLockToTarget.cs.meta |   12 +
+ .../Runtime/Components/CinemachineHardLookAt.cs    |   41 +
+ .../Components/CinemachineHardLookAt.cs.meta       |   12 +
+ .../Components/CinemachineOrbitalTransposer.cs     |  376 ++
+ .../CinemachineOrbitalTransposer.cs.meta           |   12 +
+ .../Runtime/Components/CinemachinePOV.cs           |  119 +
+ .../Runtime/Components/CinemachinePOV.cs.meta      |   12 +
+ .../Components/CinemachineSameAsFollowTarget.cs    |   31 +
+ .../CinemachineSameAsFollowTarget.cs.meta          |   12 +
+ .../Runtime/Components/CinemachineTrackedDolly.cs  |  297 +
+ .../Components/CinemachineTrackedDolly.cs.meta     |   12 +
+ .../Runtime/Components/CinemachineTransposer.cs    |  346 ++
+ .../Components/CinemachineTransposer.cs.meta       |   12 +
+ .../com.unity.cinemachine@2.2.8/Runtime/Core.meta  |    9 +
+ .../Runtime/Core/AxisState.cs                      |  331 ++
+ .../Runtime/Core/AxisState.cs.meta                 |   12 +
+ .../Runtime/Core/CameraState.cs                    |  498 ++
+ .../Runtime/Core/CameraState.cs.meta               |   12 +
+ .../Runtime/Core/CinemachineBlend.cs               |  310 ++
+ .../Runtime/Core/CinemachineBlend.cs.meta          |   12 +
+ .../Runtime/Core/CinemachineBlenderSettings.cs     |   98 +
+ .../Core/CinemachineBlenderSettings.cs.meta        |   12 +
+ .../Runtime/Core/CinemachineComponentBase.cs       |  219 +
+ .../Runtime/Core/CinemachineComponentBase.cs.meta  |   12 +
+ .../Runtime/Core/CinemachineCore.cs                |  418 ++
+ .../Runtime/Core/CinemachineCore.cs.meta           |   12 +
+ .../Runtime/Core/CinemachineDebug.cs               |   81 +
+ .../Runtime/Core/CinemachineDebug.cs.meta          |   12 +
+ .../Runtime/Core/CinemachineExtension.cs           |  126 +
+ .../Runtime/Core/CinemachineExtension.cs.meta      |   12 +
+ .../Runtime/Core/CinemachinePathBase.cs            |  380 ++
+ .../Runtime/Core/CinemachinePathBase.cs.meta       |   12 +
+ .../Runtime/Core/CinemachinePropertyAttribute.cs   |   82 +
+ .../Core/CinemachinePropertyAttribute.cs.meta      |   12 +
+ .../Runtime/Core/CinemachineTouchInputMapper.cs    |   33 +
+ .../Core/CinemachineTouchInputMapper.cs.meta       |   11 +
+ .../Runtime/Core/CinemachineVirtualCameraBase.cs   |  482 ++
+ .../Core/CinemachineVirtualCameraBase.cs.meta      |   12 +
+ .../Runtime/Core/GaussianFilter.cs                 |  145 +
+ .../Runtime/Core/GaussianFilter.cs.meta            |   12 +
+ .../Runtime/Core/ICinemachineCamera.cs             |   99 +
+ .../Runtime/Core/ICinemachineCamera.cs.meta        |   12 +
+ .../Runtime/Core/ICinemachineComponent.cs          |    3 +
+ .../Runtime/Core/ICinemachineComponent.cs.meta     |   12 +
+ .../Runtime/Core/LensSettings.cs                   |  182 +
+ .../Runtime/Core/LensSettings.cs.meta              |   12 +
+ .../Runtime/Core/NoiseSettings.cs                  |  120 +
+ .../Runtime/Core/NoiseSettings.cs.meta             |   12 +
+ .../Runtime/Core/Predictor.cs                      |  293 +
+ .../Runtime/Core/Predictor.cs.meta                 |   12 +
+ .../Runtime/Core/RuntimeUtility.cs                 |   30 +
+ .../Runtime/Core/RuntimeUtility.cs.meta            |   13 +
+ .../Runtime/Core/SignalSourceAsset.cs              |   42 +
+ .../Runtime/Core/SignalSourceAsset.cs.meta         |   11 +
+ .../Runtime/Core/SplineHelpers.cs                  |  137 +
+ .../Runtime/Core/SplineHelpers.cs.meta             |   12 +
+ .../Runtime/Core/UnityVectorExtensions.cs          |  241 +
+ .../Runtime/Core/UnityVectorExtensions.cs.meta     |   12 +
+ .../Runtime/Core/UpdateTracker.cs                  |  132 +
+ .../Runtime/Core/UpdateTracker.cs.meta             |   11 +
+ .../Runtime/EventHelpers.meta                      |    8 +
+ .../EventHelpers/CinemachineTriggerAction.cs       |  274 +
+ .../EventHelpers/CinemachineTriggerAction.cs.meta  |   11 +
+ .../Runtime/Experimental.meta                      |    8 +
+ .../Runtime/Experimental/CinemachineNewFreeLook.cs |  531 ++
+ .../Experimental/CinemachineNewFreeLook.cs.meta    |   11 +
+ .../Experimental/CinemachineNewVirtualCamera.cs    |  373 ++
+ .../CinemachineNewVirtualCamera.cs.meta            |   11 +
+ .../Runtime/Impulse.meta                           |    8 +
+ .../Impulse/CinemachineCollisionImpulseSource.cs   |  153 +
+ .../CinemachineCollisionImpulseSource.cs.meta      |   11 +
+ .../Runtime/Impulse/CinemachineFixedSignal.cs      |   68 +
+ .../Runtime/Impulse/CinemachineFixedSignal.cs.meta |   11 +
+ .../Impulse/CinemachineImpulseDefinition.cs        |  186 +
+ .../Impulse/CinemachineImpulseDefinition.cs.meta   |   11 +
+ .../Runtime/Impulse/CinemachineImpulseListener.cs  |   59 +
+ .../Impulse/CinemachineImpulseListener.cs.meta     |   11 +
+ .../Runtime/Impulse/CinemachineImpulseManager.cs   |  401 ++
+ .../Impulse/CinemachineImpulseManager.cs.meta      |   13 +
+ .../Runtime/Impulse/CinemachineImpulseSource.cs    |   56 +
+ .../Impulse/CinemachineImpulseSource.cs.meta       |   11 +
+ .../Runtime/Timeline.meta                          |    8 +
+ .../Runtime/Timeline/CinemachineMixer.cs           |  111 +
+ .../Runtime/Timeline/CinemachineMixer.cs.meta      |   12 +
+ .../Runtime/Timeline/CinemachineShot.cs            |   42 +
+ .../Runtime/Timeline/CinemachineShot.cs.meta       |   12 +
+ .../Runtime/Timeline/CinemachineTrack.cs           |   34 +
+ .../Runtime/Timeline/CinemachineTrack.cs.meta      |   12 +
+ .../Runtime/com.unity.cinemachine.asmdef           |    7 +
+ .../Runtime/com.unity.cinemachine.asmdef.meta      |    7 +
+ .../com.unity.cinemachine@2.2.8/license.txt        |   30 +
+ .../com.unity.cinemachine@2.2.8/license.txt.meta   |    7 +
+ .../com.unity.cinemachine@2.2.8/package.json       |   11 +
+ .../com.unity.cinemachine@2.2.8/package.json.meta  |    7 +
+ .../ScriptAssemblies/Assembly-CSharp-Editor.dll    |  Bin 72704 -> 72704 bytes
+ .../Library/ScriptAssemblies/Assembly-CSharp.dll   |  Bin 38912 -> 39424 bytes
+ .../Library/ScriptAssemblies/Assembly-CSharp.pdb   |  Bin 14896 -> 15112 bytes
+ .../Library/ScriptAssemblies/Cinemachine.dll       |  Bin 0 -> 200704 bytes
+ .../Library/ScriptAssemblies/Cinemachine.pdb       |  Bin 0 -> 89544 bytes
+ .../Unity.Analytics.DataPrivacy.dll                |  Bin 7680 -> 7680 bytes
+ .../ScriptAssemblies/Unity.CollabProxy.Editor.dll  |  Bin 40960 -> 40960 bytes
+ .../Unity.PackageManagerUI.Editor.dll              |  Bin 89600 -> 89600 bytes
+ .../ScriptAssemblies/Unity.TextMeshPro.Editor.dll  |  Bin 177152 -> 177152 bytes
+ .../Library/ScriptAssemblies/Unity.TextMeshPro.dll |  Bin 346624 -> 346624 bytes
+ .../com.unity.cinemachine.editor.dll               |  Bin 0 -> 185856 bytes
+ .../com.unity.cinemachine.editor.pdb               |  Bin 0 -> 73860 bytes
+ Unity Game/Library/ScriptMapper                    |  Bin 12833 -> 12861 bytes
+ Unity Game/Library/ShaderCache.db                  |  Bin 3072 -> 3072 bytes
+ .../2/213e455e3f5d11a50060339038b9a53f.bin         |  Bin 0 -> 1153 bytes
+ .../9/9e26750d09b5a8d223bb38f4523c9de4.bin         |  Bin 0 -> 545 bytes
+ .../a/aba68af46c4b905761cf3cd42aac871e.bin         |  Bin 0 -> 1385 bytes
+ .../d/db8f49475ff1159d922595d1795e6c5c.bin         |  Bin 0 -> 3205 bytes
+ .../StateCache/SceneView/b30c72-mainStage.json     |    2 +-
+ Unity Game/Library/assetDatabase3                  |  Bin 4845020 -> 4918480 bytes
+ Unity Game/Library/expandedItems                   |  Bin 4248 -> 4212 bytes
+ .../metadata/00/004ac85ff5c65a84c87ed0f35da11cbe   |  Bin 0 -> 4260 bytes
+ .../00/004ac85ff5c65a84c87ed0f35da11cbe.info       |  Bin 0 -> 632 bytes
+ .../metadata/00/00b2d199b96b516448144ab30fb26aed   |  Bin 0 -> 6804 bytes
+ .../00/00b2d199b96b516448144ab30fb26aed.info       |  Bin 0 -> 811 bytes
+ .../metadata/01/0181db608628b494d8ae50728e507ce1   |  Bin 0 -> 13568 bytes
+ .../01/0181db608628b494d8ae50728e507ce1.info       |  Bin 0 -> 737 bytes
+ .../metadata/02/0282251d79d6e964089ace2dc6e6e496   |  Bin 0 -> 4305 bytes
+ .../02/0282251d79d6e964089ace2dc6e6e496.info       |  Bin 0 -> 630 bytes
+ .../metadata/04/04e6f1d86089cda409e925cd975436d9   |  Bin 0 -> 13228 bytes
+ .../04/04e6f1d86089cda409e925cd975436d9.info       |  Bin 0 -> 709 bytes
+ .../metadata/05/05acc715f855ced458d76ee6f8ac6c61   |  Bin 0 -> 5508 bytes
+ .../05/05acc715f855ced458d76ee6f8ac6c61.info       |  Bin 0 -> 693 bytes
+ .../metadata/08/0803634542916d8498caef53ed5604db   |  Bin 0 -> 6492 bytes
+ .../08/0803634542916d8498caef53ed5604db.info       |  Bin 0 -> 758 bytes
+ .../metadata/09/09da586418723f247abdf5fb6aa098c7   |  Bin 0 -> 4273 bytes
+ .../09/09da586418723f247abdf5fb6aa098c7.info       |  Bin 0 -> 594 bytes
+ .../metadata/0e/0eb9f23cde3a1734da334cfa0831dd25   |  Bin 0 -> 25044 bytes
+ .../0e/0eb9f23cde3a1734da334cfa0831dd25.info       |  Bin 0 -> 743 bytes
+ .../metadata/0f/0f7633c93f0364a418841eeb8b058634   |  Bin 0 -> 18592 bytes
+ .../0f/0f7633c93f0364a418841eeb8b058634.info       |  Bin 0 -> 710 bytes
+ .../metadata/0f/0fafdc3d4f989ff48803e7d870539b41   |  Bin 0 -> 4317 bytes
+ .../0f/0fafdc3d4f989ff48803e7d870539b41.info       |  Bin 0 -> 634 bytes
+ .../metadata/10/10e6f8c815d3c4d45b1d98b951d53912   |  Bin 0 -> 7556 bytes
+ .../10/10e6f8c815d3c4d45b1d98b951d53912.info       |  Bin 0 -> 688 bytes
+ .../metadata/11/1123a444101eb774ba7490990b50736a   |  Bin 0 -> 14336 bytes
+ .../11/1123a444101eb774ba7490990b50736a.info       |  Bin 0 -> 722 bytes
+ .../metadata/11/1186b8795dc3fc84e8ec53bd314d8e91   |  Bin 0 -> 4620 bytes
+ .../11/1186b8795dc3fc84e8ec53bd314d8e91.info       |  Bin 0 -> 701 bytes
+ .../metadata/15/15ebf04de67923d41a36c21e1fc63718   |  Bin 0 -> 27284 bytes
+ .../15/15ebf04de67923d41a36c21e1fc63718.info       |  Bin 0 -> 716 bytes
+ .../metadata/15/15ef94834d9e4aa44ac8fe619843346b   |  Bin 0 -> 7176 bytes
+ .../15/15ef94834d9e4aa44ac8fe619843346b.info       |  Bin 0 -> 652 bytes
+ .../metadata/18/180ecf9b41d478f468eb3e9083753217   |  Bin 0 -> 6772 bytes
+ .../18/180ecf9b41d478f468eb3e9083753217.info       |  Bin 0 -> 707 bytes
+ .../metadata/1e/1e8b78ac948f05a46a6d8339a503172b   |  Bin 0 -> 6312 bytes
+ .../1e/1e8b78ac948f05a46a6d8339a503172b.info       |  Bin 0 -> 701 bytes
+ .../metadata/1f/1ff9d8296ed1f02419bf4f417ff2265e   |  Bin 0 -> 11260 bytes
+ .../1f/1ff9d8296ed1f02419bf4f417ff2265e.info       |  Bin 0 -> 737 bytes
+ .../metadata/20/20a4c62744850124cbd4a70ef53ca23d   |  Bin 0 -> 4301 bytes
+ .../20/20a4c62744850124cbd4a70ef53ca23d.info       |  Bin 0 -> 618 bytes
+ .../metadata/20/20a705aea2d80e0478fb89b6f43d8530   |  Bin 0 -> 4284 bytes
+ .../20/20a705aea2d80e0478fb89b6f43d8530.info       |  Bin 0 -> 695 bytes
+ .../metadata/20/20e46be82478fa24b90f748044c06b4b   |  Bin 0 -> 4284 bytes
+ .../20/20e46be82478fa24b90f748044c06b4b.info       |  Bin 0 -> 699 bytes
+ .../metadata/21/211d719bb25901043833928f50e9d0ea   |  Bin 0 -> 12856 bytes
+ .../21/211d719bb25901043833928f50e9d0ea.info       |  Bin 0 -> 724 bytes
+ .../metadata/23/2390b16c7d3bd2541b31285143692a36   |  Bin 0 -> 4252 bytes
+ .../23/2390b16c7d3bd2541b31285143692a36.info       |  Bin 0 -> 624 bytes
+ .../metadata/24/2449eb616c871d044adce04ac98030a6   |  Bin 0 -> 12632 bytes
+ .../24/2449eb616c871d044adce04ac98030a6.info       |  Bin 0 -> 727 bytes
+ .../metadata/24/247be52eadac5044e9f8b7b4d8d0ada9   |  Bin 0 -> 10944 bytes
+ .../24/247be52eadac5044e9f8b7b4d8d0ada9.info       |  Bin 0 -> 743 bytes
+ .../metadata/24/24ec24775a1b45e4ea81ac13002dee32   |  Bin 0 -> 25884 bytes
+ .../24/24ec24775a1b45e4ea81ac13002dee32.info       |  Bin 0 -> 679 bytes
+ .../metadata/26/2643ac9881a89594a80c242b565b34ec   |  Bin 0 -> 8868 bytes
+ .../26/2643ac9881a89594a80c242b565b34ec.info       |  Bin 0 -> 674 bytes
+ .../metadata/26/26f97a965ebcae74c82db1eaeb52181e   |  Bin 2130668 -> 2129760 bytes
+ .../26/26f97a965ebcae74c82db1eaeb52181e.info       |  Bin 20552 -> 101292 bytes
+ .../metadata/29/29d58ccb958d24942bf23fafcec87c0b   |  Bin 0 -> 4305 bytes
+ .../29/29d58ccb958d24942bf23fafcec87c0b.info       |  Bin 0 -> 627 bytes
+ .../metadata/2a/2a15a1e455bcc7543872f50762449739   |  Bin 0 -> 15348 bytes
+ .../2a/2a15a1e455bcc7543872f50762449739.info       |  Bin 0 -> 734 bytes
+ .../metadata/2a/2adf148a19499274795e418631d7db45   |  Bin 0 -> 5432 bytes
+ .../2a/2adf148a19499274795e418631d7db45.info       |  Bin 0 -> 701 bytes
+ .../metadata/2b/2bb09c3bc24a82648a2e4fc008a28d8b   |  Bin 0 -> 8432 bytes
+ .../2b/2bb09c3bc24a82648a2e4fc008a28d8b.info       |  Bin 0 -> 716 bytes
+ .../metadata/2c/2c760cb7073c57e44959f36cbed8ed39   |  Bin 0 -> 7748 bytes
+ .../2c/2c760cb7073c57e44959f36cbed8ed39.info       |  Bin 0 -> 704 bytes
+ .../metadata/2d/2d37e5385efd7064cb1d54c94960acae   |  Bin 0 -> 12516 bytes
+ .../2d/2d37e5385efd7064cb1d54c94960acae.info       |  Bin 0 -> 683 bytes
+ .../metadata/31/319d2fe34a804e245819465c9505ea59   |  Bin 0 -> 36648 bytes
+ .../31/319d2fe34a804e245819465c9505ea59.info       |  Bin 0 -> 793 bytes
+ .../metadata/31/31c3ab7d86d07034eb528155d40c016b   |  Bin 0 -> 4321 bytes
+ .../31/31c3ab7d86d07034eb528155d40c016b.info       |  Bin 0 -> 643 bytes
+ .../metadata/32/3226d9f88577be74197693bd17cff8c3   |  Bin 0 -> 4992 bytes
+ .../32/3226d9f88577be74197693bd17cff8c3.info       |  Bin 0 -> 734 bytes
+ .../metadata/32/325a6a3050a061e4b8aa51386c30e8e1   |  Bin 0 -> 29152 bytes
+ .../32/325a6a3050a061e4b8aa51386c30e8e1.info       |  Bin 0 -> 820 bytes
+ .../metadata/35/351cec6faf82a1848a52b8fd995c6c25   |  Bin 0 -> 4317 bytes
+ .../35/351cec6faf82a1848a52b8fd995c6c25.info       |  Bin 0 -> 637 bytes
+ .../metadata/36/36baaa8bdcb9d8b49b9199833965d2c3   |  Bin 0 -> 8588 bytes
+ .../36/36baaa8bdcb9d8b49b9199833965d2c3.info       |  Bin 0 -> 710 bytes
+ .../metadata/36/36d1163fa822e8b418a0a603ec078d5c   |  Bin 0 -> 5844 bytes
+ .../36/36d1163fa822e8b418a0a603ec078d5c.info       |  Bin 0 -> 719 bytes
+ .../metadata/37/372fe04232d5ed94d8d71524616c1543   |  Bin 0 -> 363016 bytes
+ .../37/372fe04232d5ed94d8d71524616c1543.info       |  Bin 0 -> 5381 bytes
+ .../metadata/38/382e34fa2b7177e4589888b9fb25567e   |  Bin 0 -> 4317 bytes
+ .../38/382e34fa2b7177e4589888b9fb25567e.info       |  Bin 0 -> 638 bytes
+ .../metadata/3c/3c9beda531928fc40968802117a5d256   |  Bin 0 -> 10516 bytes
+ .../3c/3c9beda531928fc40968802117a5d256.info       |  Bin 0 -> 680 bytes
+ .../metadata/3d/3d53800f587b60a4191877d7713cd17c   |  Bin 0 -> 4301 bytes
+ .../3d/3d53800f587b60a4191877d7713cd17c.info       |  Bin 0 -> 622 bytes
+ .../metadata/3e/3ee56510c2623c54daa99a3748f6f438   |  Bin 0 -> 4317 bytes
+ .../3e/3ee56510c2623c54daa99a3748f6f438.info       |  Bin 0 -> 637 bytes
+ .../metadata/3f/3f7c779802a73d5448e38af7c39fbaa5   |  Bin 0 -> 11888 bytes
+ .../3f/3f7c779802a73d5448e38af7c39fbaa5.info       |  Bin 0 -> 716 bytes
+ .../metadata/3f/3fed8968b96eb924891cf86f5c51f661   |  Bin 0 -> 17824 bytes
+ .../3f/3fed8968b96eb924891cf86f5c51f661.info       |  Bin 0 -> 680 bytes
+ .../metadata/41/418e42c7d0405cc48a7b83f63ea53bb3   |  Bin 0 -> 21844 bytes
+ .../41/418e42c7d0405cc48a7b83f63ea53bb3.info       |  Bin 0 -> 707 bytes
+ .../metadata/41/41a7beeb0ec57584382c8170981d8ac1   |  Bin 0 -> 9116 bytes
+ .../41/41a7beeb0ec57584382c8170981d8ac1.info       |  Bin 0 -> 671 bytes
+ .../metadata/43/4307f53044263cf4b835bd812fc161a4   |  Bin 0 -> 4492 bytes
+ .../43/4307f53044263cf4b835bd812fc161a4.info       |  Bin 0 -> 685 bytes
+ .../metadata/44/44d70cc20219cd84593f67d248eafe36   |  Bin 0 -> 5336 bytes
+ .../44/44d70cc20219cd84593f67d248eafe36.info       |  Bin 0 -> 731 bytes
+ .../metadata/45/45e653bab7fb20e499bda25e1b646fea   |  Bin 0 -> 29880 bytes
+ .../45/45e653bab7fb20e499bda25e1b646fea.info       |  Bin 0 -> 808 bytes
+ .../metadata/46/4692eb7a7fa5c53458eb32a04df6c6a0   |  Bin 0 -> 7152 bytes
+ .../46/4692eb7a7fa5c53458eb32a04df6c6a0.info       |  Bin 0 -> 726 bytes
+ .../metadata/46/46965f9cbaf525742a6da4c2172a99cd   |  Bin 0 -> 4276 bytes
+ .../46/46965f9cbaf525742a6da4c2172a99cd.info       |  Bin 0 -> 689 bytes
+ .../metadata/47/4700f9f03ad19f94baf0367cb7a9c988   |  Bin 0 -> 8708 bytes
+ .../47/4700f9f03ad19f94baf0367cb7a9c988.info       |  Bin 0 -> 799 bytes
+ .../metadata/49/492012e0d7ddbe447ba5cefcc55139d6   |  Bin 0 -> 4260 bytes
+ .../49/492012e0d7ddbe447ba5cefcc55139d6.info       |  Bin 0 -> 628 bytes
+ .../metadata/4a/4a9c464b0191f7d4da1d129d97d8240b   |  Bin 0 -> 7140 bytes
+ .../4a/4a9c464b0191f7d4da1d129d97d8240b.info       |  Bin 0 -> 769 bytes
+ .../metadata/4b/4bf6347e15795924680cf6570d7ac018   |  Bin 0 -> 4293 bytes
+ .../4b/4bf6347e15795924680cf6570d7ac018.info       |  Bin 0 -> 611 bytes
+ .../metadata/4f/4fa53a91a43ae1a4bbf6b29961b45c38   |  Bin 0 -> 9888 bytes
+ .../4f/4fa53a91a43ae1a4bbf6b29961b45c38.info       |  Bin 0 -> 692 bytes
+ .../metadata/53/53258ad9ad6e71e48bb8643c9522112e   |  Bin 0 -> 19380 bytes
+ .../53/53258ad9ad6e71e48bb8643c9522112e.info       |  Bin 0 -> 814 bytes
+ .../metadata/54/54b24e51e2a9fa242b38d80ee11f3b2d   |  Bin 0 -> 17844 bytes
+ .../54/54b24e51e2a9fa242b38d80ee11f3b2d.info       |  Bin 0 -> 684 bytes
+ .../metadata/55/554b0ed52734c154eab51f6cedd3a7d7   |  Bin 0 -> 4276 bytes
+ .../55/554b0ed52734c154eab51f6cedd3a7d7.info       |  Bin 0 -> 689 bytes
+ .../metadata/55/557c6f70a7173744abaa3967b6da6f5d   |  Bin 0 -> 18736 bytes
+ .../55/557c6f70a7173744abaa3967b6da6f5d.info       |  Bin 0 -> 647 bytes
+ .../metadata/57/57744762d9079934292f57896d8193e0   |  Bin 0 -> 7616 bytes
+ .../57/57744762d9079934292f57896d8193e0.info       |  Bin 0 -> 811 bytes
+ .../metadata/57/5778d22ca832d9f47b5e73a8c5fe78a2   |  Bin 0 -> 12448 bytes
+ .../57/5778d22ca832d9f47b5e73a8c5fe78a2.info       |  Bin 0 -> 656 bytes
+ .../metadata/57/57baee20e53f7b54782519af44a9468f   |  Bin 0 -> 16352 bytes
+ .../57/57baee20e53f7b54782519af44a9468f.info       |  Bin 0 -> 730 bytes
+ .../metadata/58/58a9eaefca02fe041806c3109e743a5b   |  Bin 6260 -> 7140 bytes
+ .../metadata/59/59bf6f737ca29494a8a074e4e7151fc3   |  Bin 0 -> 4305 bytes
+ .../59/59bf6f737ca29494a8a074e4e7151fc3.info       |  Bin 0 -> 629 bytes
+ .../metadata/5f/5f2a108eb023faf43a809979fd3d38f2   |  Bin 0 -> 100864 bytes
+ .../5f/5f2a108eb023faf43a809979fd3d38f2.info       |  Bin 0 -> 11136 bytes
+ .../metadata/60/6036af5730313e54699c5a693891fe90   |  Bin 0 -> 14208 bytes
+ .../60/6036af5730313e54699c5a693891fe90.info       |  Bin 0 -> 719 bytes
+ .../metadata/62/620aee1bd928b2a4981896c6b4e1bf0d   |  Bin 0 -> 13016 bytes
+ .../62/620aee1bd928b2a4981896c6b4e1bf0d.info       |  Bin 0 -> 743 bytes
+ .../metadata/66/66a1778a02c77914b82f7fbdafdedc6b   |  Bin 0 -> 4252 bytes
+ .../66/66a1778a02c77914b82f7fbdafdedc6b.info       |  Bin 0 -> 628 bytes
+ .../metadata/68/68194b7bb9ff1c6489c9c3c87c68c2a4   |  Bin 0 -> 16712 bytes
+ .../68/68194b7bb9ff1c6489c9c3c87c68c2a4.info       |  Bin 0 -> 672 bytes
+ .../metadata/68/68839a4bf8790cd449d4043f5efb5aec   |  Bin 0 -> 9392 bytes
+ .../68/68839a4bf8790cd449d4043f5efb5aec.info       |  Bin 0 -> 662 bytes
+ .../metadata/68/68bb026fafb42b14791938953eaace77   |  Bin 0 -> 8708 bytes
+ .../68/68bb026fafb42b14791938953eaace77.info       |  Bin 0 -> 740 bytes
+ .../metadata/69/69ce8388f6785dd4c8c39915efece2f4   |  Bin 0 -> 4268 bytes
+ .../69/69ce8388f6785dd4c8c39915efece2f4.info       |  Bin 0 -> 665 bytes
+ .../metadata/6a/6a0472cd31396f741969b8c1af8dd5a0   |  Bin 0 -> 15060 bytes
+ .../6a/6a0472cd31396f741969b8c1af8dd5a0.info       |  Bin 0 -> 703 bytes
+ .../metadata/6a/6ad980451443d70438faac0bc6c235a0   |  Bin 0 -> 35172 bytes
+ .../6a/6ad980451443d70438faac0bc6c235a0.info       |  Bin 0 -> 722 bytes
+ .../metadata/6b/6b46e8ffe448f084ab12938cb774d063   |  Bin 0 -> 4305 bytes
+ .../6b/6b46e8ffe448f084ab12938cb774d063.info       |  Bin 0 -> 627 bytes
+ .../metadata/6c/6c26251a3e1f5ac41afa5ffb404c5f71   |  Bin 0 -> 17220 bytes
+ .../6c/6c26251a3e1f5ac41afa5ffb404c5f71.info       |  Bin 0 -> 805 bytes
+ .../metadata/6c/6cef82e891a45884fb2b70604b0f8c29   |  Bin 0 -> 15624 bytes
+ .../6c/6cef82e891a45884fb2b70604b0f8c29.info       |  Bin 0 -> 647 bytes
+ .../metadata/6d/6dd3f00b9032de54c8784df7bdc6fdf8   |  Bin 0 -> 12608 bytes
+ .../6d/6dd3f00b9032de54c8784df7bdc6fdf8.info       |  Bin 0 -> 647 bytes
+ .../metadata/70/705fa5093d6721d478bccdcee593dffd   |  Bin 4868 -> 5132 bytes
+ .../metadata/70/70f1be76e10cd9f44ad1a86b9e05745e   |  Bin 0 -> 9248 bytes
+ .../70/70f1be76e10cd9f44ad1a86b9e05745e.info       |  Bin 0 -> 718 bytes
+ .../metadata/71/711aad28b4057bd4783120e26ff2ee25   |  Bin 0 -> 11440 bytes
+ .../71/711aad28b4057bd4783120e26ff2ee25.info       |  Bin 0 -> 707 bytes
+ .../metadata/72/72ece51f2901e7445ab60da3685d6b5f   |  Bin 0 -> 35828 bytes
+ .../72/72ece51f2901e7445ab60da3685d6b5f.info       |  Bin 0 -> 784 bytes
+ .../metadata/74/74d8c4d6e5d0338469ae46c13725f3ce   |  Bin 0 -> 23256 bytes
+ .../74/74d8c4d6e5d0338469ae46c13725f3ce.info       |  Bin 0 -> 698 bytes
+ .../metadata/7d/7d0d800d47186f0468d962ccf338ab97   |  Bin 0 -> 11148 bytes
+ .../7d/7d0d800d47186f0468d962ccf338ab97.info       |  Bin 0 -> 730 bytes
+ .../metadata/7d/7d93e7b7399fbe64790358e67fc94b18   |  Bin 0 -> 5000 bytes
+ .../7d/7d93e7b7399fbe64790358e67fc94b18.info       |  Bin 0 -> 621 bytes
+ .../metadata/7e/7e37f2a64474b3948b3a169780e54779   |  Bin 0 -> 6032 bytes
+ .../7e/7e37f2a64474b3948b3a169780e54779.info       |  Bin 0 -> 617 bytes
+ .../metadata/80/8000e8170b5e1374c9503b5255ccc7e8   |  Bin 0 -> 20720 bytes
+ .../80/8000e8170b5e1374c9503b5255ccc7e8.info       |  Bin 0 -> 712 bytes
+ .../metadata/80/806a217c43cf53b4c9c731285489f52a   |  Bin 0 -> 14084 bytes
+ .../80/806a217c43cf53b4c9c731285489f52a.info       |  Bin 0 -> 623 bytes
+ .../metadata/82/829b8a241d4653446a2cb2436c262305   |  Bin 0 -> 13104 bytes
+ .../82/829b8a241d4653446a2cb2436c262305.info       |  Bin 0 -> 719 bytes
+ .../metadata/82/829e606f890b35c47aa29643517add2e   |  Bin 0 -> 9708 bytes
+ .../82/829e606f890b35c47aa29643517add2e.info       |  Bin 0 -> 674 bytes
+ .../metadata/82/82e62c82b3be64042ac529dee964cc2f   |  Bin 0 -> 18360 bytes
+ .../82/82e62c82b3be64042ac529dee964cc2f.info       |  Bin 0 -> 799 bytes
+ .../metadata/86/8608ec81ee27a15488d33f9dad239e91   |  Bin 0 -> 4284 bytes
+ .../86/8608ec81ee27a15488d33f9dad239e91.info       |  Bin 0 -> 695 bytes
+ .../metadata/87/87edaa385191f4e43ac1e2831a02159f   |  Bin 0 -> 9820 bytes
+ .../87/87edaa385191f4e43ac1e2831a02159f.info       |  Bin 0 -> 707 bytes
+ .../metadata/89/8986fa27e90db314d8a3359520e7fd1a   |  Bin 0 -> 14672 bytes
+ .../89/8986fa27e90db314d8a3359520e7fd1a.info       |  Bin 0 -> 693 bytes
+ .../metadata/8a/8ad60cb17f7694c43a8190c617281753   |  Bin 0 -> 8768 bytes
+ .../8a/8ad60cb17f7694c43a8190c617281753.info       |  Bin 0 -> 728 bytes
+ .../metadata/8f/8f107aadf823af24889bc290a1cca90d   |  Bin 0 -> 4305 bytes
+ .../8f/8f107aadf823af24889bc290a1cca90d.info       |  Bin 0 -> 624 bytes
+ .../metadata/90/90fb794a295e73545af71bcdb7375791   |  Bin 0 -> 6028 bytes
+ .../90/90fb794a295e73545af71bcdb7375791.info       |  Bin 0 -> 690 bytes
+ .../metadata/92/924d241f19612fa45bd388dc28955fad   |  Bin 0 -> 4317 bytes
+ .../92/924d241f19612fa45bd388dc28955fad.info       |  Bin 0 -> 638 bytes
+ .../metadata/93/933e2b6843fbbbc4c8cabeead6fc1fae   |  Bin 0 -> 17788 bytes
+ .../93/933e2b6843fbbbc4c8cabeead6fc1fae.info       |  Bin 0 -> 711 bytes
+ .../metadata/93/9384ab8608cdc3d479fe89cd51eed48f   |  Bin 0 -> 22804 bytes
+ .../93/9384ab8608cdc3d479fe89cd51eed48f.info       |  Bin 0 -> 722 bytes
+ .../metadata/96/961772e8b1d75dd4a915fb8a236d5a8a   |  Bin 0 -> 8664 bytes
+ .../96/961772e8b1d75dd4a915fb8a236d5a8a.info       |  Bin 0 -> 693 bytes
+ .../metadata/99/99a9c787e5d1bbf48a389834c4a9641c   |  Bin 0 -> 8076 bytes
+ .../99/99a9c787e5d1bbf48a389834c4a9641c.info       |  Bin 0 -> 698 bytes
+ .../metadata/99/99ab3e8b62cb69145b760fc81e2d18d6   |  Bin 0 -> 4309 bytes
+ .../99/99ab3e8b62cb69145b760fc81e2d18d6.info       |  Bin 0 -> 631 bytes
+ .../metadata/9a/9a53087ba28aaf145a184ea363108831   |  Bin 0 -> 4584 bytes
+ .../9a/9a53087ba28aaf145a184ea363108831.info       |  Bin 0 -> 683 bytes
+ .../metadata/9c/9c644b247df49ee47957d373411a85c3   |  Bin 0 -> 4305 bytes
+ .../9c/9c644b247df49ee47957d373411a85c3.info       |  Bin 0 -> 627 bytes
+ .../metadata/9c/9cd1a769fbb1d1c47b4c22a04a64fa5f   |  Bin 0 -> 5388 bytes
+ .../9c/9cd1a769fbb1d1c47b4c22a04a64fa5f.info       |  Bin 0 -> 758 bytes
+ .../metadata/9c/9ce16cd7e31794b48b2843381cd87d31   |  Bin 0 -> 5296 bytes
+ .../9c/9ce16cd7e31794b48b2843381cd87d31.info       |  Bin 0 -> 722 bytes
+ .../metadata/9f/9f96161bfc85a364aac3baa0b7279f94   |  Bin 0 -> 4297 bytes
+ .../9f/9f96161bfc85a364aac3baa0b7279f94.info       |  Bin 0 -> 620 bytes
+ .../metadata/a1/a1728508674789b4e8539a2ad08ebc3f   |  Bin 0 -> 7176 bytes
+ .../a1/a1728508674789b4e8539a2ad08ebc3f.info       |  Bin 0 -> 719 bytes
+ .../metadata/a2/a200b19ca1a9685429ed7e043c28e904   |  Bin 0 -> 13904 bytes
+ .../a2/a200b19ca1a9685429ed7e043c28e904.info       |  Bin 0 -> 701 bytes
+ .../metadata/a2/a2fba25a5cd15594e8f050a11e386c80   |  Bin 0 -> 14020 bytes
+ .../a2/a2fba25a5cd15594e8f050a11e386c80.info       |  Bin 0 -> 793 bytes
+ .../metadata/a3/a3dacaec0287d7444b4bd276816e1666   |  Bin 0 -> 4276 bytes
+ .../a3/a3dacaec0287d7444b4bd276816e1666.info       |  Bin 0 -> 685 bytes
+ .../metadata/a4/a4c41ac9245b87c4192012080077d830   |  Bin 0 -> 5768 bytes
+ .../a4/a4c41ac9245b87c4192012080077d830.info       |  Bin 0 -> 725 bytes
+ .../metadata/a5/a5969901aa40942499363f92e3787110   |  Bin 0 -> 6924 bytes
+ .../a5/a5969901aa40942499363f92e3787110.info       |  Bin 0 -> 701 bytes
+ .../metadata/a6/a60d9407e2bb20e4ea00281b1e33eae7   |  Bin 0 -> 7072 bytes
+ .../a6/a60d9407e2bb20e4ea00281b1e33eae7.info       |  Bin 0 -> 713 bytes
+ .../metadata/a6/a63f9f2267c36684e855add13ad5499f   |  Bin 0 -> 23964 bytes
+ .../a6/a63f9f2267c36684e855add13ad5499f.info       |  Bin 0 -> 731 bytes
+ .../metadata/a7/a73149a4b6c41d741bc5e4e3b7711c0d   |  Bin 0 -> 22464 bytes
+ .../a7/a73149a4b6c41d741bc5e4e3b7711c0d.info       |  Bin 0 -> 689 bytes
+ .../metadata/a8/a8725b08dfa3851468b1f029bb53c966   |  Bin 0 -> 13912 bytes
+ .../a8/a8725b08dfa3851468b1f029bb53c966.info       |  Bin 0 -> 683 bytes
+ .../metadata/a8/a8fb8b30e4d6f6640859c9bcaef4bd88   |  Bin 0 -> 10072 bytes
+ .../a8/a8fb8b30e4d6f6640859c9bcaef4bd88.info       |  Bin 0 -> 620 bytes
+ .../metadata/a9/a9e63e62da42ce141b35602019323584   |  Bin 0 -> 8140 bytes
+ .../a9/a9e63e62da42ce141b35602019323584.info       |  Bin 0 -> 722 bytes
+ .../metadata/ac/ac0b09e7857660247b1477e93731de29   |  Bin 0 -> 4724 bytes
+ .../ac/ac0b09e7857660247b1477e93731de29.info       |  Bin 0 -> 793 bytes
+ .../metadata/ac/ac4cc060534a50747a448a00776ed888   |  Bin 0 -> 4305 bytes
+ .../ac/ac4cc060534a50747a448a00776ed888.info       |  Bin 0 -> 627 bytes
+ .../metadata/ac/aceb1a3f85f55c249bba6eaade29f2aa   |  Bin 0 -> 7140 bytes
+ .../ac/aceb1a3f85f55c249bba6eaade29f2aa.info       |  Bin 0 -> 706 bytes
+ .../metadata/ae/aea31f180f2ebf949a84c5f2b2c79255   |  Bin 0 -> 4260 bytes
+ .../ae/aea31f180f2ebf949a84c5f2b2c79255.info       |  Bin 0 -> 634 bytes
+ .../metadata/b1/b1a97a2b5515f5d49977e7e8add5b7a9   |  Bin 0 -> 8160 bytes
+ .../b1/b1a97a2b5515f5d49977e7e8add5b7a9.info       |  Bin 0 -> 767 bytes
+ .../metadata/b2/b241f91b9ccf8ff489abf204b30d3112   |  Bin 0 -> 4284 bytes
+ .../b2/b241f91b9ccf8ff489abf204b30d3112.info       |  Bin 0 -> 693 bytes
+ .../metadata/b2/b2f73bdc979030e419f33c10913639cc   |  Bin 0 -> 13796 bytes
+ .../b2/b2f73bdc979030e419f33c10913639cc.info       |  Bin 0 -> 704 bytes
+ .../metadata/b5/b567991935cb6844d9bb65eda22b628f   |  Bin 0 -> 5348 bytes
+ .../b5/b567991935cb6844d9bb65eda22b628f.info       |  Bin 0 -> 674 bytes
+ .../metadata/b5/b56f2475416eeea4c916add2d7268ad1   |  Bin 0 -> 5120 bytes
+ .../b5/b56f2475416eeea4c916add2d7268ad1.info       |  Bin 0 -> 731 bytes
+ .../metadata/b7/b7f59e54f2bfd184b9dd451a678d089b   |  Bin 0 -> 10456 bytes
+ .../b7/b7f59e54f2bfd184b9dd451a678d089b.info       |  Bin 0 -> 671 bytes
+ .../metadata/b8/b8ba3923a6094cd48b85425f47fd7450   |  Bin 0 -> 100864 bytes
+ .../b8/b8ba3923a6094cd48b85425f47fd7450.info       |  Bin 0 -> 11138 bytes
+ .../metadata/ba/ba59c38a116ff2f4fb69f825ba0da3bc   |  Bin 0 -> 9620 bytes
+ .../ba/ba59c38a116ff2f4fb69f825ba0da3bc.info       |  Bin 0 -> 710 bytes
+ .../metadata/ba/ba8c092d026123a418fb4bfb797a7bd8   |  Bin 0 -> 4608 bytes
+ .../ba/ba8c092d026123a418fb4bfb797a7bd8.info       |  Bin 0 -> 698 bytes
+ .../metadata/bd/bd920fe83f1086148a2b401f3e66528f   |  Bin 0 -> 27744 bytes
+ .../bd/bd920fe83f1086148a2b401f3e66528f.info       |  Bin 0 -> 794 bytes
+ .../metadata/be/be817a1286f201845b5c36ae9afe9e35   |  Bin 0 -> 19988 bytes
+ .../be/be817a1286f201845b5c36ae9afe9e35.info       |  Bin 0 -> 809 bytes
+ .../metadata/bf/bf34fbe7a6e71634493d770ed0031f9d   |  Bin 0 -> 7688 bytes
+ .../bf/bf34fbe7a6e71634493d770ed0031f9d.info       |  Bin 0 -> 716 bytes
+ .../metadata/c0/c06f4c593eaf2e0439416e08fc09857a   |  Bin 0 -> 4285 bytes
+ .../c0/c06f4c593eaf2e0439416e08fc09857a.info       |  Bin 0 -> 608 bytes
+ .../metadata/c0/c0d6910df7c989c4abc7d5ddf0e421b2   |  Bin 0 -> 4776 bytes
+ .../c0/c0d6910df7c989c4abc7d5ddf0e421b2.info       |  Bin 0 -> 619 bytes
+ .../metadata/c1/c19eb9a4b328654bd4ca551e1c34b76c   |  Bin 0 -> 4305 bytes
+ .../c1/c19eb9a4b328654bd4ca551e1c34b76c.info       |  Bin 0 -> 596 bytes
+ .../metadata/c2/c2a918f460a69394eb9726b31e1d404c   |  Bin 0 -> 27040 bytes
+ .../c2/c2a918f460a69394eb9726b31e1d404c.info       |  Bin 0 -> 653 bytes
+ .../metadata/c5/c55de101660494c4791597d6af976ae4   |  Bin 0 -> 87964 bytes
+ .../c5/c55de101660494c4791597d6af976ae4.info       |  Bin 0 -> 28397 bytes
+ .../metadata/c5/c5d95ccadebafc84b8226853d987217d   |  Bin 0 -> 11616 bytes
+ .../c5/c5d95ccadebafc84b8226853d987217d.info       |  Bin 0 -> 736 bytes
+ .../metadata/c5/c5da6ce9225f948438f7d6a072499ecd   |  Bin 0 -> 8412 bytes
+ .../c5/c5da6ce9225f948438f7d6a072499ecd.info       |  Bin 0 -> 731 bytes
+ .../metadata/c6/c63cb4cb8e3e82c4f8bfa7516da4f2b5   |  Bin 0 -> 5036 bytes
+ .../c6/c63cb4cb8e3e82c4f8bfa7516da4f2b5.info       |  Bin 0 -> 737 bytes
+ .../metadata/c6/c64ec1fa74cb7174da4b9f561a7dffe1   |  Bin 0 -> 4476 bytes
+ .../c6/c64ec1fa74cb7174da4b9f561a7dffe1.info       |  Bin 0 -> 651 bytes
+ .../metadata/c7/c7d73314dfe49f8458398c6dc8edcda8   |  Bin 0 -> 21960 bytes
+ .../c7/c7d73314dfe49f8458398c6dc8edcda8.info       |  Bin 0 -> 677 bytes
+ .../metadata/c8/c83e87916355f464fa83e7591dc9159e   |  Bin 2175104 -> 2176592 bytes
+ .../c8/c83e87916355f464fa83e7591dc9159e.info       |  Bin 301721 -> 154293 bytes
+ .../metadata/c8/c88d2a04cc828c044b0fcc133fd481e6   |  Bin 0 -> 21284 bytes
+ .../c8/c88d2a04cc828c044b0fcc133fd481e6.info       |  Bin 0 -> 704 bytes
+ .../metadata/cd/cd1b3b6848c215f4cba3ace2c38f9bce   |  Bin 0 -> 6732 bytes
+ .../cd/cd1b3b6848c215f4cba3ace2c38f9bce.info       |  Bin 0 -> 763 bytes
+ .../metadata/cd/cd438dd108a0f284aa931a2da434f1d3   |  Bin 0 -> 10296 bytes
+ .../cd/cd438dd108a0f284aa931a2da434f1d3.info       |  Bin 0 -> 734 bytes
+ .../metadata/ce/cebc3fe47a919524eb4a977f726a484e   |  Bin 0 -> 6360 bytes
+ .../ce/cebc3fe47a919524eb4a977f726a484e.info       |  Bin 0 -> 683 bytes
+ .../metadata/d0/d093acf2bada69e4bbbcf0a8b4534919   |  Bin 0 -> 4305 bytes
+ .../d0/d093acf2bada69e4bbbcf0a8b4534919.info       |  Bin 0 -> 623 bytes
+ .../metadata/d3/d30409ab90458e5409807c8b0274ac9c   |  Bin 0 -> 11444 bytes
+ .../d3/d30409ab90458e5409807c8b0274ac9c.info       |  Bin 0 -> 682 bytes
+ .../metadata/d4/d4a408a1b506d0046875061c677944d8   |  Bin 0 -> 7752 bytes
+ .../d4/d4a408a1b506d0046875061c677944d8.info       |  Bin 0 -> 728 bytes
+ .../metadata/d6/d62f748f5292bb343be9e6b0c84416d9   |  Bin 0 -> 23920 bytes
+ .../d6/d62f748f5292bb343be9e6b0c84416d9.info       |  Bin 0 -> 796 bytes
+ .../metadata/d8/d8623b6a09cb5ab4ea2c51347a3a074c   |  Bin 0 -> 4297 bytes
+ .../d8/d8623b6a09cb5ab4ea2c51347a3a074c.info       |  Bin 0 -> 618 bytes
+ .../metadata/d9/d9ca844c06be1ab40a3f7fc9e3c42c55   |  Bin 0 -> 4297 bytes
+ .../d9/d9ca844c06be1ab40a3f7fc9e3c42c55.info       |  Bin 0 -> 618 bytes
+ .../metadata/e2/e2408873163918f4da4afc37c51b1586   |  Bin 0 -> 4305 bytes
+ .../e2/e2408873163918f4da4afc37c51b1586.info       |  Bin 0 -> 628 bytes
+ .../metadata/e4/e44b92e217bfdf24d99acb4344918eeb   |  Bin 0 -> 5336 bytes
+ .../e4/e44b92e217bfdf24d99acb4344918eeb.info       |  Bin 0 -> 740 bytes
+ .../metadata/e4/e46ac8d61dc065848bd5a1aa7cd8c006   |  Bin 0 -> 17096 bytes
+ .../e4/e46ac8d61dc065848bd5a1aa7cd8c006.info       |  Bin 0 -> 712 bytes
+ .../metadata/e4/e4e5d566a8aa9914c906555a6857fcb9   |  Bin 0 -> 46722 bytes
+ .../e4/e4e5d566a8aa9914c906555a6857fcb9.info       |  Bin 0 -> 656 bytes
+ .../metadata/e5/e501d18bb52cf8c40b1853ca4904654f   |  Bin 0 -> 39832 bytes
+ .../e5/e501d18bb52cf8c40b1853ca4904654f.info       |  Bin 0 -> 793 bytes
+ .../metadata/e5/e5eb80d8e62d9d145bb50fb783c0f731   |  Bin 0 -> 19548 bytes
+ .../e5/e5eb80d8e62d9d145bb50fb783c0f731.info       |  Bin 0 -> 704 bytes
+ .../metadata/e8/e8413e2c94231d544b120f2b71d432e2   |  Bin 0 -> 4297 bytes
+ .../e8/e8413e2c94231d544b120f2b71d432e2.info       |  Bin 0 -> 620 bytes
+ .../metadata/e9/e9ba644cd3701424794cff370999515c   |  Bin 2374428 -> 2373044 bytes
+ .../e9/e9ba644cd3701424794cff370999515c.info       |  Bin 379819 -> 192320 bytes
+ .../metadata/eb/eb25eb9c85a88c94aa253071e03aca6e   |  Bin 0 -> 23244 bytes
+ .../eb/eb25eb9c85a88c94aa253071e03aca6e.info       |  Bin 0 -> 710 bytes
+ .../metadata/eb/eb8e037cb3f873743a725427c8c22342   |  Bin 0 -> 8612 bytes
+ .../eb/eb8e037cb3f873743a725427c8c22342.info       |  Bin 0 -> 725 bytes
+ .../metadata/eb/ebb13519e7af50b4dbc59d78b3bb6a32   |  Bin 0 -> 10948 bytes
+ .../eb/ebb13519e7af50b4dbc59d78b3bb6a32.info       |  Bin 0 -> 689 bytes
+ .../metadata/ed/ed3efd28525441947b55ec9b5d68ba31   |  Bin 0 -> 5544 bytes
+ .../ed/ed3efd28525441947b55ec9b5d68ba31.info       |  Bin 0 -> 748 bytes
+ .../metadata/ee/ee42f1964a0e8224c90be81905946699   |  Bin 0 -> 5592 bytes
+ .../ee/ee42f1964a0e8224c90be81905946699.info       |  Bin 0 -> 761 bytes
+ .../metadata/ef/eff4faea73dcad74991e80ea98c76e2c   |  Bin 0 -> 4317 bytes
+ .../ef/eff4faea73dcad74991e80ea98c76e2c.info       |  Bin 0 -> 635 bytes
+ .../metadata/f2/f24a4388d07ef494e8516cb859803e09   |  Bin 0 -> 9620 bytes
+ .../f2/f24a4388d07ef494e8516cb859803e09.info       |  Bin 0 -> 707 bytes
+ .../metadata/f3/f34d110791e602a418f182fbec6b699d   |  Bin 0 -> 4328 bytes
+ .../f3/f34d110791e602a418f182fbec6b699d.info       |  Bin 0 -> 638 bytes
+ .../metadata/f3/f34e35dc1dc67c54c841b728548d69cc   |  Bin 0 -> 9408 bytes
+ .../f3/f34e35dc1dc67c54c841b728548d69cc.info       |  Bin 0 -> 722 bytes
+ .../metadata/f4/f4044717213e31446939f7bd49c896ea   |  Bin 0 -> 28192 bytes
+ .../f4/f4044717213e31446939f7bd49c896ea.info       |  Bin 0 -> 695 bytes
+ .../metadata/fa/fa7155796051b734daa718462081dc5f   |  Bin 0 -> 22484 bytes
+ .../fa/fa7155796051b734daa718462081dc5f.info       |  Bin 0 -> 701 bytes
+ .../metadata/fc/fc54afb14b6b01a4dabc4c8831cb7bf7   |  Bin 0 -> 5380 bytes
+ .../fc/fc54afb14b6b01a4dabc4c8831cb7bf7.info       |  Bin 0 -> 746 bytes
+ .../metadata/fc/fca2bf25139920d4f9bf86711457992e   |  Bin 0 -> 9224 bytes
+ .../fc/fca2bf25139920d4f9bf86711457992e.info       |  Bin 0 -> 679 bytes
+ .../metadata/fd/fd10c4a322c950342a9d03a14ae879b7   |  Bin 0 -> 4317 bytes
+ .../fd/fd10c4a322c950342a9d03a14ae879b7.info       |  Bin 0 -> 634 bytes
+ .../metadata/fd/fdb859783dabdca44be0ea05d1203b30   |  Bin 0 -> 9064 bytes
+ .../fd/fdb859783dabdca44be0ea05d1203b30.info       |  Bin 0 -> 761 bytes
+ .../shadercompiler-UnityShaderCompiler.exe0.log    |    6 +-
+ .../shadercompiler-UnityShaderCompiler.exe1.log    |   11 +
+ .../shadercompiler-UnityShaderCompiler.exe2.log    |   11 +
+ .../shadercompiler-UnityShaderCompiler.exe3.log    |   11 +
+ .../shadercompiler-UnityShaderCompiler.exe4.log    |   11 +
+ Unity Game/Packages/manifest.json                  |    1 +
+ ...ly-CSharp-Editor.csproj.CoreCompileInputs.cache |    2 +-
+ ...bly-CSharp-Editor.csprojAssemblyReference.cache |  Bin 158678 -> 180530 bytes
+ .../Assembly-CSharp.csproj.CoreCompileInputs.cache |    2 +-
+ .../Assembly-CSharp.csprojAssemblyReference.cache  |  Bin 153704 -> 181956 bytes
+ .../DesignTimeResolveAssemblyReferencesInput.cache |  Bin 0 -> 29376 bytes
+ Unity Game/obj/Debug/build.force                   |    0
+ git.txt                                            | 5660 ++++++++++++++++++++
+ 865 files changed, 39945 insertions(+), 417 deletions(-)
+
 commit ed2e97cdcc7a6fe0734b6a6b2a460cf0293cd5bb
 Author: ShriramSuryawanshi <shriram.a.suryawanshi@gmail.com>
 Date:   Thu Mar 14 18:48:35 2019 -0400

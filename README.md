@@ -1,7 +1,7 @@
 
 CS 541 - Game Development for Mobile Platforms {Spring 2019}
 
-Project 4 - iOS/Android Application  : Animation Game using Unity
+Project 4 - iOS/Android Application  : Cavern Figher - Animation Game using Unity
 
 Animation and sound effects video (YouTube) - https://youtu.be/VXxA-fxs3ck
 
