@@ -1,8 +1,18 @@
+commit d8303d0c8e7a039d2ba4746762bde67d548d9f73
+Author: ShriramSuryawanshi <shriram.a.suryawanshi@gmail.com>
+Date:   Fri Mar 15 20:29:37 2019 -0400
+
+    Updated git logs
+
+ 3 files changed, 8043 insertions(+), 7975 deletions(-)
+
 commit e119672ee774b29f7f36fd13fb3faadddda0b634
 Author: ShriramSuryawanshi <shriram.a.suryawanshi@gmail.com>
 Date:   Fri Mar 15 20:21:48 2019 -0400
 
     Readme, git log
+
+ 2 files changed, 2367 insertions(+), 1 deletion(-)
 
 commit 2ca9fc6d8ed527dbb6a36d3033a8822c55434d5a
 Author: ShriramSuryawanshi <shriram.a.suryawanshi@gmail.com>
@@ -10,11 +20,15 @@ Date:   Fri Mar 15 20:14:34 2019 -0400
 
     Finihsing up, screenshots, readme
 
+ 1214 files changed, 29089 insertions(+), 860 deletions(-)
+
 commit 525e36602a1d4f1ee0fa6c7981549f6361714401
 Author: ShriramSuryawanshi <shriram.a.suryawanshi@gmail.com>
 Date:   Fri Mar 15 17:09:49 2019 -0400
 
     Enemy attack and deaths
+
+ 144 files changed, 14784 insertions(+), 446 deletions(-)
 
 commit fa3cd38e1ceb5259c1dd93f205942b4857ff2318
 Author: ShriramSuryawanshi <shriram.a.suryawanshi@gmail.com>
@@ -22,11 +36,15 @@ Date:   Fri Mar 15 03:46:54 2019 -0400
 
     Enemy Added with animations
 
+ 111 files changed, 7706 insertions(+), 488 deletions(-)
+
 commit da19a8c9a65f2f729fe42656978b807c9e4a35ae
 Author: ShriramSuryawanshi <shriram.a.suryawanshi@gmail.com>
 Date:   Thu Mar 14 21:05:52 2019 -0400
 
     Player done
+
+ 865 files changed, 39945 insertions(+), 417 deletions(-)
 
 commit ed2e97cdcc7a6fe0734b6a6b2a460cf0293cd5bb
 Author: ShriramSuryawanshi <shriram.a.suryawanshi@gmail.com>
@@ -34,11 +52,15 @@ Date:   Thu Mar 14 18:48:35 2019 -0400
 
     Player run, jump animations
 
+ 90 files changed, 8273 insertions(+), 480 deletions(-)
+
 commit ee27c7bfe19f53edf83f3de7f67b2ba899d6c44a
 Author: ShriramSuryawanshi <shriram.a.suryawanshi@gmail.com>
 Date:   Thu Mar 14 13:53:57 2019 -0400
 
     Game Assets
+
+ 2033 files changed, 270100 insertions(+), 58 deletions(-)
 
 commit 25994c04c3ab251ecd633597bd9852bf5b7e28c3
 Author: ShriramSuryawanshi <shriram.a.suryawanshi@gmail.com>
@@ -46,14 +68,20 @@ Date:   Thu Mar 14 13:19:54 2019 -0400
 
     ground layer
 
+ 24 files changed, 2105 insertions(+), 92 deletions(-)
+
 commit f9cceb4a8d6b07722fda7cfe02d12714d4817bbe
 Author: ShriramSuryawanshi <shriram.a.suryawanshi@gmail.com>
 Date:   Wed Mar 13 15:22:57 2019 -0400
 
     ground desgined
 
+ 3473 files changed, 113410 insertions(+)
+
 commit 87fb2e7848edbdc055b53ec0d407dea08bda8410
 Author: Shriram Suryawanshi <45048811+ShriramSuryawanshi@users.noreply.github.com>
 Date:   Mon Mar 11 20:52:51 2019 -0400
 
     Initial commit
+
+ 1 file changed, 2 insertions(+)

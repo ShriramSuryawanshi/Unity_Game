@@ -9,6 +9,7 @@ This is the android/iOS game built using Unity. I have used the free sprite asse
 The game is not complete yet, as of now I have completed the below functionalities and animations -
 
 Game Player - Idle, Walk, Run, Jump, Collecting Diamonds, Sword Swings, Killing Enemies
+
 Enemies  - Spider, Hulk, Skeleton - for each enemy implemented animations  - Idle, Walk, Attack on Player, Death
 
 Future Implementations - 
